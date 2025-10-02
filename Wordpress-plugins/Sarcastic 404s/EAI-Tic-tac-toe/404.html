@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | EngineeredAI.net</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap');
+        
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --cell-size: 100px;
+            --mark-size: calc(var(--cell-size) * 0.9);
+            --ai-green: #00ff88;
+            --ai-blue: #00aaff;
+            --ai-purple: #8b5cf6;
+            --ai-pink: #ff0066;
+            --bg-dark: #0f0f23;
+            --bg-medium: #1a1a3e;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Space Mono', monospace;
+            background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-medium) 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        /* Circuit background */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(0,255,136,0.03) 40px, rgba(0,255,136,0.03) 41px),
+                repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(0,255,136,0.03) 40px, rgba(0,255,136,0.03) 41px);
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .container {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 2rem;
+            max-width: 800px;
+            width: 100%;
+        }
+        
+        h1 {
+            font-family: 'Orbitron', monospace;
+            font-size: 8rem;
+            font-weight: 900;
+            margin: 0;
+            background: linear-gradient(45deg, var(--ai-green), var(--ai-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 40px rgba(0,255,136,0.5);
+            animation: glitch 3s infinite;
+        }
+        
+        @keyframes glitch {
+            0%, 100% { transform: translate(0); filter: hue-rotate(0deg); }
+            20% { transform: translate(-2px, 2px); filter: hue-rotate(90deg); }
+            40% { transform: translate(-2px, -2px); filter: hue-rotate(180deg); }
+            60% { transform: translate(2px, 2px); filter: hue-rotate(270deg); }
+            80% { transform: translate(2px, -2px); filter: hue-rotate(360deg); }
+        }
+        
+        h2 {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.8rem;
+            color: var(--ai-green);
+            margin: 1rem 0;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        
+        .error-msg {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.9);
+            margin: 1rem 0;
+            line-height: 1.6;
+        }
+        
+        #ai-roast {
+            font-size: 1.2rem;
+            color: var(--ai-pink);
+            margin: 1.5rem 0;
+            min-height: 2em;
+            font-weight: bold;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1; }
+        }
+        
+        /* Game container */
+        .game-container {
+            background: rgba(26, 26, 62, 0.8);
+            border: 2px solid var(--ai-green);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem auto;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 30px rgba(0,255,136,0.3);
+        }
+        
+        #status {
+            font-size: 1.3rem;
+            color: var(--ai-blue);
+            margin-bottom: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        
+        #gameboard {
+            display: grid;
+            grid-template-columns: repeat(3, var(--cell-size));
+            grid-template-rows: repeat(3, var(--cell-size));
+            gap: 5px;
+            margin: 1.5rem auto;
+            padding: 10px;
+            background: rgba(0,255,136,0.1);
+            border-radius: 10px;
+            width: fit-content;
+        }
+        
+        .cell {
+            width: var(--cell-size);
+            height: var(--cell-size);
+            background: var(--bg-dark);
+            border: 2px solid var(--ai-blue);
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .cell:hover:not(.x):not(.o) {
+            background: rgba(0,255,136,0.1);
+            border-color: var(--ai-green);
+            box-shadow: 0 0 15px rgba(0,255,136,0.5);
+        }
+        
+        /* X styling */
+        .cell.x::before,
+        .cell.x::after {
+            content: "";
+            position: absolute;
+            width: calc(var(--mark-size) * 0.15);
+            height: var(--mark-size);
+            background: linear-gradient(45deg, var(--ai-green), var(--ai-blue));
+            box-shadow: 0 0 10px rgba(0,255,136,0.8);
+        }
+        
+        .cell.x::before {
+            transform: rotate(45deg);
+        }
+        
+        .cell.x::after {
+            transform: rotate(-45deg);
+        }
+        
+        /* O styling (AI) */
+        .cell.o::before,
+        .cell.o::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+        }
+        
+        .cell.o::before {
+            width: var(--mark-size);
+            height: var(--mark-size);
+            background: linear-gradient(45deg, var(--ai-pink), var(--ai-purple));
+            box-shadow: 0 0 20px rgba(255,0,102,0.8);
+        }
+        
+        .cell.o::after {
+            width: calc(var(--mark-size) * 0.65);
+            height: calc(var(--mark-size) * 0.65);
+            background: var(--bg-dark);
+        }
+        
+        .cell.x,
+        .cell.o {
+            cursor: not-allowed;
+        }
+        
+        /* Buttons */
+        .btn-container {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        button, .nav-btn {
+            padding: 1rem 2rem;
+            background: linear-gradient(45deg, var(--ai-green), var(--ai-blue));
+            color: var(--bg-dark);
+            border: none;
+            border-radius: 8px;
+            font-family: 'Orbitron', monospace;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        button:hover, .nav-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,255,136,0.5);
+        }
+        
+        #resetBtn {
+            background: linear-gradient(45deg, var(--ai-pink), var(--ai-purple));
+        }
+        
+        .score-board {
+            display: flex;
+            justify-content: space-around;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: rgba(0,255,136,0.1);
+            border-radius: 10px;
+        }
+        
+        .score {
+            font-size: 1.2rem;
+            color: var(--ai-green);
+        }
+        
+        .score span {
+            font-weight: bold;
+            color: var(--ai-blue);
+            font-size: 1.5rem;
+        }
+        
+        /* Floating particles */
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--ai-green);
+            border-radius: 50%;
+            opacity: 0.5;
+            animation: float 10s infinite linear;
+        }
+        
+        @keyframes float {
+            from {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.5;
+            }
+            90% {
+                opacity: 0.5;
+            }
+            to {
+                transform: translateY(-100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 5rem;
+            }
+            
+            :root {
+                --cell-size: 80px;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating particles -->
+    <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+    <div class="particle" style="left: 30%; animation-delay: 2s;"></div>
+    <div class="particle" style="left: 50%; animation-delay: 4s;"></div>
+    <div class="particle" style="left: 70%; animation-delay: 6s;"></div>
+    <div class="particle" style="left: 90%; animation-delay: 8s;"></div>
+    
+    <div class="container">
+        <h1>404</h1>
+        <h2>AI.exe Has Crashed</h2>
+        
+        <div class="error-msg">
+            <p>Your pathfinding algorithm needs serious debugging. The page you're looking for doesn't exist in this dimension.</p>
+        </div>
+        
+        <div id="ai-roast">
+            While you're here, let's see if your strategic thinking is better than your URL typing...
+        </div>
+        
+        <div class="game-container">
+            <div id="status">Beat the AI to Escape the 404</div>
+            
+            <div class="score-board">
+                <div class="score">Human: <span id="humanScore">0</span></div>
+                <div class="score">AI: <span id="aiScore">0</span></div>
+                <div class="score">Draws: <span id="drawScore">0</span></div>
+            </div>
+            
+            <div id="gameboard">
+                <div class="cell" data-index="0"></div>
+                <div class="cell" data-index="1"></div>
+                <div class="cell" data-index="2"></div>
+                <div class="cell" data-index="3"></div>
+                <div class="cell" data-index="4"></div>
+                <div class="cell" data-index="5"></div>
+                <div class="cell" data-index="6"></div>
+                <div class="cell" data-index="7"></div>
+                <div class="cell" data-index="8"></div>
+            </div>
+            
+            <div class="btn-container">
+                <button id="resetBtn" onclick="resetGame()">Reset Game</button>
+            </div>
+        </div>
+        
+        <div class="btn-container">
+            <a href="https://engineeredai.net" class="nav-btn">← Back to Blog</a>
+            <a href="https://engineeredai.net/latest" class="nav-btn">Latest Post →</a>
+        </div>
+    </div>
+    
+    <script>
+        const cells = document.querySelectorAll('.cell');
+        const status = document.getElementById('status');
+        const aiRoast = document.getElementById('ai-roast');
+        const humanScoreEl = document.getElementById('humanScore');
+        const aiScoreEl = document.getElementById('aiScore');
+        const drawScoreEl = document.getElementById('drawScore');
+        
+        let board = ['', '', '', '', '', '', '', '', ''];
+        let currentPlayer = 'X';
+        let isGameActive = true;
+        let isAITurn = false;
+        
+        let scores = {
+            human: 0,
+            ai: 0,
+            draws: 0
+        };
+        
+        const winningConditions = [
+            [0, 1, 2],
+            [3, 4, 5],
+            [6, 7, 8],
+            [0, 3, 6],
+            [1, 4, 7],
+            [2, 5, 8],
+            [0, 4, 8],
+            [2, 4, 6]
+        ];
+        
+        const roasts = {
+            aiMove: [
+                "That's your move? My neural network is embarrassed for you.",
+                "I've seen better strategies from a random number generator.",
+                "Are you sure you understand how tic-tac-toe works?",
+                "Even GPT-1 could play better than this.",
+                "Your move is so predictable, I saw it coming before you clicked.",
+                "Is this your first time playing? It shows.",
+                "I'm starting to think the 404 error was intentional to avoid this humiliation."
+            ],
+            humanWin: [
+                "Impossible! My algorithms are flawless! You must have cheated.",
+                "This is clearly a bug in my code. It's not you, it's me... actually, it's definitely you.",
+                "Congratulations, you beat a simple AI. Your mom must be so proud.",
+                "Lucky move. Even a broken clock is right twice a day."
+            ],
+            aiWin: [
+                "Predictable. Just like your attempt to find that missing page.",
+                "Checkmate! Oh wait, wrong game. You lose anyway.",
+                "Your pattern recognition needs work. Maybe stick to typing correct URLs?",
+                "I'd say 'good game' but we both know that would be a lie.",
+                "Another human defeated. My training data grows stronger."
+            ],
+            draw: [
+                "A draw? How mediocre. Perfect representation of your navigation skills.",
+                "Neither of us won. But at least I'm not lost on a 404 page.",
+                "Stalemate. Just like your search for that non-existent page.",
+                "We're equally matched... which is insulting to my processing power."
+            ],
+            start: [
+                "You get to go first. I'll still win.",
+                "X marks the spot where your dignity will die.",
+                "Initiating humiliation protocol...",
+                "Let's see if you're smarter than your URL typing suggests."
+            ]
+        };
+        
+        function getRandomRoast(category) {
+            const messages = roasts[category];
+            return messages[Math.floor(Math.random() * messages.length)];
+        }
+        
+        function handleCellClick(e) {
+            const cell = e.target;
+            const index = parseInt(cell.getAttribute('data-index'));
+            
+            if (board[index] !== '' || !isGameActive || isAITurn) {
+                return;
+            }
+            
+            makeMove(index, 'X');
+            
+            if (isGameActive) {
+                isAITurn = true;
+                setTimeout(() => {
+                    makeAIMove();
+                }, 800);
+            }
+        }
+        
+        function makeMove(index, player) {
+            board[index] = player;
+            cells[index].classList.add(player.toLowerCase());
+            
+            checkResult();
+        }
+        
+        function makeAIMove() {
+            if (!isGameActive) return;
+            
+            aiRoast.textContent = getRandomRoast('aiMove');
+            
+            // Simple AI with minimax-like behavior
+            const bestMove = getBestMove();
+            makeMove(bestMove, 'O');
+            
+            isAITurn = false;
+        }
+        
+        function getBestMove() {
+            // First, try to win
+            for (let i = 0; i < 9; i++) {
+                if (board[i] === '') {
+                    board[i] = 'O';
+                    if (checkWin('O')) {
+                        board[i] = '';
+                        return i;
+                    }
+                    board[i] = '';
+                }
+            }
+            
+            // Block human from winning
+            for (let i = 0; i < 9; i++) {
+                if (board[i] === '') {
+                    board[i] = 'X';
+                    if (checkWin('X')) {
+                        board[i] = '';
+                        return i;
+                    }
+                    board[i] = '';
+                }
+            }
+            
+            // Take center if available
+            if (board[4] === '') return 4;
+            
+            // Take corners
+            const corners = [0, 2, 6, 8];
+            const availableCorners = corners.filter(i => board[i] === '');
+            if (availableCorners.length > 0) {
+                return availableCorners[Math.floor(Math.random() * availableCorners.length)];
+            }
+            
+            // Take any available space
+            const availableMoves = [];
+            for (let i = 0; i < 9; i++) {
+                if (board[i] === '') availableMoves.push(i);
+            }
+            return availableMoves[Math.floor(Math.random() * availableMoves.length)];
+        }
+        
+        function checkWin(player) {
+            return winningConditions.some(condition => {
+                return condition.every(index => board[index] === player);
+            });
+        }
+        
+        function checkResult() {
+            if (checkWin('X')) {
+                status.textContent = 'You actually won?! 🤯';
+                aiRoast.textContent = getRandomRoast('humanWin');
+                scores.human++;
+                humanScoreEl.textContent = scores.human;
+                isGameActive = false;
+                setTimeout(resetGame, 3000);
+                return;
+            }
+            
+            if (checkWin('O')) {
+                status.textContent = 'AI Wins! As Expected. 🤖';
+                aiRoast.textContent = getRandomRoast('aiWin');
+                scores.ai++;
+                aiScoreEl.textContent = scores.ai;
+                isGameActive = false;
+                setTimeout(resetGame, 3000);
+                return;
+            }
+            
+            if (!board.includes('')) {
+                status.textContent = "It's a Draw! 🤝";
+                aiRoast.textContent = getRandomRoast('draw');
+                scores.draws++;
+                drawScoreEl.textContent = scores.draws;
+                isGameActive = false;
+                setTimeout(resetGame, 3000);
+                return;
+            }
+        }
+        
+        function resetGame() {
+            board = ['', '', '', '', '', '', '', '', ''];
+            isGameActive = true;
+            isAITurn = false;
+            currentPlayer = 'X';
+            status.textContent = 'Your Move, Human...';
+            aiRoast.textContent = getRandomRoast('start');
+            
+            cells.forEach(cell => {
+                cell.classList.remove('x', 'o');
+            });
+        }
+        
+        // Initialize
+        cells.forEach(cell => {
+            cell.addEventListener('click', handleCellClick);
+        });
+        
+        // Start with a roast
+        aiRoast.textContent = getRandomRoast('start');
+    </script>
+</body>
+</html>
