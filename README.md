@@ -14,3 +14,6 @@ EngineeredAI is about showing the guts, not selling the hype.
 If it works, break it down. If it’s useless, make it funny.
 
 Pull requests welcome — if you can keep the sarcasm sharp.
+
+
+mkdir -p 404-designs/{broken-compass,redacted-notice,glitch-terminal}
