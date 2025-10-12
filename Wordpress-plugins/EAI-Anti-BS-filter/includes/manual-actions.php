@@ -213,3 +213,83 @@ add_action('admin_footer-edit-comments.php', function () {
     </style>
     <?php
 });
+
+/**
+ * === PINGBACK RECOVERY ===
+ * Add this to the bottom of manual-actions.php
+ */
+
+add_action('admin_menu', function() {
+    add_management_page(
+        'EAI Pingback Recovery',
+        '🔄 Recover Pingbacks',
+        'manage_options',
+        'eai-recover-pingbacks',
+        'eai_pingback_recovery_page'
+    );
+});
+
+function eai_pingback_recovery_page() {
+    ?>
+    <div class="wrap">
+        <h1>🔄 Recover Sanitized Pingbacks</h1>
+        <p>This will restore all legitimate pingbacks that were accidentally sanitized.</p>
+        
+        <?php
+        if (isset($_POST['eai_recover_pingbacks']) && check_admin_referer('eai_recover_nonce')) {
+            $recovered = eai_restore_pingbacks();
+            echo '<div class="notice notice-success"><p>✅ Recovered ' . $recovered . ' pingbacks!</p></div>';
+        }
+        ?>
+        
+        <form method="post">
+            <?php wp_nonce_field('eai_recover_nonce'); ?>
+            <button type="submit" name="eai_recover_pingbacks" class="button button-primary button-large">
+                🔧 Restore Pingbacks Now
+            </button>
+        </form>
+    </div>
+    <?php
+}
+
+function eai_restore_pingbacks() {
+    $recovered = 0;
+    
+    // Get all comments with eai_sanitized metadata
+    $args = [
+        'meta_key' => 'eai_sanitized',
+        'meta_value' => 1,
+        'number' => 999,
+        'type' => 'all'
+    ];
+    
+    $sanitized = get_comments($args);
+
+    foreach ($sanitized as $comment) {
+        // Get original data
+        $original_json = get_comment_meta($comment->comment_ID, 'eai_original_spam', true);
+        if (!$original_json) continue;
+
+        $original = json_decode($original_json, true);
+        if (!$original) continue;
+
+        // Restore the comment
+        wp_update_comment([
+            'comment_ID' => $comment->comment_ID,
+            'comment_author' => $original['author'] ?? $comment->comment_author,
+            'comment_author_email' => $original['email'] ?? $comment->comment_author_email,
+            'comment_author_url' => $original['url'] ?? $comment->comment_author_url,
+            'comment_content' => $original['content'] ?? $comment->comment_content,
+            'comment_agent' => str_replace(' EAI-SANITIZED', '', $original['agent'] ?? $comment->comment_agent),
+        ]);
+
+        // Remove EAI metadata
+        delete_comment_meta($comment->comment_ID, 'eai_sanitized');
+        delete_comment_meta($comment->comment_ID, 'eai_original_spam');
+
+        $recovered++;
+        error_log('[EAI] ✅ Recovered comment_id=' . $comment->comment_ID);
+    }
+
+    return $recovered;
+}
