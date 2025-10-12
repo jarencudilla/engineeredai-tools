@@ -60,7 +60,7 @@ function eai_is_spam_comment($comment) {
  */
 add_filter('preprocess_comment', function ($commentdata) {
     // Skip trackbacks/pingbacks and logged-in admins
-    if (($commentdata['comment_type'] ?? '') !== '' || current_user_can('moderate_comments')) {
+    if (($commentdata['comment_type'] ?? '') !== 'comment' || current_user_can('moderate_comments')) {
         return $commentdata;
     }
     
