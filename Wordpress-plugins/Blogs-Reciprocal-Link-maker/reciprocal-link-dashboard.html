@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reciprocal Link Dashboard</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f5f5; padding: 20px; }
+        .container { max-width: 1400px; margin: 0 auto; }
+        h1 { margin-bottom: 20px; color: #333; }
+        
+        .controls { margin-bottom: 20px; display: flex; gap: 10px; }
+        button { padding: 10px 20px; background: #0073aa; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 14px; }
+        button:hover { background: #005a87; }
+        button.secondary { background: #666; }
+        button.secondary:hover { background: #555; }
+        
+        .tabs { display: flex; gap: 5px; margin-bottom: 20px; border-bottom: 2px solid #ddd; }
+        .tab { padding: 12px 20px; background: #fff; border: 1px solid #ddd; border-bottom: none; cursor: pointer; font-weight: 500; color: #666; }
+        .tab.active { background: #0073aa; color: white; border-color: #0073aa; }
+        
+        .tab-content { display: none; background: white; padding: 20px; border-radius: 4px; }
+        .tab-content.active { display: block; }
+        
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #eee; }
+        th { background: #f9f9f9; font-weight: 600; color: #333; }
+        tr:hover { background: #f9f9f9; }
+        
+        .post-title { font-weight: 500; color: #0073aa; max-width: 300px; word-break: break-word; }
+        .related-posts { font-size: 13px; color: #666; }
+        .related-posts li { margin: 4px 0; }
+        .related-posts a { color: #0073aa; text-decoration: none; }
+        .related-posts a:hover { text-decoration: underline; }
+        .topic-tag { display: inline-block; background: #e8f4f8; color: #0073aa; padding: 2px 6px; border-radius: 3px; font-size: 11px; margin-right: 4px; }
+        
+        .checkbox-col { text-align: center; }
+        .checkbox-col input { width: 20px; height: 20px; cursor: pointer; }
+        
+        .status { padding: 4px 8px; border-radius: 3px; font-size: 12px; text-align: center; }
+        .status.pending { background: #fff3cd; color: #856404; }
+        .status.done { background: #d4edda; color: #155724; }
+        
+        .loading { text-align: center; padding: 40px; color: #666; }
+        .spinner { display: inline-block; width: 30px; height: 30px; border: 3px solid #f3f3f3; border-top: 3px solid #0073aa; border-radius: 50%; animation: spin 1s linear infinite; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        
+        .error { background: #f8d7da; color: #721c24; padding: 12px; border-radius: 4px; margin: 10px 0; }
+        .success { background: #d4edda; color: #155724; padding: 12px; border-radius: 4px; margin: 10px 0; }
+        
+        .post-id { color: #999; font-size: 12px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔗 Reciprocal Link Dashboard</h1>
+        
+        <div class="controls">
+            <button id="scanBtn">Scan All Blogs</button>
+            <button class="secondary" id="exportBtn">Export Data</button>
+            <button class="secondary" id="clearBtn">Clear All Checks</button>
+        </div>
+        
+        <div id="message"></div>
+        
+        <div class="tabs" id="tabs"></div>
+        <div id="content"></div>
+    </div>
+    
+    <script>
+        const blogs = {
+            'qajourney': { name: 'QA Journey', feed: 'https://qajourney.net/feed/', color: '#0073aa' },
+            'engineered_ai': { name: 'Engineered AI', feed: 'https://engineeredai.net/feed/', color: '#d9534f' },
+            'momentum_path': { name: 'Momentum Path', feed: 'https://momentumpath.net/feed/', color: '#5cb85c' },
+            'remote_work_haven': { name: 'Remote Work Haven', feed: 'https://remoteworkhaven.net/feed/', color: '#f0ad4e' },
+            'healthy_forge': { name: 'Healthy Forge', feed: 'https://healthyforge.com/feed/', color: '#9b59b6' }
+        };
+        
+        const topicKeywords = {
+            'qa': ['qa', 'quality assurance', 'testing', 'test', 'automation', 'cypress', 'selenium', 'bug'],
+            'remote-work': ['remote', 'work from home', 'wfh', 'distributed', 'async', 'virtual'],
+            'ai': ['ai', 'artificial intelligence', 'machine learning', 'ml', 'algorithm'],
+            'career': ['career', 'job', 'leadership', 'promotion', 'salary', 'skills'],
+            'wellness': ['wellness', 'health', 'mental health', 'burnout', 'stress', 'mindfulness'],
+            'productivity': ['productivity', 'efficiency', 'workflow', 'time management'],
+            'learning': ['learning', 'training', 'education', 'course', 'tutorial']
+        };
+        
+        let allData = {};
+        
+        async function scanAllBlogs() {
+            showMessage('Scanning all blogs...', 'loading');
+            allData = {};
+            
+            for (const [blogKey, blogInfo] of Object.entries(blogs)) {
+                try {
+                    const posts = await fetchAndParseFeed(blogInfo.feed);
+                    allData[blogKey] = posts;
+                } catch (e) {
+                    showMessage(`Error scanning ${blogInfo.name}: ${e.message}`, 'error');
+                }
+            }
+            
+            // Now find matches across blogs
+            findTopicMatches();
+            renderDashboard();
+            saveToLocalStorage();
+            showMessage('Scan complete!', 'success');
+        }
+        
+        async function fetchAndParseFeed(feedUrl) {
+            try {
+                const response = await fetch(feedUrl);
+                const text = await response.text();
+                const parser = new DOMParser();
+                const xml = parser.parseFromString(text, 'text/xml');
+                
+                if (xml.getElementsByTagName('parsererror').length > 0) {
+                    throw new Error('Invalid XML');
+                }
+            
+            const items = xml.querySelectorAll('item');
+            const posts = [];
+            
+            items.forEach(item => {
+                const title = item.querySelector('title')?.textContent || '';
+                const link = item.querySelector('link')?.textContent || '';
+                const description = item.querySelector('description')?.textContent || '';
+                const content = (title + ' ' + description).toLowerCase();
+                
+                const topics = detectTopics(content);
+                
+                if (topics.length > 0) {
+                    posts.push({
+                        title: title.substring(0, 80),
+                        link,
+                        topics,
+                        description: description.substring(0, 100)
+                    });
+                }
+            });
+            
+            return posts;
+        }
+        
+        function detectTopics(text) {
+            const detected = [];
+            for (const [topic, keywords] of Object.entries(topicKeywords)) {
+                if (keywords.some(kw => text.includes(kw))) {
+                    detected.push(topic);
+                }
+            }
+            return [...new Set(detected)];
+        }
+        
+        function findTopicMatches() {
+            for (const [blogKey, posts] of Object.entries(allData)) {
+                posts.forEach(post => {
+                    post.related = [];
+                    
+                    for (const [otherBlogKey, otherPosts] of Object.entries(allData)) {
+                        if (blogKey === otherBlogKey) continue;
+                        
+                        otherPosts.forEach(otherPost => {
+                            const shared = post.topics.filter(t => otherPost.topics.includes(t));
+                            if (shared.length > 0) {
+                                post.related.push({
+                                    blog: blogs[otherBlogKey].name,
+                                    title: otherPost.title,
+                                    link: otherPost.link,
+                                    topics: shared
+                                });
+                            }
+                        });
+                    }
+                });
+            }
+        }
+        
+        function renderDashboard() {
+            const tabsContainer = document.getElementById('tabs');
+            const contentContainer = document.getElementById('content');
+            tabsContainer.innerHTML = '';
+            contentContainer.innerHTML = '';
+            
+            Object.entries(blogs).forEach(([key, blog], index) => {
+                const tab = document.createElement('div');
+                tab.className = `tab ${index === 0 ? 'active' : ''}`;
+                tab.textContent = blog.name;
+                tab.onclick = () => switchTab(key);
+                tabsContainer.appendChild(tab);
+                
+                const content = document.createElement('div');
+                content.className = `tab-content ${index === 0 ? 'active' : ''}`;
+                content.id = `tab-${key}`;
+                
+                const posts = allData[key] || [];
+                let html = '<table><thead><tr><th>Post Title</th><th>Topics</th><th>Related Articles</th><th style="width: 80px;">Status</th><th style="width: 50px;">✓</th></tr></thead><tbody>';
+                
+                posts.forEach((post, idx) => {
+                    const checkId = `${key}-${idx}`;
+                    const isChecked = getCheckStatus(checkId);
+                    const relatedHtml = post.related.length > 0 
+                        ? `<ul class="related-posts">${post.related.map(r => `<li><strong>${r.blog}</strong>: ${r.title}</li>`).join('')}</ul>`
+                        : '<span style="color: #999;">No related posts</span>';
+                    
+                    html += `
+                        <tr>
+                            <td><div class="post-title">${post.title}</div></td>
+                            <td>${post.topics.map(t => `<span class="topic-tag">${t}</span>`).join('')}</td>
+                            <td>${relatedHtml}</td>
+                            <td><span class="status ${isChecked ? 'done' : 'pending'}">${isChecked ? 'Done' : 'Pending'}</span></td>
+                            <td class="checkbox-col"><input type="checkbox" id="${checkId}" ${isChecked ? 'checked' : ''} onchange="toggleCheck('${checkId}')"></td>
+                        </tr>
+                    `;
+                });
+                
+                html += '</tbody></table>';
+                content.innerHTML = html;
+                contentContainer.appendChild(content);
+            });
+        }
+        
+        function switchTab(blogKey) {
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            
+            event.target.classList.add('active');
+            document.getElementById(`tab-${blogKey}`).classList.add('active');
+        }
+        
+        function toggleCheck(id) {
+            const isChecked = document.getElementById(id).checked;
+            localStorage.setItem(`check-${id}`, isChecked ? '1' : '0');
+        }
+        
+        function getCheckStatus(id) {
+            return localStorage.getItem(`check-${id}`) === '1';
+        }
+        
+        function clearChecks() {
+            if (confirm('Clear all checkmarks?')) {
+                Object.keys(localStorage).forEach(key => {
+                    if (key.startsWith('check-')) localStorage.removeItem(key);
+                });
+                renderDashboard();
+                showMessage('All checks cleared', 'success');
+            }
+        }
+        
+        function exportData() {
+            const json = JSON.stringify(allData, null, 2);
+            const blob = new Blob([json], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `reciprocal-links-${new Date().toISOString().split('T')[0]}.json`;
+            a.click();
+        }
+        
+        function saveToLocalStorage() {
+            localStorage.setItem('reciprocal-data', JSON.stringify(allData));
+        }
+        
+        function showMessage(text, type) {
+            const msg = document.getElementById('message');
+            msg.innerHTML = `<div class="${type}">${type === 'loading' ? '<div class="spinner"></div>' : ''} ${text}</div>`;
+        }
+        
+        // Load on init
+        const saved = localStorage.getItem('reciprocal-data');
+        if (saved) {
+            allData = JSON.parse(saved);
+            renderDashboard();
+        }
+        
+        // Bind buttons
+        document.getElementById('scanBtn').addEventListener('click', scanAllBlogs);
+        document.getElementById('exportBtn').addEventListener('click', exportData);
+        document.getElementById('clearBtn').addEventListener('click', clearChecks);
+    </script>
+</body>
+</html>
