@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Keyword Extractor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: linear-gradient(to bottom right, #0f172a, #1e293b, #0f172a);
+            min-height: 100vh;
+        }
+    </style>
+</head>
+<body class="p-6">
+    <div class="max-w-6xl mx-auto">
+        <div class="bg-slate-800 rounded-lg shadow-2xl border border-slate-700 overflow-hidden">
+            <!-- Header -->
+            <div class="bg-gradient-to-r from-blue-600 to-purple-600 p-6">
+                <div class="flex items-center gap-3">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                    </svg>
+                    <div>
+                        <h1 class="text-2xl font-bold text-white">SEO Keyword Extractor</h1>
+                        <p class="text-blue-100 text-sm">Extract meaningful keywords from post titles and content</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-6 space-y-6">
+                <!-- Input Section -->
+                <div>
+                    <label class="block text-sm font-medium text-slate-300 mb-2">
+                        Paste Your Post Titles (one per line)
+                    </label>
+                    <textarea
+                        id="input"
+                        placeholder="Why Your QA Methodology Fails When Your Test Cases Suck&#10;Manual vs Automated Testing: When and Why to Use Each Approach&#10;Breaking Down the QA Basics: Tools, Test Plans, and Common Practices"
+                        class="w-full h-64 bg-slate-900 border border-slate-600 rounded-lg p-4 text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent font-mono text-sm"
+                    ></textarea>
+                </div>
+
+                <!-- Controls -->
+                <div class="flex items-center gap-4 flex-wrap">
+                    <div class="flex items-center gap-2">
+                        <label class="text-sm font-medium text-slate-300">Min Frequency:</label>
+                        <input
+                            type="number"
+                            id="minFrequency"
+                            value="1"
+                            min="1"
+                            class="w-20 bg-slate-900 border border-slate-600 rounded px-3 py-1 text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        />
+                    </div>
+                    <button
+                        id="extractBtn"
+                        class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium transition-colors"
+                    >
+                        Extract Keywords
+                    </button>
+                    <button
+                        id="copyBtn"
+                        class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg font-medium transition-colors hidden"
+                    >
+                        Copy to Clipboard
+                    </button>
+                    <button
+                        id="exportBtn"
+                        class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg font-medium transition-colors hidden"
+                    >
+                        Export
+                    </button>
+                    <button
+                        id="clearBtn"
+                        class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg font-medium transition-colors hidden"
+                    >
+                        Clear
+                    </button>
+                </div>
+
+                <!-- Results Container -->
+                <div id="results" class="hidden space-y-4">
+                    <div class="flex items-center justify-between">
+                        <h2 class="text-xl font-bold text-white">
+                            Extracted Keywords (<span id="totalCount">0</span>)
+                        </h2>
+                        <div class="text-sm text-slate-400">
+                            Phrases: <span id="phraseCount">0</span> | 
+                            Singles: <span id="singleCount">0</span>
+                        </div>
+                    </div>
+
+                    <!-- Keyword Grid -->
+                    <div class="bg-slate-900 rounded-lg p-4 border border-slate-700">
+                        <div id="keywordGrid" class="flex flex-wrap gap-2"></div>
+                    </div>
+
+                    <!-- Meta Keywords Format -->
+                    <div>
+                        <label class="block text-sm font-medium text-slate-300 mb-2">
+                            Meta Keywords Format (Copy & Paste)
+                        </label>
+                        <textarea
+                            id="metaOutput"
+                            readonly
+                            class="w-full h-32 bg-slate-900 border border-slate-600 rounded-lg p-4 text-slate-100 font-mono text-sm"
+                        ></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const stopwords = new Set([
+            'a', 'about', 'above', 'after', 'again', 'against', 'all', 'am', 'an', 'and', 'any', 'are', 'as', 'at',
+            'be', 'because', 'been', 'before', 'being', 'below', 'between', 'both', 'but', 'by',
+            'can', 'could', 'did', 'do', 'does', 'doing', 'down', 'during',
+            'each', 'few', 'for', 'from', 'further',
+            'had', 'has', 'have', 'having', 'he', 'her', 'here', 'hers', 'herself', 'him', 'himself', 'his', 'how',
+            'i', 'if', 'in', 'into', 'is', 'it', 'its', 'itself',
+            'just',
+            'me', 'might', 'more', 'most', 'must', 'my', 'myself',
+            'no', 'nor', 'not', 'now',
+            'of', 'off', 'on', 'once', 'only', 'or', 'other', 'our', 'ours', 'ourselves', 'out', 'over', 'own',
+            'same', 'she', 'should', 'so', 'some', 'such',
+            'than', 'that', 'the', 'their', 'theirs', 'them', 'themselves', 'then', 'there', 'these', 'they', 'this', 'those', 'through', 'to', 'too',
+            'under', 'until', 'up',
+            'very',
+            'was', 'we', 'were', 'what', 'when', 'where', 'which', 'while', 'who', 'whom', 'why', 'will', 'with', 'would',
+            'you', 'your', 'yours', 'yourself', 'yourselves',
+            'maybe', 'really', 'actually', 'basically', 'literally', 'seriously',
+            'get', 'got', 'getting', 'make', 'made', 'making', 'take', 'took', 'taking',
+            'vs', 'v', 'versus'
+        ]);
+
+        let currentKeywords = [];
+
+        function extractKeywords() {
+            const input = document.getElementById('input').value;
+            const minFrequency = parseInt(document.getElementById('minFrequency').value) || 1;
+            
+            const lines = input.trim().split('\n').filter(line => line.trim());
+            
+            const phraseCount = {};
+            const singleWordCount = {};
+
+            lines.forEach(line => {
+                const cleaned = line
+                    .toLowerCase()
+                    .replace(/[^\w\s-]/g, ' ')
+                    .replace(/\s+/g, ' ')
+                    .trim();
+
+                const words = cleaned.split(' ').filter(w => w.length > 2 && !stopwords.has(w));
+
+                // Extract 2-word phrases
+                for (let i = 0; i < words.length - 1; i++) {
+                    const phrase = `${words[i]} ${words[i + 1]}`;
+                    phraseCount[phrase] = (phraseCount[phrase] || 0) + 1;
+                }
+
+                // Extract 3-word phrases
+                for (let i = 0; i < words.length - 2; i++) {
+                    const phrase = `${words[i]} ${words[i + 1]} ${words[i + 2]}`;
+                    phraseCount[phrase] = (phraseCount[phrase] || 0) + 1;
+                }
+
+                // Single meaningful words
+                words.forEach(word => {
+                    singleWordCount[word] = (singleWordCount[word] || 0) + 1;
+                });
+            });
+
+            // Combine and sort
+            const allKeywords = [
+                ...Object.entries(phraseCount).map(([phrase, count]) => ({ keyword: phrase, count, type: 'phrase' })),
+                ...Object.entries(singleWordCount)
+                    .filter(([word, count]) => count >= minFrequency)
+                    .map(([word, count]) => ({ keyword: word, count, type: 'single' }))
+            ];
+
+            allKeywords.sort((a, b) => {
+                if (b.count !== a.count) return b.count - a.count;
+                return a.keyword.localeCompare(b.keyword);
+            });
+
+            const unique = allKeywords.filter((item, index, self) => 
+                item.count >= minFrequency && 
+                index === self.findIndex(t => t.keyword === item.keyword)
+            );
+
+            currentKeywords = unique;
+            displayResults();
+        }
+
+        function displayResults() {
+            if (currentKeywords.length === 0) return;
+
+            document.getElementById('results').classList.remove('hidden');
+            document.getElementById('copyBtn').classList.remove('hidden');
+            document.getElementById('exportBtn').classList.remove('hidden');
+            document.getElementById('clearBtn').classList.remove('hidden');
+
+            const phraseCount = currentKeywords.filter(k => k.type === 'phrase').length;
+            const singleCount = currentKeywords.filter(k => k.type === 'single').length;
+
+            document.getElementById('totalCount').textContent = currentKeywords.length;
+            document.getElementById('phraseCount').textContent = phraseCount;
+            document.getElementById('singleCount').textContent = singleCount;
+
+            const grid = document.getElementById('keywordGrid');
+            grid.innerHTML = currentKeywords.map(item => {
+                const colorClass = item.type === 'phrase'
+                    ? 'bg-blue-600/20 text-blue-300 border border-blue-500/30'
+                    : 'bg-purple-600/20 text-purple-300 border border-purple-500/30';
+                
+                const countBadge = item.count > 1 ? `<span class="ml-1.5 text-xs opacity-70">×${item.count}</span>` : '';
+                
+                return `<span class="px-3 py-1.5 rounded-full text-sm font-medium ${colorClass}">
+                    ${item.keyword}${countBadge}
+                </span>`;
+            }).join('');
+
+            const metaText = currentKeywords.map(k => k.keyword).join(', ');
+            document.getElementById('metaOutput').value = metaText;
+        }
+
+        function copyToClipboard() {
+            const text = currentKeywords.map(k => k.keyword).join(', ');
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = document.getElementById('copyBtn');
+                const original = btn.textContent;
+                btn.textContent = 'Copied!';
+                setTimeout(() => btn.textContent = original, 2000);
+            });
+        }
+
+        function exportKeywords() {
+            const text = currentKeywords.map(k => k.keyword).join(', ');
+            const blob = new Blob([text], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'keywords.txt';
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        function clearResults() {
+            currentKeywords = [];
+            document.getElementById('results').classList.add('hidden');
+            document.getElementById('copyBtn').classList.add('hidden');
+            document.getElementById('exportBtn').classList.add('hidden');
+            document.getElementById('clearBtn').classList.add('hidden');
+        }
+
+        document.getElementById('extractBtn').addEventListener('click', extractKeywords);
+        document.getElementById('copyBtn').addEventListener('click', copyToClipboard);
+        document.getElementById('exportBtn').addEventListener('click', exportKeywords);
+        document.getElementById('clearBtn').addEventListener('click', clearResults);
+    </script>
+</body>
+</html>
