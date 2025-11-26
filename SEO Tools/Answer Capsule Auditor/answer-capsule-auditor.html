@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Answer Capsule Auditor</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .subtitle {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .input-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        input[type="text"] {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #4A90E2;
+        }
+        
+        button {
+            padding: 12px 24px;
+            background: #4A90E2;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        button:hover {
+            background: #357ABD;
+        }
+        
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        
+        .error {
+            background: #fee;
+            border: 1px solid #fcc;
+            color: #c00;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 15px;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .stat-number {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .excellent { color: #22c55e; }
+        .good { color: #3b82f6; }
+        .warning { color: #f59e0b; }
+        .missing { color: #ef4444; }
+        
+        .controls {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        .filter-buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .filter-btn {
+            padding: 10px 20px;
+            background: #f0f0f0;
+            color: #333;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        .filter-btn.active {
+            background: #4A90E2;
+            color: white;
+        }
+        
+        .export-btn {
+            background: #22c55e;
+            float: right;
+        }
+        
+        .export-btn:hover {
+            background: #16a34a;
+        }
+        
+        table {
+            width: 100%;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        thead {
+            background: #f9fafb;
+        }
+        
+        th {
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            color: #374151;
+            border-bottom: 2px solid #e5e7eb;
+        }
+        
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #e5e7eb;
+            color: #4b5563;
+        }
+        
+        tr:hover {
+            background: #f9fafb;
+        }
+        
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .status-excellent { background: #dcfce7; color: #166534; }
+        .status-good { background: #dbeafe; color: #1e40af; }
+        .status-warning { background: #fef3c7; color: #92400e; }
+        .status-missing { background: #fee2e2; color: #991b1b; }
+        
+        .link-url {
+            color: #4A90E2;
+            text-decoration: none;
+        }
+        
+        .link-url:hover {
+            text-decoration: underline;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+        
+        .info-box {
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            color: #1e40af;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        .info-box h3 {
+            margin-bottom: 10px;
+        }
+        
+        .info-box ul {
+            margin-left: 20px;
+        }
+        
+        .info-box li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Answer Capsule Auditor</h1>
+            <p class="subtitle">Crawl your site to identify posts that need answer capsules (120-150 char summaries after H2 questions)</p>
+            
+            <div class="input-group">
+                <input type="text" id="siteUrl" placeholder="https://engineeredai.net" value="">
+                <button onclick="crawlSite()" id="crawlBtn">Crawl Site</button>
+            </div>
+            
+            <div id="error" style="display: none;" class="error"></div>
+        </div>
+
+        <div id="stats" style="display: none;" class="stats">
+            <div class="stat-card">
+                <div class="stat-number" id="stat-total">0</div>
+                <div class="stat-label">Total Posts</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number excellent" id="stat-excellent">0</div>
+                <div class="stat-label">Excellent</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number good" id="stat-good">0</div>
+                <div class="stat-label">Good</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number warning" id="stat-links">0</div>
+                <div class="stat-label">Has Links</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number missing" id="stat-missing">0</div>
+                <div class="stat-label">Missing</div>
+            </div>
+        </div>
+
+        <div id="controls" style="display: none;" class="controls">
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="setFilter('all')">All</button>
+                <button class="filter-btn" onclick="setFilter('missing')">Missing</button>
+                <button class="filter-btn" onclick="setFilter('hasLinks')">Has Links</button>
+                <button class="filter-btn" onclick="setFilter('good')">Good</button>
+                <button class="filter-btn" onclick="setFilter('excellent')">Excellent</button>
+            </div>
+            <button class="export-btn" onclick="exportCSV()">Export CSV</button>
+            <div style="clear: both;"></div>
+        </div>
+
+        <div id="loading" class="loading" style="display: none;">
+            <p>Crawling site... Please wait.</p>
+        </div>
+
+        <div id="tableContainer" style="display: none;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Status</th>
+                        <th>Title</th>
+                        <th>Length</th>
+                        <th>Links</th>
+                        <th>Recommendation</th>
+                        <th>URL</th>
+                    </tr>
+                </thead>
+                <tbody id="resultsTable">
+                </tbody>
+            </table>
+        </div>
+
+        <div class="info-box">
+            <h3>How to Use</h3>
+            <ul>
+                <li>Enter your site URL (e.g., https://engineeredai.net)</li>
+                <li>Click "Crawl Site" to analyze up to 50 blog posts</li>
+                <li>Review posts marked as "Missing" or "Has Links" first</li>
+                <li>Export to CSV for detailed analysis</li>
+                <li>Add 120-150 character answer capsules after H2 questions</li>
+                <li>Keep capsules link-free for better LLM quotability</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        let allResults = [];
+        let currentFilter = 'all';
+
+        function showError(message) {
+            const errorDiv = document.getElementById('error');
+            errorDiv.textContent = message;
+            errorDiv.style.display = 'block';
+        }
+
+        function hideError() {
+            document.getElementById('error').style.display = 'none';
+        }
+
+        function analyzeCapsule(html, url) {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+            
+            const title = doc.querySelector('title')?.textContent || 'No title';
+            const h2Elements = doc.querySelectorAll('h2');
+            
+            let capsuleData = {
+                url: url,
+                title: title,
+                status: 'missing',
+                h2Count: h2Elements.length,
+                hasQuestionH2: false,
+                capsuleText: '',
+                capsuleLength: 0,
+                hasLinksInCapsule: false,
+                recommendation: ''
+            };
+
+            for (let h2 of h2Elements) {
+                const h2Text = h2.textContent.trim();
+                
+                if (h2Text.includes('?')) {
+                    capsuleData.hasQuestionH2 = true;
+                    
+                    let nextElement = h2.nextElementSibling;
+                    while (nextElement && nextElement.tagName !== 'P' && nextElement.tagName !== 'H2') {
+                        nextElement = nextElement.nextElementSibling;
+                    }
+                    
+                    if (nextElement && nextElement.tagName === 'P') {
+                        const pText = nextElement.textContent.trim();
+                        const pLength = pText.length;
+                        const hasLinks = nextElement.querySelectorAll('a').length > 0;
+                        
+                        if (pLength >= 100 && pLength <= 250) {
+                            capsuleData.capsuleText = pText;
+                            capsuleData.capsuleLength = pLength;
+                            capsuleData.hasLinksInCapsule = hasLinks;
+                            
+                            if (pLength >= 120 && pLength <= 180 && !hasLinks) {
+                                capsuleData.status = 'excellent';
+                                capsuleData.recommendation = 'Perfect answer capsule structure';
+                            } else if (pLength >= 100 && pLength <= 250 && !hasLinks) {
+                                capsuleData.status = 'good';
+                                capsuleData.recommendation = 'Good capsule, consider tightening to 120-150 chars';
+                            } else if (hasLinks) {
+                                capsuleData.status = 'hasLinks';
+                                capsuleData.recommendation = 'Remove links from capsule for better LLM quotability';
+                            }
+                            break;
+                        }
+                    }
+                }
+            }
+            
+            if (capsuleData.status === 'missing' && capsuleData.h2Count > 0) {
+                if (!capsuleData.hasQuestionH2) {
+                    capsuleData.recommendation = 'Add question-format H2 with 120-150 char answer below';
+                } else {
+                    capsuleData.recommendation = 'Question H2 exists, add short answer paragraph below it';
+                }
+            } else if (capsuleData.status === 'missing') {
+                capsuleData.recommendation = 'Add H2 question heading and answer capsule';
+            }
+            
+            return capsuleData;
+        }
+
+        async function crawlSite() {
+            const siteUrl = document.getElementById('siteUrl').value.trim();
+            
+            if (!siteUrl) {
+                showError('Please enter a site URL');
+                return;
+            }
+
+            hideError();
+            document.getElementById('crawlBtn').disabled = true;
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('stats').style.display = 'none';
+            document.getElementById('controls').style.display = 'none';
+            document.getElementById('tableContainer').style.display = 'none';
+            
+            allResults = [];
+
+            try {
+                const sitemapUrl = `${siteUrl}/sitemap_index.xml`;
+                const response = await fetch(sitemapUrl);
+                
+                if (!response.ok) {
+                    throw new Error('Could not fetch sitemap. Make sure the URL is correct and the site has a sitemap.xml');
+                }
+                
+                const sitemapText = await response.text();
+                const parser = new DOMParser();
+                const sitemapDoc = parser.parseFromString(sitemapText, 'text/xml');
+                
+                const urlElements = sitemapDoc.querySelectorAll('loc');
+                const urls = Array.from(urlElements)
+                    .map(el => el.textContent)
+                    .filter(url => url.includes('/20') || url.match(/\/\d{4}\//));
+                
+                for (let i = 0; i < Math.min(urls.length, 50); i++) {
+                    const url = urls[i];
+                    try {
+                        const pageResponse = await fetch(url);
+                        const html = await pageResponse.text();
+                        const analysis = analyzeCapsule(html, url);
+                        allResults.push(analysis);
+                    } catch (err) {
+                        allResults.push({
+                            url: url,
+                            title: 'Error fetching',
+                            status: 'error',
+                            capsuleLength: 0,
+                            hasLinksInCapsule: false,
+                            recommendation: err.message
+                        });
+                    }
+                }
+                
+                displayResults();
+                
+            } catch (err) {
+                showError(err.message + ' - Note: This tool may have CORS issues when run locally. Try uploading to your server or use a CORS proxy.');
+            } finally {
+                document.getElementById('crawlBtn').disabled = false;
+                document.getElementById('loading').style.display = 'none';
+            }
+        }
+
+        function displayResults() {
+            if (allResults.length === 0) return;
+
+            const stats = {
+                total: allResults.length,
+                excellent: allResults.filter(r => r.status === 'excellent').length,
+                good: allResults.filter(r => r.status === 'good').length,
+                hasLinks: allResults.filter(r => r.status === 'hasLinks').length,
+                missing: allResults.filter(r => r.status === 'missing').length
+            };
+
+            document.getElementById('stat-total').textContent = stats.total;
+            document.getElementById('stat-excellent').textContent = stats.excellent;
+            document.getElementById('stat-good').textContent = stats.good;
+            document.getElementById('stat-links').textContent = stats.hasLinks;
+            document.getElementById('stat-missing').textContent = stats.missing;
+
+            document.getElementById('stats').style.display = 'grid';
+            document.getElementById('controls').style.display = 'block';
+            document.getElementById('tableContainer').style.display = 'block';
+
+            renderTable();
+        }
+
+        function setFilter(filter) {
+            currentFilter = filter;
+            
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            renderTable();
+        }
+
+        function renderTable() {
+            const filtered = allResults.filter(r => {
+                if (currentFilter === 'all') return true;
+                return r.status === currentFilter;
+            });
+
+            const tbody = document.getElementById('resultsTable');
+            tbody.innerHTML = '';
+
+            filtered.forEach(result => {
+                const row = document.createElement('tr');
+                
+                const statusClass = result.status === 'excellent' ? 'status-excellent' :
+                                  result.status === 'good' ? 'status-good' :
+                                  result.status === 'hasLinks' ? 'status-warning' :
+                                  'status-missing';
+                
+                const statusLabel = result.status === 'excellent' ? 'Excellent' :
+                                  result.status === 'good' ? 'Good' :
+                                  result.status === 'hasLinks' ? 'Has Links' :
+                                  'Missing';
+                
+                row.innerHTML = `
+                    <td><span class="status-badge ${statusClass}">${statusLabel}</span></td>
+                    <td>${result.title}</td>
+                    <td>${result.capsuleLength || '-'}</td>
+                    <td>${result.hasLinksInCapsule ? 'Yes' : 'No'}</td>
+                    <td>${result.recommendation}</td>
+                    <td><a href="${result.url}" target="_blank" class="link-url">View</a></td>
+                `;
+                
+                tbody.appendChild(row);
+            });
+        }
+
+        function exportCSV() {
+            const headers = ['URL', 'Title', 'Status', 'Capsule Length', 'Has Links', 'Recommendation'];
+            const rows = allResults.map(r => [
+                r.url,
+                `"${r.title}"`,
+                r.status,
+                r.capsuleLength || 0,
+                r.hasLinksInCapsule ? 'Yes' : 'No',
+                `"${r.recommendation}"`
+            ]);
+            
+            const csv = [headers.join(','), ...rows.map(row => row.join(','))].join('\n');
+            
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `answer-capsule-audit-${Date.now()}.csv`;
+            a.click();
+        }
+    </script>
+</body>
+</html>
