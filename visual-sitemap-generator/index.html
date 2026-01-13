@@ -1,279 +1,316 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Visual Sitemap Generator v1.0</title>
+<meta charset="UTF-8">
+<title>Visual Sitemap Generator</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
 body {
-    margin: 0;
-    font-family: system-ui, sans-serif;
-    background: #0f172a;
-    color: #e5e7eb;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif;
+  background: linear-gradient(135deg, #0b1020, #141a33);
+  color: #e5e7eb;
+  min-height: 100vh;
 }
 
-.container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 20px;
+header {
+  padding: 30px;
+  text-align: center;
 }
 
 h1 {
-    text-align: center;
-    margin-bottom: 10px;
+  font-size: 2.2rem;
+  margin-bottom: 10px;
 }
 
 .subtitle {
-    text-align: center;
-    color: #94a3b8;
-    margin-bottom: 30px;
-}
-
-input, button {
-    padding: 12px;
-    font-size: 1rem;
+  color: #9ca3af;
+  margin-bottom: 20px;
 }
 
 input {
-    width: 60%;
-    max-width: 500px;
+  width: 460px;
+  max-width: 90%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: none;
 }
 
 button {
-    cursor: pointer;
-    background: #6366f1;
-    color: white;
-    border: none;
-    margin-left: 10px;
+  padding: 12px 20px;
+  margin-left: 8px;
+  border-radius: 6px;
+  border: none;
+  background: #6366f1;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
 }
 
-#canvasContainer {
-    margin-top: 30px;
-    background: #020617;
-    border: 1px solid #1e293b;
-    border-radius: 8px;
-    overflow: hidden;
+button:hover { background: #4f46e5; }
+
+#canvasWrap {
+  height: 75vh;
+  margin: 20px;
+  border-radius: 12px;
+  background: rgba(0,0,0,0.25);
+  overflow: hidden;
+  position: relative;
 }
 
 svg {
-    width: 100%;
-    height: 800px;
+  width: 100%;
+  height: 100%;
+  cursor: grab;
 }
 
 .node rect {
-    rx: 8;
+  rx: 8;
 }
 
 .link {
-    stroke: #475569;
-    stroke-width: 2;
+  stroke: rgba(255,255,255,0.35);
+  stroke-width: 2;
+}
+
+.patch-notes {
+  margin: 30px;
+  padding: 20px;
+  background: rgba(0,0,0,0.35);
+  border-radius: 10px;
+  font-size: 14px;
 }
 </style>
 </head>
 
 <body>
-<div class="container">
-    <h1>Visual Sitemap Generator</h1>
-    <div class="subtitle">Semantic sitemap visualization (v1.0)</div>
 
-    <div style="text-align:center;">
-        <input id="urlInput" placeholder="https://example.com or sitemap.xml" />
-        <button id="generateBtn">Generate</button>
-    </div>
+<header>
+  <h1>Visual Sitemap Generator</h1>
+  <div class="subtitle">Semantic sitemap visualization (v1.1)</div>
+  <input id="urlInput" value="https://engineeredai.net/sitemap_index.xml">
+  <button id="generateBtn">Generate</button>
+</header>
 
-    <div id="canvasContainer">
-        <svg id="canvas"></svg>
-    </div>
+<div id="canvasWrap">
+  <svg id="svg">
+    <g id="viewport"></g>
+  </svg>
 </div>
 
-<script>
+<div class="patch-notes">
+  <h3>Patch Notes</h3>
+  <ul>
+    <li><b>v1.1</b> – Posts now render under categories</li>
+    <li>Fixed pan & zoom by transforming SVG viewport group</li>
+    <li>Bypassed proxy for same-origin sitemaps</li>
+    <li>Disabled Cloudflare Rocket Loader interference</li>
+    <li>Stabilized production deployment (static / cPanel)</li>
+  </ul>
+</div>
+
+<script data-cfasync="false">
 class SitemapVisualizer {
+  constructor() {
+    this.svg = document.getElementById("svg");
+    this.viewport = document.getElementById("viewport");
 
-    constructor() {
-        this.svg = document.getElementById("canvas");
-        this.nodeWidth = 220;
-        this.nodeHeight = 70;
-        this.vGap = 120;
-        this.hGap = 60;
+    this.scale = 1;
+    this.tx = 0;
+    this.ty = 0;
+    this.dragging = false;
+    this.startX = 0;
+    this.startY = 0;
+
+    this.nodeW = 190;
+    this.nodeH = 56;
+    this.hGap = 90;
+    this.vGap = 90;
+
+    this.bind();
+  }
+
+  bind() {
+    document.getElementById("generateBtn").onclick = () => this.generate();
+
+    this.svg.addEventListener("mousedown", e => {
+      this.dragging = true;
+      this.startX = e.clientX - this.tx;
+      this.startY = e.clientY - this.ty;
+      this.svg.style.cursor = "grabbing";
+    });
+
+    window.addEventListener("mouseup", () => {
+      this.dragging = false;
+      this.svg.style.cursor = "grab";
+    });
+
+    this.svg.addEventListener("mousemove", e => {
+      if (!this.dragging) return;
+      this.tx = e.clientX - this.startX;
+      this.ty = e.clientY - this.startY;
+      this.applyTransform();
+    });
+
+    this.svg.addEventListener("wheel", e => {
+      e.preventDefault();
+      const factor = e.deltaY < 0 ? 1.1 : 0.9;
+      this.scale = Math.min(3, Math.max(0.25, this.scale * factor));
+      this.applyTransform();
+    }, { passive: false });
+  }
+
+  applyTransform() {
+    this.viewport.setAttribute(
+      "transform",
+      `translate(${this.tx},${this.ty}) scale(${this.scale})`
+    );
+  }
+
+  async generate() {
+    this.viewport.innerHTML = "";
+    this.scale = 1;
+    this.tx = this.ty = 0;
+    this.applyTransform();
+
+    const url = document.getElementById("urlInput").value.trim();
+    if (!url) return;
+
+    const entries = await this.loadSitemap(url);
+    const tree = this.buildTree(entries);
+    this.render(tree);
+  }
+
+  async loadSitemap(url) {
+    const target = new URL(url);
+    const sameOrigin = target.origin === location.origin;
+
+    const fetchUrl = sameOrigin
+      ? url
+      : `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`;
+
+    const res = await fetch(fetchUrl);
+    if (!res.ok) throw new Error("Failed to fetch sitemap");
+
+    const xml = new DOMParser().parseFromString(await res.text(), "text/xml");
+    if (xml.querySelector("parsererror")) throw new Error("Invalid XML");
+
+    const index = xml.querySelectorAll("sitemapindex > sitemap > loc");
+    if (index.length) {
+      let all = [];
+      for (const n of index) {
+        all = all.concat(await this.loadSitemap(n.textContent.trim()));
+      }
+      return all;
     }
 
-    async generate() {
-        const input = document.getElementById("urlInput").value.trim();
-        if (!input) return;
+    return [...xml.querySelectorAll("url > loc")].map(n => ({
+      url: n.textContent.trim(),
+      source: url
+    }));
+  }
 
-        let url = input;
-        if (!url.startsWith("http")) url = "https://" + url;
+  buildTree(entries) {
+    const root = {
+      name: new URL(entries[0].url).hostname,
+      type: "root",
+      children: []
+    };
 
-        const urls = await this.fetchSitemap(url);
-        const tree = this.buildTree(urls);
-        this.render(tree);
-    }
+    const categories = {};
 
-    async fetchSitemap(url) {
-        const origin = new URL(url).origin;
-        const candidates = [
-            url.includes(".xml") ? url : null,
-            origin + "/sitemap_index.xml",
-            origin + "/sitemap.xml"
-        ].filter(Boolean);
+    entries.forEach(({ url, source }) => {
+      const path = new URL(url).pathname.replace(/\/$/, "");
 
-        for (const candidate of candidates) {
-            try {
-                return await this.loadSitemap(candidate);
-            } catch {}
-        }
-        throw new Error("No sitemap found");
-    }
+      if (path.startsWith("/tag/")) return;
 
-    async loadSitemap(url) {
-        const proxy = `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`;
-        const res = await fetch(proxy);
-        const text = await res.text();
-
-        const xml = new DOMParser().parseFromString(text, "text/xml");
-        const index = xml.querySelectorAll("sitemapindex > sitemap > loc");
-        if (index.length) {
-            let all = [];
-            for (const loc of index) {
-                const child = await this.loadSitemap(loc.textContent.trim());
-                all = all.concat(child);
-            }
-            return all;
-        }
-
-        return [...xml.querySelectorAll("url > loc")].map(n => n.textContent.trim());
-    }
-
-    classify(urls) {
-        const out = { pages: [], categories: {}, posts: [] };
-
-        urls.forEach(u => {
-            const path = new URL(u).pathname.replace(/\/$/, "");
-
-            if (path === "") return;
-
-            if (path.startsWith("/tag/")) return;
-
-            if (path.startsWith("/category/")) {
-                const slug = path.split("/")[2];
-                out.categories[slug] = { slug, url: u, posts: [] };
-                return;
-            }
-
-            if (path.split("/").length === 2) {
-                out.posts.push({ url: u, path });
-                return;
-            }
-
-            out.pages.push({ url: u, path });
-        });
-
-        return out;
-    }
-
-    buildTree(urls) {
-        const classified = this.classify(urls);
-        const root = {
-            name: new URL(urls[0]).hostname,
-            type: "root",
-            children: []
+      if (path.startsWith("/category/")) {
+        const slug = path.split("/")[2];
+        categories[slug] = {
+          name: slug.replace(/-/g, " "),
+          type: "section",
+          children: []
         };
+        return;
+      }
 
-        if (classified.pages.length) {
-            root.children.push({
-                name: "Pages",
-                type: "section",
-                children: classified.pages.map(p => ({
-                    name: p.path.split("/").pop().replace(/-/g, " "),
-                    type: "page",
-                    url: p.url,
-                    children: []
-                }))
+      if (source.includes("post")) {
+        const slug = path.split("/").pop();
+        Object.values(categories).forEach(cat => {
+          if (url.includes(cat.name.replace(/ /g, "-"))) {
+            cat.children.push({
+              name: slug.replace(/-/g, " "),
+              type: "page",
+              children: []
             });
-        }
-
-        const cats = {
-            name: "Categories",
-            type: "section",
-            children: []
-        };
-
-        Object.values(classified.categories).forEach(c => {
-            cats.children.push({
-                name: c.slug.replace(/-/g, " "),
-                type: "section",
-                url: c.url,
-                children: []
-            });
+          }
         });
+      }
+    });
 
-        if (cats.children.length) root.children.push(cats);
-        return root;
-    }
+    root.children.push({
+      name: "Categories",
+      type: "section",
+      children: Object.values(categories)
+    });
 
-    render(tree) {
-        this.svg.innerHTML = "";
-        let x = 100;
-        this.drawNode(tree, x, 50);
-    }
+    return root;
+  }
 
-    drawNode(node, x, y) {
-        const g = document.createElementNS("http://www.w3.org/2000/svg", "g");
-        g.setAttribute("transform", `translate(${x},${y})`);
+  render(tree) {
+    let x = 0;
+    this.drawNode(tree, x, 0);
+  }
 
-        const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-        rect.setAttribute("x", -this.nodeWidth / 2);
-        rect.setAttribute("y", -this.nodeHeight / 2);
-        rect.setAttribute("width", this.nodeWidth);
-        rect.setAttribute("height", this.nodeHeight);
-        rect.setAttribute("fill", this.color(node.type));
+  drawNode(node, x, y) {
+    const g = document.createElementNS("http://www.w3.org/2000/svg", "g");
+    g.setAttribute("transform", `translate(${x},${y})`);
+    g.setAttribute("class", "node");
 
-        const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
-        text.setAttribute("text-anchor", "middle");
-        text.setAttribute("dy", "5");
-        text.textContent = node.name;
+    const colors = {
+      root: "#3b82f6",
+      section: "#a855f7",
+      page: "#10b981"
+    };
 
-        g.appendChild(rect);
-        g.appendChild(text);
-        this.svg.appendChild(g);
+    const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+    rect.setAttribute("width", this.nodeW);
+    rect.setAttribute("height", this.nodeH);
+    rect.setAttribute("fill", colors[node.type]);
 
-        if (!node.children) return;
+    const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+    text.setAttribute("x", this.nodeW / 2);
+    text.setAttribute("y", 34);
+    text.setAttribute("text-anchor", "middle");
+    text.textContent = node.name;
 
-        let startX = x - ((node.children.length - 1) * (this.nodeWidth + this.hGap)) / 2;
-        node.children.forEach(child => {
-            const cx = startX;
-            const cy = y + this.vGap;
-            this.drawLink(x, y + this.nodeHeight / 2, cx, cy - this.nodeHeight / 2);
-            this.drawNode(child, cx, cy);
-            startX += this.nodeWidth + this.hGap;
-        });
-    }
+    g.append(rect, text);
+    this.viewport.appendChild(g);
 
-    drawLink(x1, y1, x2, y2) {
-        const l = document.createElementNS("http://www.w3.org/2000/svg", "line");
-        l.setAttribute("x1", x1);
-        l.setAttribute("y1", y1);
-        l.setAttribute("x2", x2);
-        l.setAttribute("y2", y2);
-        l.setAttribute("class", "link");
-        this.svg.appendChild(l);
-    }
+    if (!node.children) return;
 
-    color(type) {
-        return {
-            root: "#2563eb",
-            section: "#9333ea",
-            page: "#10b981"
-        }[type] || "#64748b"; 
-    }
+    node.children.forEach((child, i) => {
+      const cx = x + i * (this.nodeW + this.hGap);
+      const cy = y + this.vGap;
+
+      const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+      line.setAttribute("x1", x + this.nodeW / 2);
+      line.setAttribute("y1", y + this.nodeH);
+      line.setAttribute("x2", cx + this.nodeW / 2);
+      line.setAttribute("y2", cy);
+      line.setAttribute("class", "link");
+      this.viewport.appendChild(line);
+
+      this.drawNode(child, cx, cy);
+    });
+  }
 }
 
-window.addEventListener("DOMContentLoaded", () => {
-    const app = new SitemapVisualizer();
-    document.getElementById("generateBtn")
-        .addEventListener("click", () => app.generate());
-});
+new SitemapVisualizer();
 </script>
+
 </body>
 </html>
