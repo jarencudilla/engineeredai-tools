@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AutoBlog AI v3</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:       #0a0a0a;
+  --surface:  #111111;
+  --border:   #1e1e1e;
+  --border2:  #2a2a2a;
+  --text:     #e8e8e8;
+  --muted:    #666;
+  --accent:   #00ff88;
+  --accent2:  #ff6b35;
+  --accent3:  #4d9eff;
+  --error:    #ff4444;
+  --warn:     #ffaa00;
+  --mono:     'JetBrains Mono', monospace;
+  --sans:     'Syne', sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; background: var(--bg); color: var(--text); font-family: var(--mono); font-size: 13px; }
+
+/* Layout */
+.shell { display: flex; height: 100vh; overflow: hidden; }
+.sidebar { width: 220px; min-width: 220px; background: var(--surface); border-right: 1px solid var(--border); display: flex; flex-direction: column; }
+.main { flex: 1; overflow-y: auto; }
+
+/* Sidebar */
+.logo { padding: 24px 20px 16px; border-bottom: 1px solid var(--border); }
+.logo-name { font-family: var(--sans); font-size: 16px; font-weight: 800; letter-spacing: -0.5px; color: var(--accent); }
+.logo-sub { font-size: 10px; color: var(--muted); margin-top: 2px; letter-spacing: 1px; text-transform: uppercase; }
+nav { flex: 1; padding: 12px 0; }
+.nav-item { display: flex; align-items: center; gap: 10px; padding: 10px 20px; cursor: pointer; color: var(--muted); transition: all 0.15s; font-size: 12px; letter-spacing: 0.5px; border-left: 2px solid transparent; }
+.nav-item:hover { color: var(--text); background: rgba(255,255,255,0.03); }
+.nav-item.active { color: var(--accent); border-left-color: var(--accent); background: rgba(0,255,136,0.04); }
+.nav-icon { width: 16px; text-align: center; font-size: 14px; }
+.sidebar-bottom { padding: 16px 20px; border-top: 1px solid var(--border); }
+.auto-toggle { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.auto-label { font-size: 11px; color: var(--muted); }
+.toggle { position: relative; width: 36px; height: 20px; cursor: pointer; }
+.toggle input { opacity: 0; width: 0; height: 0; }
+.toggle-track { position: absolute; inset: 0; background: var(--border2); border-radius: 10px; transition: 0.2s; }
+.toggle input:checked + .toggle-track { background: var(--accent); }
+.toggle-thumb { position: absolute; top: 3px; left: 3px; width: 14px; height: 14px; background: #fff; border-radius: 50%; transition: 0.2s; }
+.toggle input:checked ~ .toggle-thumb { left: 19px; }
+.status-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--muted); display: inline-block; margin-right: 6px; }
+.status-dot.active { background: var(--accent); box-shadow: 0 0 6px var(--accent); }
+
+/* Pages */
+.page { display: none; padding: 32px 36px; }
+.page.active { display: block; }
+
+/* Page header */
+.page-header { margin-bottom: 28px; }
+.page-title { font-family: var(--sans); font-size: 22px; font-weight: 800; letter-spacing: -0.5px; }
+.page-sub { color: var(--muted); font-size: 11px; margin-top: 4px; }
+
+/* Cards */
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 4px; padding: 20px; margin-bottom: 16px; }
+.card-title { font-family: var(--sans); font-size: 13px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
+
+/* Stats grid */
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 24px; }
+.stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: 4px; padding: 18px 20px; }
+.stat-val { font-family: var(--sans); font-size: 32px; font-weight: 800; line-height: 1; }
+.stat-label { font-size: 10px; color: var(--muted); margin-top: 6px; letter-spacing: 1px; text-transform: uppercase; }
+.stat-val.green { color: var(--accent); }
+.stat-val.orange { color: var(--accent2); }
+.stat-val.blue { color: var(--accent3); }
+.stat-val.red { color: var(--error); }
+
+/* Grid */
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 3px; border: none; cursor: pointer; font-family: var(--mono); font-size: 12px; font-weight: 500; transition: all 0.15s; letter-spacing: 0.3px; }
+.btn-primary { background: var(--accent); color: #000; }
+.btn-primary:hover { background: #00e077; }
+.btn-secondary { background: transparent; color: var(--text); border: 1px solid var(--border2); }
+.btn-secondary:hover { border-color: var(--text); }
+.btn-danger { background: transparent; color: var(--error); border: 1px solid var(--error); }
+.btn-danger:hover { background: var(--error); color: #fff; }
+.btn-warn { background: transparent; color: var(--warn); border: 1px solid var(--warn); }
+.btn-warn:hover { background: var(--warn); color: #000; }
+.btn-sm { padding: 5px 10px; font-size: 11px; }
+.btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* Forms */
+.form-group { margin-bottom: 14px; }
+.form-label { font-size: 11px; color: var(--muted); margin-bottom: 5px; display: block; letter-spacing: 0.5px; text-transform: uppercase; }
+.form-input { width: 100%; background: var(--bg); border: 1px solid var(--border2); border-radius: 3px; padding: 9px 12px; color: var(--text); font-family: var(--mono); font-size: 12px; transition: border 0.15s; }
+.form-input:focus { outline: none; border-color: var(--accent); }
+.form-input::placeholder { color: var(--muted); }
+select.form-input { cursor: pointer; }
+textarea.form-input { resize: vertical; min-height: 80px; }
+
+/* Table */
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; }
+th { text-align: left; padding: 10px 12px; font-size: 10px; color: var(--muted); border-bottom: 1px solid var(--border); letter-spacing: 1px; text-transform: uppercase; font-weight: 500; }
+td { padding: 12px 12px; border-bottom: 1px solid var(--border); font-size: 12px; vertical-align: middle; }
+tr:hover td { background: rgba(255,255,255,0.02); }
+
+/* Badges */
+.badge { display: inline-block; padding: 2px 8px; border-radius: 2px; font-size: 10px; letter-spacing: 0.5px; text-transform: uppercase; font-weight: 500; }
+.badge-green { background: rgba(0,255,136,0.1); color: var(--accent); }
+.badge-orange { background: rgba(255,107,53,0.1); color: var(--accent2); }
+.badge-blue { background: rgba(77,158,255,0.1); color: var(--accent3); }
+.badge-red { background: rgba(255,68,68,0.1); color: var(--error); }
+.badge-gray { background: rgba(255,255,255,0.06); color: var(--muted); }
+
+/* Progress bar */
+.progress-wrap { background: var(--border); border-radius: 2px; height: 3px; overflow: hidden; }
+.progress-bar { height: 100%; background: var(--accent); border-radius: 2px; transition: width 0.3s; }
+
+/* Pipeline item */
+.pipeline-row { display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border); }
+.pipeline-num { width: 24px; height: 24px; border-radius: 50%; background: var(--border2); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; flex-shrink: 0; }
+.pipeline-num.done { background: var(--accent); color: #000; }
+.pipeline-num.running { background: var(--accent3); color: #000; animation: pulse 1s infinite; }
+.pipeline-label { flex: 1; font-size: 12px; }
+.pipeline-model { flex: 1; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.5} }
+
+/* Niche / Site cards */
+.item-card { background: var(--bg); border: 1px solid var(--border); border-radius: 4px; padding: 16px; margin-bottom: 10px; display: flex; align-items: flex-start; gap: 12px; }
+.item-info { flex: 1; }
+.item-name { font-family: var(--sans); font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+.item-meta { font-size: 11px; color: var(--muted); line-height: 1.6; }
+.item-actions { display: flex; gap: 6px; flex-shrink: 0; }
+
+/* Modal */
+.modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.8); z-index: 1000; display: none; align-items: center; justify-content: center; }
+.modal-overlay.open { display: flex; }
+.modal { background: var(--surface); border: 1px solid var(--border2); border-radius: 6px; width: 90%; max-width: 640px; max-height: 90vh; overflow-y: auto; }
+.modal-header { padding: 20px 24px 16px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+.modal-title { font-family: var(--sans); font-size: 16px; font-weight: 700; }
+.modal-close { background: none; border: none; color: var(--muted); cursor: pointer; font-size: 20px; line-height: 1; padding: 0; }
+.modal-body { padding: 24px; }
+.modal-footer { padding: 16px 24px; border-top: 1px solid var(--border); display: flex; justify-content: flex-end; gap: 8px; }
+
+/* Editor modal */
+.editor-modal { max-width: 900px; width: 96%; }
+.editor-layout { display: grid; grid-template-columns: 1fr 280px; gap: 20px; }
+.editor-content { min-height: 400px; }
+
+/* Toast */
+.toast-wrap { position: fixed; bottom: 24px; right: 24px; z-index: 2000; display: flex; flex-direction: column; gap: 8px; }
+.toast { background: var(--surface); border: 1px solid var(--border2); border-radius: 4px; padding: 12px 16px; font-size: 12px; min-width: 280px; transform: translateX(120%); transition: transform 0.2s; }
+.toast.show { transform: translateX(0); }
+.toast.success { border-left: 3px solid var(--accent); }
+.toast.error { border-left: 3px solid var(--error); }
+.toast.info { border-left: 3px solid var(--accent3); }
+
+/* Run status inline */
+.run-status { font-size: 11px; color: var(--accent3); margin-top: 6px; min-height: 16px; }
+.run-status.error { color: var(--error); }
+
+/* Queue viewer */
+.queue-item { background: var(--bg); border: 1px solid var(--border); border-radius: 4px; padding: 16px; margin-bottom: 10px; }
+.queue-item-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
+.queue-topic { font-family: var(--sans); font-size: 13px; font-weight: 700; }
+.queue-meta { font-size: 11px; color: var(--muted); margin-top: 3px; }
+
+/* Article type mix */
+.type-mix-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.type-mix-item { background: var(--bg); border: 1px solid var(--border); border-radius: 3px; padding: 8px 10px; }
+.type-mix-label { font-size: 10px; color: var(--muted); margin-bottom: 4px; }
+.type-mix-input { width: 100%; background: transparent; border: none; color: var(--text); font-family: var(--mono); font-size: 13px; font-weight: 700; text-align: center; }
+.type-mix-input:focus { outline: none; }
+
+/* Provider card */
+.provider-card { background: var(--bg); border: 1px solid var(--border); border-radius: 4px; padding: 16px; margin-bottom: 12px; }
+.provider-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+.provider-name { font-family: var(--sans); font-size: 14px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+.provider-status { font-size: 10px; color: var(--muted); }
+.provider-status.configured { color: var(--accent); }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
+
+.divider { height: 1px; background: var(--border); margin: 20px 0; }
+.text-muted { color: var(--muted); }
+.text-accent { color: var(--accent); }
+.text-orange { color: var(--accent2); }
+.text-blue { color: var(--accent3); }
+.mt-12 { margin-top: 12px; }
+.mt-8 { margin-top: 8px; }
+.flex { display: flex; }
+.flex-between { display: flex; align-items: center; justify-content: space-between; }
+.flex-center { display: flex; align-items: center; }
+.gap-8 { gap: 8px; }
+.gap-12 { gap: 12px; }
+</style>
+</head>
+<body>
+<div class="shell">
+
+<!-- Sidebar -->
+<aside class="sidebar">
+  <div class="logo">
+    <div class="logo-name">AutoBlog AI</div>
+    <div class="logo-sub">v3 · AI Writing Engine</div>
+  </div>
+  <nav>
+    <div class="nav-item active" onclick="showPage('dashboard')">
+      <span class="nav-icon">◈</span> Command Center
+    </div>
+    <div class="nav-item" onclick="showPage('queue')">
+      <span class="nav-icon">◉</span> Review Queue
+      <span id="queue-badge" style="display:none;margin-left:auto;background:var(--accent2);color:#000;font-size:10px;padding:1px 6px;border-radius:10px;"></span>
+    </div>
+    <div class="nav-item" onclick="showPage('sites')">
+      <span class="nav-icon">◎</span> Sites
+    </div>
+    <div class="nav-item" onclick="showPage('niches')">
+      <span class="nav-icon">◧</span> Niches
+    </div>
+    <div class="nav-item" onclick="showPage('pipeline')">
+      <span class="nav-icon">◈</span> Pipeline
+    </div>
+    <div class="nav-item" onclick="showPage('log')">
+      <span class="nav-icon">◫</span> Post Log
+    </div>
+    <div class="nav-item" onclick="showPage('settings')">
+      <span class="nav-icon">◱</span> Settings
+    </div>
+  </nav>
+  <div class="sidebar-bottom">
+    <div class="auto-toggle">
+      <span class="auto-label"><span class="status-dot" id="auto-dot"></span>Auto-Publish</span>
+      <label class="toggle">
+        <input type="checkbox" id="auto-toggle-cb" onchange="toggleAuto(this.checked)">
+        <div class="toggle-track"></div>
+        <div class="toggle-thumb"></div>
+      </label>
+    </div>
+    <div style="margin-top:10px; display:flex; align-items:center; justify-content:space-between;">
+      <span class="auto-label" style="font-size:10px;">Require Review</span>
+      <label class="toggle">
+        <input type="checkbox" id="review-toggle-cb" onchange="toggleReview(this.checked)" checked>
+        <div class="toggle-track"></div>
+        <div class="toggle-thumb"></div>
+      </label>
+    </div>
+  </div>
+</aside>
+
+<!-- Main -->
+<main class="main">
+
+  <!-- Dashboard -->
+  <div class="page active" id="page-dashboard">
+    <div class="page-header">
+      <div class="page-title">Command Center</div>
+      <div class="page-sub">Your autonomous AI writing team at a glance</div>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-card"><div class="stat-val green" id="stat-total">0</div><div class="stat-label">Total Published</div></div>
+      <div class="stat-card"><div class="stat-val orange" id="stat-today">0</div><div class="stat-label">Posts Today</div></div>
+      <div class="stat-card"><div class="stat-val blue" id="stat-queued">0</div><div class="stat-label">In Review Queue</div></div>
+      <div class="stat-card"><div class="stat-val red" id="stat-errors">0</div><div class="stat-label">Errors</div></div>
+    </div>
+    <div class="card">
+      <div class="card-title">Niche Runner</div>
+      <div id="niche-runners">
+        <div class="text-muted" style="font-size:12px;">No niches configured. Add niches in the Niches page.</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Per-Site Stats</div>
+      <div id="site-stats-list"><div class="text-muted" style="font-size:12px;">No sites configured.</div></div>
+    </div>
+  </div>
+
+  <!-- Review Queue -->
+  <div class="page" id="page-queue">
+    <div class="page-header flex-between">
+      <div>
+        <div class="page-title">Review Queue</div>
+        <div class="page-sub">Approve or reject AI-generated drafts before publishing</div>
+      </div>
+    </div>
+    <div id="queue-list"><div class="text-muted" style="font-size:12px;">Queue is empty.</div></div>
+  </div>
+
+  <!-- Sites -->
+  <div class="page" id="page-sites">
+    <div class="page-header flex-between">
+      <div>
+        <div class="page-title">Sites</div>
+        <div class="page-sub">Manage WordPress sites and AI author credentials</div>
+      </div>
+      <button class="btn btn-primary" onclick="openSiteModal()">+ Add Site</button>
+    </div>
+    <div id="sites-list"><div class="text-muted" style="font-size:12px;">No sites added yet.</div></div>
+  </div>
+
+  <!-- Niches -->
+  <div class="page" id="page-niches">
+    <div class="page-header flex-between">
+      <div>
+        <div class="page-title">Niches</div>
+        <div class="page-sub">Configure topics and posting schedules per site</div>
+      </div>
+      <button class="btn btn-primary" onclick="openNicheModal()">+ Add Niche</button>
+    </div>
+    <div id="niches-list"><div class="text-muted" style="font-size:12px;">No niches added yet.</div></div>
+  </div>
+
+  <!-- Pipeline -->
+  <div class="page" id="page-pipeline">
+    <div class="page-header">
+      <div class="page-title">Pipeline Config</div>
+      <div class="page-sub">Assign AI models to each pipeline stage</div>
+    </div>
+    <div class="card">
+      <div class="card-title">6-Stage Pipeline</div>
+      <div id="pipeline-stages"></div>
+      <div class="mt-12">
+        <button class="btn btn-primary" onclick="savePipeline()">Save Pipeline Config</button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Stage Descriptions</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <div><div class="text-accent" style="font-size:12px;margin-bottom:4px;">Stage 1 — Strategist</div><div class="text-muted" style="font-size:11px;">Finds topic, identifies search intent, builds outline, generates secondary keywords</div></div>
+        <div><div class="text-accent" style="font-size:12px;margin-bottom:4px;">Stage 2 — Writer</div><div class="text-muted" style="font-size:11px;">Writes the full draft (1200+ words, 5+ sentence paragraphs, internal links)</div></div>
+        <div><div class="text-accent" style="font-size:12px;margin-bottom:4px;">Stage 3 — Editor</div><div class="text-muted" style="font-size:11px;">Challenges weak sections, cuts fluff, ensures angle is consistent throughout</div></div>
+        <div><div class="text-accent" style="font-size:12px;margin-bottom:4px;">Stage 4 — Curator</div><div class="text-muted" style="font-size:11px;">Quality gate: enforces writing rules, checks search intent alignment</div></div>
+        <div><div class="text-accent" style="font-size:12px;margin-bottom:4px;">Stage 5 — Metadata</div><div class="text-muted" style="font-size:11px;">Generates full SEO metadata: keyphrase, slug, meta desc, keywords, excerpt</div></div>
+        <div><div class="text-accent" style="font-size:12px;margin-bottom:4px;">Stage 6 — Proofread</div><div class="text-muted" style="font-size:11px;">Final grammar, flow, and consistency pass before queue</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Log -->
+  <div class="page" id="page-log">
+    <div class="page-header flex-between">
+      <div>
+        <div class="page-title">Post Log</div>
+        <div class="page-sub">Full history of every article run through the pipeline</div>
+      </div>
+      <div class="flex gap-8">
+        <select class="form-input" id="log-filter-site" onchange="renderLog()" style="width:160px;">
+          <option value="">All Sites</option>
+        </select>
+        <select class="form-input" id="log-filter-type" onchange="renderLog()" style="width:160px;">
+          <option value="">All Types</option>
+          <option value="informational">Informational</option>
+          <option value="shock">Shock</option>
+          <option value="editorial">Editorial</option>
+          <option value="viral">Viral</option>
+          <option value="monetization">Monetization</option>
+          <option value="news">News</option>
+        </select>
+      </div>
+    </div>
+    <div class="card" style="padding:0;">
+      <div class="table-wrap">
+        <table>
+          <thead><tr>
+            <th>Topic</th><th>Site</th><th>Niche</th><th>Type</th><th>Status</th><th>Date</th><th>Link</th>
+          </tr></thead>
+          <tbody id="log-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Settings -->
+  <div class="page" id="page-settings">
+    <div class="page-header">
+      <div class="page-title">Settings</div>
+      <div class="page-sub">API keys and global configuration</div>
+    </div>
+
+    <!-- Gemini -->
+    <div class="provider-card">
+      <div class="provider-header">
+        <div class="provider-name">🟢 Google Gemini <span id="gemini-status" class="provider-status">Not configured</span></div>
+        <a href="https://aistudio.google.com" target="_blank" class="btn btn-secondary btn-sm">Get Free Key ↗</a>
+      </div>
+      <div class="form-group">
+        <label class="form-label">API Key</label>
+        <input class="form-input" type="password" id="key-gemini" placeholder="AIza...">
+      </div>
+      <div style="font-size:11px;color:var(--muted);">Free tier: 1,500 requests/day (Gemini 2.0 Flash) · Models: gemini-2.5-pro-preview-06-05, gemini-2.0-flash, gemini-1.5-pro</div>
+    </div>
+
+    <!-- Groq -->
+    <div class="provider-card">
+      <div class="provider-header">
+        <div class="provider-name">⚡ Groq <span id="groq-status" class="provider-status">Not configured</span></div>
+        <a href="https://console.groq.com" target="_blank" class="btn btn-secondary btn-sm">Get Free Key ↗</a>
+      </div>
+      <div class="form-group">
+        <label class="form-label">API Key</label>
+        <input class="form-input" type="password" id="key-groq" placeholder="gsk_...">
+      </div>
+      <div style="font-size:11px;color:var(--muted);">Free tier: generous limits · Models: llama-3.3-70b-versatile, mixtral-8x7b-32768, llama-3.1-8b-instant</div>
+    </div>
+
+    <!-- Mistral -->
+    <div class="provider-card">
+      <div class="provider-header">
+        <div class="provider-name">🔷 Mistral AI <span id="mistral-status" class="provider-status">Not configured</span></div>
+        <a href="https://console.mistral.ai" target="_blank" class="btn btn-secondary btn-sm">Get Free Key ↗</a>
+      </div>
+      <div class="form-group">
+        <label class="form-label">API Key</label>
+        <input class="form-input" type="password" id="key-mistral" placeholder="...">
+      </div>
+      <div style="font-size:11px;color:var(--muted);">Free tier available · Models: mistral-small-latest, open-mixtral-8x7b, mistral-large-latest</div>
+    </div>
+
+    <!-- OpenRouter -->
+    <div class="provider-card">
+      <div class="provider-header">
+        <div class="provider-name">🌐 OpenRouter <span id="openrouter-status" class="provider-status">Not configured</span></div>
+        <a href="https://openrouter.ai/keys" target="_blank" class="btn btn-secondary btn-sm">Get Free Key ↗</a>
+      </div>
+      <div class="form-group">
+        <label class="form-label">API Key</label>
+        <input class="form-input" type="password" id="key-openrouter" placeholder="sk-or-...">
+      </div>
+      <div style="font-size:11px;color:var(--muted);">Free models: meta-llama/llama-3.3-70b-instruct:free, google/gemma-3-27b-it:free, microsoft/phi-4:free</div>
+    </div>
+
+    <!-- Ollama -->
+    <div class="provider-card">
+      <div class="provider-header">
+        <div class="provider-name">🖥️ Ollama (Local) <span id="ollama-status" class="provider-status">Not configured</span></div>
+        <a href="https://ollama.com/download" target="_blank" class="btn btn-secondary btn-sm">Download ↗</a>
+      </div>
+      <div class="flex gap-8">
+        <div class="form-group" style="flex:1;">
+          <label class="form-label">Ollama URL</label>
+          <input class="form-input" type="text" id="key-ollama" placeholder="http://localhost:11434" value="http://localhost:11434">
+        </div>
+        <div style="display:flex;align-items:flex-end;padding-bottom:14px;">
+          <button class="btn btn-secondary btn-sm" onclick="testOllama()">Test Connection</button>
+        </div>
+      </div>
+      <div id="ollama-models" style="font-size:11px;color:var(--muted);">
+        Install: winget install Ollama.Ollama<br>
+        Pull models: ollama pull phi4 · ollama pull mistral · ollama pull gemma3
+      </div>
+    </div>
+
+    <!-- Claude -->
+    <div class="provider-card">
+      <div class="provider-header">
+        <div class="provider-name">🟣 Anthropic Claude <span id="anthropic-status" class="provider-status">Not configured · Paid</span></div>
+        <a href="https://console.anthropic.com" target="_blank" class="btn btn-secondary btn-sm">Get Key ↗</a>
+      </div>
+      <div class="form-group">
+        <label class="form-label">API Key</label>
+        <input class="form-input" type="password" id="key-anthropic" placeholder="sk-ant-...">
+      </div>
+      <div style="font-size:11px;color:var(--muted);">Paid — ~$0.03-0.08/article · Models: claude-sonnet-4-6, claude-opus-4-5 · Separate from claude.ai subscription</div>
+    </div>
+
+    <div style="margin-top:20px;">
+      <button class="btn btn-primary" onclick="saveSettings()">Save API Keys</button>
+    </div>
+  </div>
+
+</main>
+</div>
+
+<!-- Toast container -->
+<div class="toast-wrap" id="toast-wrap"></div>
+
+<!-- Site Modal -->
+<div class="modal-overlay" id="site-modal">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title" id="site-modal-title">Add Site</div>
+      <button class="modal-close" onclick="closeSiteModal()">×</button>
+    </div>
+    <div class="modal-body">
+      <input type="hidden" id="site-id">
+      <div class="grid2">
+        <div class="form-group">
+          <label class="form-label">Site Name</label>
+          <input class="form-input" id="site-name" placeholder="My Health Blog">
+        </div>
+        <div class="form-group">
+          <label class="form-label">WordPress URL</label>
+          <input class="form-input" id="site-url" placeholder="https://healthyforge.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label">AI Author Username</label>
+          <input class="form-input" id="site-username" placeholder="alfred">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Application Password</label>
+          <input class="form-input" type="password" id="site-password" placeholder="xxxx xxxx xxxx xxxx xxxx xxxx">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Author User ID</label>
+          <input class="form-input" id="site-author-id" placeholder="2" type="number">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Amazon Associate Tag</label>
+          <input class="form-input" id="site-associate" placeholder="healthyforge-20">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Post Sitemap URL <span style="color:var(--muted)">(for internal linking)</span></label>
+        <input class="form-input" id="site-sitemap" placeholder="https://healthyforge.com/post-sitemap.xml">
+      </div>
+      <div style="margin-top:4px;">
+        <button class="btn btn-secondary btn-sm" onclick="testSiteConnection()">Test WordPress Connection</button>
+        <span id="site-test-result" style="font-size:11px;margin-left:10px;"></span>
+      </div>
+      <div class="divider"></div>
+      <div style="font-size:11px;color:var(--muted);">
+        <strong style="color:var(--text);">How to get Application Password:</strong><br>
+        1. Login to WordPress Admin → Users → Your AI Author<br>
+        2. Scroll to "Application Passwords" section<br>
+        3. Enter name "AutoBlog AI" → click Add<br>
+        4. Copy the generated password immediately
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closeSiteModal()">Cancel</button>
+      <button class="btn btn-primary" onclick="saveSite()">Save Site</button>
+    </div>
+  </div>
+</div>
+
+<!-- Niche Modal -->
+<div class="modal-overlay" id="niche-modal">
+  <div class="modal" style="max-width:700px;">
+    <div class="modal-header">
+      <div class="modal-title" id="niche-modal-title">Add Niche</div>
+      <button class="modal-close" onclick="closeNicheModal()">×</button>
+    </div>
+    <div class="modal-body">
+      <input type="hidden" id="niche-id">
+      <div class="grid2">
+        <div class="form-group">
+          <label class="form-label">Niche Name</label>
+          <input class="form-input" id="niche-name" placeholder="Health & Fitness">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Assign to Site</label>
+          <select class="form-input" id="niche-site"></select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Description</label>
+        <textarea class="form-input" id="niche-desc" placeholder="Health, fitness, wellness, nutrition, workout plans..."></textarea>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Target Keywords</label>
+        <input class="form-input" id="niche-keywords" placeholder="weight loss, home workout, meal prep, nutrition tips">
+      </div>
+      <div class="grid2">
+        <div class="form-group">
+          <label class="form-label">Posts Per Day</label>
+          <input class="form-input" type="number" id="niche-posts-per-day" value="1" min="1" max="10">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Tone Override</label>
+          <input class="form-input" id="niche-tone" placeholder="Friendly, motivational, practical">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Article Type Mix <span style="color:var(--muted)">(% — should add to 100)</span></label>
+        <div class="type-mix-grid">
+          <div class="type-mix-item"><div class="type-mix-label">Informational</div><input class="type-mix-input" type="number" id="mix-informational" value="40" min="0" max="100"></div>
+          <div class="type-mix-item"><div class="type-mix-label">Viral</div><input class="type-mix-input" type="number" id="mix-viral" value="20" min="0" max="100"></div>
+          <div class="type-mix-item"><div class="type-mix-label">Monetization</div><input class="type-mix-input" type="number" id="mix-monetization" value="20" min="0" max="100"></div>
+          <div class="type-mix-item"><div class="type-mix-label">Editorial</div><input class="type-mix-input" type="number" id="mix-editorial" value="10" min="0" max="100"></div>
+          <div class="type-mix-item"><div class="type-mix-label">Shock</div><input class="type-mix-input" type="number" id="mix-shock" value="5" min="0" max="100"></div>
+          <div class="type-mix-item"><div class="type-mix-label">News</div><input class="type-mix-input" type="number" id="mix-news" value="5" min="0" max="100"></div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closeNicheModal()">Cancel</button>
+      <button class="btn btn-primary" onclick="saveNiche()">Save Niche</button>
+    </div>
+  </div>
+</div>
+
+<!-- Editor Modal -->
+<div class="modal-overlay" id="editor-modal">
+  <div class="modal editor-modal">
+    <div class="modal-header">
+      <div class="modal-title" id="editor-modal-title">Edit Draft</div>
+      <button class="modal-close" onclick="closeEditorModal()">×</button>
+    </div>
+    <div class="modal-body">
+      <input type="hidden" id="editor-post-id">
+      <div class="editor-layout">
+        <div>
+          <div class="form-group">
+            <label class="form-label">Article Content (HTML)</label>
+            <textarea class="form-input editor-content" id="editor-content"></textarea>
+          </div>
+        </div>
+        <div>
+          <div class="form-group">
+            <label class="form-label">SEO Title</label>
+            <input class="form-input" id="editor-seo-title">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Slug</label>
+            <input class="form-input" id="editor-slug">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Meta Description</label>
+            <textarea class="form-input" id="editor-meta-desc" rows="3"></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Meta Keywords</label>
+            <textarea class="form-input" id="editor-meta-keywords" rows="3"></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Excerpt</label>
+            <textarea class="form-input" id="editor-excerpt" rows="3"></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Focus Keyphrase</label>
+            <input class="form-input" id="editor-keyphrase">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Categories (comma separated)</label>
+            <input class="form-input" id="editor-categories">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Tags (comma separated)</label>
+            <input class="form-input" id="editor-tags">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Image Alt Text</label>
+            <input class="form-input" id="editor-alt-text">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Image Prompt</label>
+            <textarea class="form-input" id="editor-image-prompt" rows="2"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closeEditorModal()">Cancel</button>
+      <button class="btn btn-secondary" onclick="saveDraft()">Save Draft</button>
+      <button class="btn btn-primary" onclick="approveDraft()">✓ Approve & Publish</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const API = 'http://localhost:5000/api';
+let sites = [], niches = [], logData = [], queueData = [];
+let pipelineConfig = {};
+
+const PROVIDERS = {
+  groq: {
+    label: 'Groq',
+    models: ['llama-3.3-70b-versatile','mixtral-8x7b-32768','llama-3.1-8b-instant']
+  },
+  gemini: {
+    label: 'Gemini',
+    models: ['gemini-2.5-pro-preview-06-05','gemini-2.0-flash','gemini-1.5-pro','gemini-2.0-flash-lite']
+  },
+  mistral: {
+    label: 'Mistral',
+    models: ['mistral-small-latest','open-mixtral-8x7b','mistral-large-latest']
+  },
+  openrouter: {
+    label: 'OpenRouter',
+    models: ['meta-llama/llama-3.3-70b-instruct:free','google/gemma-3-27b-it:free','microsoft/phi-4:free','deepseek/deepseek-r1:free']
+  },
+  ollama: {
+    label: 'Ollama (Local)',
+    models: ['phi4','mistral','gemma3','llama3.2']
+  },
+  anthropic: {
+    label: 'Claude',
+    models: ['claude-sonnet-4-6','claude-opus-4-5','claude-haiku-4-5-20251001']
+  }
+};
+
+const STAGE_LABELS = {
+  stage1_strategist: 'Stage 1 — Strategist (Topic Finder)',
+  stage2_writer:     'Stage 2 — Writer (Draft)',
+  stage3_editor:     'Stage 3 — Editor (Refine)',
+  stage4_curator:    'Stage 4 — Curator (Quality Gate)',
+  stage5_metadata:   'Stage 5 — Metadata Generator',
+  stage6_proofread:  'Stage 6 — Proofread (Final Pass)'
+};
+
+// ─── Navigation ─────────────────────────────────────────────────────────────
+
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.getElementById('page-' + id).classList.add('active');
+  event.currentTarget.classList.add('active');
+  if (id === 'dashboard') loadDashboard();
+  if (id === 'queue') loadQueue();
+  if (id === 'log') loadLog();
+  if (id === 'pipeline') renderPipeline();
+}
+
+// ─── Init ────────────────────────────────────────────────────────────────────
+
+async function init() {
+  await loadConfig();
+  await loadSites();
+  await loadNiches();
+  await loadDashboard();
+  await loadQueue();
+  renderPipeline();
+}
+
+async function loadConfig() {
+  const r = await fetch(`${API}/config`);
+  const cfg = await r.json();
+  document.getElementById('auto-toggle-cb').checked = cfg.auto_publish || false;
+  document.getElementById('review-toggle-cb').checked = cfg.require_review !== false;
+  document.getElementById('auto-dot').className = 'status-dot' + (cfg.auto_publish ? ' active' : '');
+  pipelineConfig = cfg.pipeline || {};
+  // Settings page key indicators
+  const keys = cfg.api_keys || {};
+  ['gemini','groq','mistral','openrouter','anthropic'].forEach(k => {
+    const el = document.getElementById(`${k}-status`);
+    if (el) el.textContent = keys[k] === '***' ? '✓ Configured' : 'Not configured';
+    if (el && keys[k] === '***') el.classList.add('configured');
+  });
+  const ollamaEl = document.getElementById('ollama-status');
+  if (keys.ollama_url && keys.ollama_url !== 'http://localhost:11434') {
+    ollamaEl.textContent = 'Custom URL';
+  }
+  const ollamaInput = document.getElementById('key-ollama');
+  if (ollamaInput && keys.ollama_url) ollamaInput.value = keys.ollama_url;
+}
+
+async function loadSites() {
+  const r = await fetch(`${API}/sites`);
+  sites = await r.json();
+  renderSites();
+  populateSiteDropdowns();
+}
+
+async function loadNiches() {
+  const r = await fetch(`${API}/niches`);
+  niches = await r.json();
+  renderNiches();
+}
+
+async function loadDashboard() {
+  const r = await fetch(`${API}/stats`);
+  const stats = await r.json();
+  document.getElementById('stat-total').textContent = stats.total_published || 0;
+  document.getElementById('stat-today').textContent = stats.today || 0;
+  document.getElementById('stat-queued').textContent = stats.queued || 0;
+  document.getElementById('stat-errors').textContent = stats.errors || 0;
+
+  // Niche runners
+  const container = document.getElementById('niche-runners');
+  if (!niches.length) {
+    container.innerHTML = '<div class="text-muted" style="font-size:12px;">No niches configured.</div>';
+    return;
+  }
+  container.innerHTML = niches.map(n => {
+    const site = sites.find(s => s.id === n.site_id);
+    const artTypes = Object.entries(ARTICLE_TYPES_CLIENT).map(([k,v]) => `<option value="${k}">${v}</option>`).join('');
+    return `
+      <div style="display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--border);">
+        <div style="flex:1;">
+          <div style="font-family:var(--sans);font-weight:700;font-size:13px;">${n.name}</div>
+          <div style="font-size:11px;color:var(--muted);">${site ? site.name || site.url : 'No site'} · ${n.posts_per_day || 1}x/day</div>
+          <div class="run-status" id="status-${n.id}"></div>
+        </div>
+        <select class="form-input" id="type-${n.id}" style="width:160px;">
+          ${artTypes}
+        </select>
+        <button class="btn btn-secondary btn-sm" onclick="runNow('${n.id}')">▶ Run Now</button>
+      </div>`;
+  }).join('');
+
+  // Site stats
+  const siteStats = document.getElementById('site-stats-list');
+  if (!sites.length) { siteStats.innerHTML = '<div class="text-muted" style="font-size:12px;">No sites configured.</div>'; return; }
+  siteStats.innerHTML = sites.map(s => {
+    const sd = stats.per_site?.[s.id] || {total:0, today:0};
+    return `<div style="display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border);">
+      <div style="font-family:var(--sans);font-weight:700;font-size:13px;">${s.name || s.url}</div>
+      <div style="display:flex;gap:20px;font-size:12px;">
+        <span>Total: <strong class="text-accent">${sd.total}</strong></span>
+        <span>Today: <strong class="text-orange">${sd.today}</strong></span>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+const ARTICLE_TYPES_CLIENT = {
+  informational: 'Informational',
+  shock: 'Shock/Controversy',
+  editorial: 'Editorial',
+  viral: 'Viral',
+  monetization: 'Monetization',
+  news: 'News-Style'
+};
+
+async function runNow(nicheId) {
+  const typeEl = document.getElementById(`type-${nicheId}`);
+  const articleType = typeEl ? typeEl.value : 'informational';
+  const statusEl = document.getElementById(`status-${nicheId}`);
+  if (statusEl) statusEl.textContent = 'Starting pipeline...';
+
+  await fetch(`${API}/run`, {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({niche_id: nicheId, article_type: articleType})
+  });
+
+  // Poll status
+  const poll = setInterval(async () => {
+    const r = await fetch(`${API}/status/${nicheId}`);
+    const s = await r.json();
+    if (statusEl) {
+      statusEl.textContent = s.message || '';
+      statusEl.className = 'run-status' + (s.message?.startsWith('Error') ? ' error' : '');
+    }
+    if (!s.running) {
+      clearInterval(poll);
+      loadDashboard();
+      loadQueue();
+      if (s.message?.includes('queue')) toast('Draft added to review queue', 'success');
+      else if (s.message?.includes('Published')) toast('Published successfully!', 'success');
+      else if (s.message?.startsWith('Error')) toast(s.message, 'error');
+    }
+  }, 2000);
+}
+
+// ─── Queue ───────────────────────────────────────────────────────────────────
+
+async function loadQueue() {
+  const r = await fetch(`${API}/queue`);
+  queueData = await r.json();
+  renderQueue();
+  const badge = document.getElementById('queue-badge');
+  if (queueData.length > 0) { badge.style.display=''; badge.textContent = queueData.length; }
+  else badge.style.display = 'none';
+}
+
+function renderQueue() {
+  const container = document.getElementById('queue-list');
+  if (!queueData.length) { container.innerHTML = '<div class="text-muted" style="font-size:12px;">Queue is empty.</div>'; return; }
+  container.innerHTML = queueData.map(p => {
+    const site = sites.find(s => s.id === p.site_id);
+    const typeLabel = ARTICLE_TYPES_CLIENT[p.article_type] || p.article_type;
+    const d = new Date(p.created_at).toLocaleDateString();
+    return `
+      <div class="queue-item">
+        <div class="queue-item-header">
+          <div>
+            <div class="queue-topic">${p.topic || 'Untitled'}</div>
+            <div class="queue-meta">${site ? site.name || site.url : p.site_url} · ${p.niche_name || ''} · ${typeLabel} · ${d}</div>
+          </div>
+          <div class="flex gap-8">
+            <button class="btn btn-secondary btn-sm" onclick="openEditor('${p.id}')">✎ Edit</button>
+            <button class="btn btn-primary btn-sm" onclick="quickApprove('${p.id}')">✓ Approve</button>
+            <button class="btn btn-danger btn-sm" onclick="rejectPost('${p.id}')">✕</button>
+          </div>
+        </div>
+        <div style="font-size:11px;color:var(--muted);">
+          SEO: ${p.metadata?.seo_title || '—'} · Slug: /${p.metadata?.slug || '—'}<br>
+          Keywords: ${p.metadata?.meta_keywords?.substring(0,80) || '—'}
+        </div>
+      </div>`;
+  }).join('');
+}
+
+async function quickApprove(postId) {
+  try {
+    const r = await fetch(`${API}/queue/${postId}/approve`, {method:'POST'});
+    const d = await r.json();
+    if (d.success) { toast('Published successfully!', 'success'); loadQueue(); loadDashboard(); }
+    else toast(d.error, 'error');
+  } catch(e) { toast('Publish failed: ' + e.message, 'error'); }
+}
+
+async function rejectPost(postId) {
+  if (!confirm('Discard this draft?')) return;
+  await fetch(`${API}/queue/${postId}/reject`, {method:'DELETE'});
+  toast('Draft discarded', 'info');
+  loadQueue();
+  loadDashboard();
+}
+
+// ─── Editor ──────────────────────────────────────────────────────────────────
+
+async function openEditor(postId) {
+  const r = await fetch(`${API}/queue/${postId}`);
+  const p = await r.json();
+  const m = p.metadata || {};
+  document.getElementById('editor-post-id').value = postId;
+  document.getElementById('editor-modal-title').textContent = p.topic || 'Edit Draft';
+  document.getElementById('editor-content').value = p.content || '';
+  document.getElementById('editor-seo-title').value = m.seo_title || '';
+  document.getElementById('editor-slug').value = m.slug || '';
+  document.getElementById('editor-meta-desc').value = m.meta_description || '';
+  document.getElementById('editor-meta-keywords').value = m.meta_keywords || '';
+  document.getElementById('editor-excerpt').value = m.excerpt || '';
+  document.getElementById('editor-keyphrase').value = m.focus_keyphrase || '';
+  document.getElementById('editor-categories').value = (m.categories||[]).join(', ');
+  document.getElementById('editor-tags').value = (m.tags||[]).join(', ');
+  document.getElementById('editor-alt-text').value = m.image_alt_text || '';
+  document.getElementById('editor-image-prompt').value = m.image_prompt || '';
+  document.getElementById('editor-modal').classList.add('open');
+}
+
+function closeEditorModal() {
+  document.getElementById('editor-modal').classList.remove('open');
+}
+
+async function saveDraft() {
+  const postId = document.getElementById('editor-post-id').value;
+  const updated = buildEditorPayload();
+  await fetch(`${API}/queue/${postId}`, {
+    method: 'PUT',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify(updated)
+  });
+  toast('Draft saved', 'success');
+  closeEditorModal();
+  loadQueue();
+}
+
+async function approveDraft() {
+  const postId = document.getElementById('editor-post-id').value;
+  const updated = buildEditorPayload();
+  await fetch(`${API}/queue/${postId}`, {
+    method: 'PUT',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify(updated)
+  });
+  const r = await fetch(`${API}/queue/${postId}/approve`, {method:'POST'});
+  const d = await r.json();
+  if (d.success) { toast('Published!', 'success'); closeEditorModal(); loadQueue(); loadDashboard(); }
+  else toast(d.error, 'error');
+}
+
+function buildEditorPayload() {
+  return {
+    content: document.getElementById('editor-content').value,
+    metadata: {
+      seo_title: document.getElementById('editor-seo-title').value,
+      slug: document.getElementById('editor-slug').value,
+      meta_description: document.getElementById('editor-meta-desc').value,
+      meta_keywords: document.getElementById('editor-meta-keywords').value,
+      excerpt: document.getElementById('editor-excerpt').value,
+      focus_keyphrase: document.getElementById('editor-keyphrase').value,
+      categories: document.getElementById('editor-categories').value.split(',').map(s=>s.trim()).filter(Boolean),
+      tags: document.getElementById('editor-tags').value.split(',').map(s=>s.trim()).filter(Boolean),
+      image_alt_text: document.getElementById('editor-alt-text').value,
+      image_prompt: document.getElementById('editor-image-prompt').value
+    }
+  };
+}
+
+// ─── Sites ───────────────────────────────────────────────────────────────────
+
+function renderSites() {
+  const container = document.getElementById('sites-list');
+  if (!sites.length) { container.innerHTML = '<div class="text-muted" style="font-size:12px;">No sites added yet.</div>'; return; }
+  container.innerHTML = sites.map(s => `
+    <div class="item-card">
+      <div class="item-info">
+        <div class="item-name">${s.name || s.url}</div>
+        <div class="item-meta">
+          ${s.url} · Author: ${s.wp_username || '—'} · ID: ${s.wp_author_id || '—'}<br>
+          Associate Tag: ${s.associate_tag || 'None'} · Sitemap: ${s.sitemap_url ? '✓' : 'None'}
+        </div>
+      </div>
+      <div class="item-actions">
+        <button class="btn btn-secondary btn-sm" onclick="editSite('${s.id}')">Edit</button>
+        <button class="btn btn-danger btn-sm" onclick="deleteSite('${s.id}')">Delete</button>
+      </div>
+    </div>`).join('');
+}
+
+function openSiteModal(id) {
+  document.getElementById('site-modal-title').textContent = id ? 'Edit Site' : 'Add Site';
+  document.getElementById('site-id').value = id || '';
+  if (id) {
+    const s = sites.find(x => x.id === id);
+    if (s) {
+      document.getElementById('site-name').value = s.name || '';
+      document.getElementById('site-url').value = s.url || '';
+      document.getElementById('site-username').value = s.wp_username || '';
+      document.getElementById('site-password').value = '';
+      document.getElementById('site-author-id').value = s.wp_author_id || '';
+      document.getElementById('site-associate').value = s.associate_tag || '';
+      document.getElementById('site-sitemap').value = s.sitemap_url || '';
+    }
+  } else {
+    ['site-name','site-url','site-username','site-password','site-associate','site-sitemap'].forEach(id => document.getElementById(id).value = '');
+    document.getElementById('site-author-id').value = '';
+  }
+  document.getElementById('site-test-result').textContent = '';
+  document.getElementById('site-modal').classList.add('open');
+}
+
+function editSite(id) { openSiteModal(id); }
+function closeSiteModal() { document.getElementById('site-modal').classList.remove('open'); }
+
+async function saveSite() {
+  const id = document.getElementById('site-id').value;
+  const pass = document.getElementById('site-password').value;
+  const site = {
+    id: id || `site_${Date.now()}`,
+    name: document.getElementById('site-name').value,
+    url: document.getElementById('site-url').value,
+    wp_username: document.getElementById('site-username').value,
+    wp_app_password: pass,
+    wp_author_id: parseInt(document.getElementById('site-author-id').value) || 1,
+    associate_tag: document.getElementById('site-associate').value,
+    sitemap_url: document.getElementById('site-sitemap').value
+  };
+  if (!site.url) { toast('URL is required', 'error'); return; }
+  if (id) {
+    const existing = sites.find(s => s.id === id);
+    if (existing && !pass) site.wp_app_password = existing.wp_app_password;
+    const idx = sites.findIndex(s => s.id === id);
+    sites[idx] = {...existing, ...site};
+  } else {
+    sites.push(site);
+  }
+  await fetch(`${API}/sites`, {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(sites)});
+  toast('Site saved', 'success');
+  closeSiteModal();
+  renderSites();
+  populateSiteDropdowns();
+}
+
+async function deleteSite(id) {
+  if (!confirm('Delete this site?')) return;
+  sites = sites.filter(s => s.id !== id);
+  await fetch(`${API}/sites`, {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(sites)});
+  renderSites();
+  populateSiteDropdowns();
+  toast('Site deleted', 'info');
+}
+
+async function testSiteConnection() {
+  const site = {
+    url: document.getElementById('site-url').value,
+    wp_username: document.getElementById('site-username').value,
+    wp_app_password: document.getElementById('site-password').value
+  };
+  const resultEl = document.getElementById('site-test-result');
+  resultEl.textContent = 'Testing...';
+  const r = await fetch(`${API}/test_site`, {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(site)});
+  const d = await r.json();
+  resultEl.style.color = d.success ? 'var(--accent)' : 'var(--error)';
+  resultEl.textContent = d.success ? `✓ Connected as ${d.user}` : `✗ ${d.error}`;
+}
+
+// ─── Niches ──────────────────────────────────────────────────────────────────
+
+function renderNiches() {
+  const container = document.getElementById('niches-list');
+  if (!niches.length) { container.innerHTML = '<div class="text-muted" style="font-size:12px;">No niches added yet.</div>'; return; }
+  container.innerHTML = niches.map(n => {
+    const site = sites.find(s => s.id === n.site_id);
+    const mix = Object.entries(n.article_type_mix || {}).filter(([,v])=>v>0).map(([k,v])=>`${ARTICLE_TYPES_CLIENT[k]||k} ${v}%`).join(' · ');
+    return `
+      <div class="item-card">
+        <div class="item-info">
+          <div class="item-name">${n.name}</div>
+          <div class="item-meta">
+            Site: ${site ? site.name || site.url : 'Unassigned'} · ${n.posts_per_day || 1}x/day<br>
+            Mix: ${mix || 'Not set'}<br>
+            Keywords: ${n.keywords || '—'}
+          </div>
+        </div>
+        <div class="item-actions">
+          <button class="btn btn-secondary btn-sm" onclick="editNiche('${n.id}')">Edit</button>
+          <button class="btn btn-danger btn-sm" onclick="deleteNiche('${n.id}')">Delete</button>
+        </div>
+      </div>`;
+  }).join('');
+}
+
+function populateSiteDropdowns() {
+  const sel = document.getElementById('niche-site');
+  if (sel) sel.innerHTML = sites.map(s => `<option value="${s.id}">${s.name || s.url}</option>`).join('');
+  const logSel = document.getElementById('log-filter-site');
+  if (logSel) {
+    logSel.innerHTML = '<option value="">All Sites</option>' + sites.map(s => `<option value="${s.id}">${s.name || s.url}</option>`).join('');
+  }
+}
+
+function openNicheModal(id) {
+  document.getElementById('niche-modal-title').textContent = id ? 'Edit Niche' : 'Add Niche';
+  document.getElementById('niche-id').value = id || '';
+  populateSiteDropdowns();
+  if (id) {
+    const n = niches.find(x => x.id === id);
+    if (n) {
+      document.getElementById('niche-name').value = n.name || '';
+      document.getElementById('niche-desc').value = n.description || '';
+      document.getElementById('niche-keywords').value = n.keywords || '';
+      document.getElementById('niche-posts-per-day').value = n.posts_per_day || 1;
+      document.getElementById('niche-tone').value = n.tone || '';
+      document.getElementById('niche-site').value = n.site_id || '';
+      const mix = n.article_type_mix || {};
+      ['informational','viral','monetization','editorial','shock','news'].forEach(k => {
+        const el = document.getElementById(`mix-${k}`);
+        if (el) el.value = mix[k] || 0;
+      });
+    }
+  } else {
+    ['niche-name','niche-desc','niche-keywords','niche-tone'].forEach(id => document.getElementById(id).value = '');
+    document.getElementById('niche-posts-per-day').value = 1;
+    document.getElementById('mix-informational').value = 40;
+    document.getElementById('mix-viral').value = 20;
+    document.getElementById('mix-monetization').value = 20;
+    document.getElementById('mix-editorial').value = 10;
+    document.getElementById('mix-shock').value = 5;
+    document.getElementById('mix-news').value = 5;
+  }
+  document.getElementById('niche-modal').classList.add('open');
+}
+
+function editNiche(id) { openNicheModal(id); }
+function closeNicheModal() { document.getElementById('niche-modal').classList.remove('open'); }
+
+async function saveNiche() {
+  const id = document.getElementById('niche-id').value;
+  const mix = {};
+  ['informational','viral','monetization','editorial','shock','news'].forEach(k => {
+    const v = parseInt(document.getElementById(`mix-${k}`).value) || 0;
+    if (v > 0) mix[k] = v;
+  });
+  const niche = {
+    id: id || `niche_${Date.now()}`,
+    name: document.getElementById('niche-name').value,
+    description: document.getElementById('niche-desc').value,
+    keywords: document.getElementById('niche-keywords').value,
+    posts_per_day: parseInt(document.getElementById('niche-posts-per-day').value) || 1,
+    tone: document.getElementById('niche-tone').value,
+    site_id: document.getElementById('niche-site').value,
+    article_type_mix: mix,
+    active: true
+  };
+  if (!niche.name) { toast('Name is required', 'error'); return; }
+  if (id) { const idx = niches.findIndex(n => n.id === id); niches[idx] = niche; }
+  else niches.push(niche);
+  await fetch(`${API}/niches`, {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(niches)});
+  toast('Niche saved', 'success');
+  closeNicheModal();
+  renderNiches();
+}
+
+async function deleteNiche(id) {
+  if (!confirm('Delete this niche?')) return;
+  niches = niches.filter(n => n.id !== id);
+  await fetch(`${API}/niches`, {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(niches)});
+  renderNiches();
+  toast('Niche deleted', 'info');
+}
+
+// ─── Pipeline ────────────────────────────────────────────────────────────────
+
+function renderPipeline() {
+  const container = document.getElementById('pipeline-stages');
+  container.innerHTML = Object.entries(STAGE_LABELS).map(([key, label]) => {
+    const cfg = pipelineConfig[key] || {provider:'gemini', model:'gemini-2.0-flash'};
+    const providerOpts = Object.entries(PROVIDERS).map(([k,v]) =>
+      `<option value="${k}" ${cfg.provider===k?'selected':''}>${v.label}</option>`).join('');
+    const modelOpts = (PROVIDERS[cfg.provider]?.models||[]).map(m =>
+      `<option value="${m}" ${cfg.model===m?'selected':''}>${m}</option>`).join('');
+    return `
+      <div class="pipeline-row" id="pipeline-row-${key}">
+        <div class="pipeline-num">${Object.keys(STAGE_LABELS).indexOf(key)+1}</div>
+        <div class="pipeline-label">${label}</div>
+        <div class="pipeline-model" style="display:flex;gap:8px;">
+          <select class="form-input" style="width:160px;" onchange="updatePipelineModel('${key}', this.value)" id="provider-${key}">
+            ${providerOpts}
+          </select>
+          <select class="form-input" style="width:200px;" id="model-${key}">
+            ${modelOpts}
+          </select>
+        </div>
+      </div>`;
+  }).join('');
+}
+
+function updatePipelineModel(key, provider) {
+  const modelSel = document.getElementById(`model-${key}`);
+  const models = PROVIDERS[provider]?.models || [];
+  modelSel.innerHTML = models.map(m => `<option value="${m}">${m}</option>`).join('');
+}
+
+async function savePipeline() {
+  const pipeline = {};
+  Object.keys(STAGE_LABELS).forEach(key => {
+    pipeline[key] = {
+      provider: document.getElementById(`provider-${key}`).value,
+      model: document.getElementById(`model-${key}`).value
+    };
+  });
+  await fetch(`${API}/config`, {
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({pipeline})
+  });
+  pipelineConfig = pipeline;
+  toast('Pipeline config saved', 'success');
+}
+
+// ─── Log ─────────────────────────────────────────────────────────────────────
+
+async function loadLog() {
+  const r = await fetch(`${API}/log`);
+  logData = await r.json();
+  renderLog();
+}
+
+function renderLog() {
+  const tbody = document.getElementById('log-tbody');
+  const filterSite = document.getElementById('log-filter-site')?.value || '';
+  const filterType = document.getElementById('log-filter-type')?.value || '';
+  let data = [...logData].reverse();
+  if (filterSite) data = data.filter(e => e.site_id === filterSite);
+  if (filterType) data = data.filter(e => e.article_type === filterType);
+  if (!data.length) { tbody.innerHTML = '<tr><td colspan="7" class="text-muted">No entries.</td></tr>'; return; }
+  tbody.innerHTML = data.map(e => {
+    const site = sites.find(s => s.id === e.site_id);
+    const statusBadge = e.status === 'published' ? '<span class="badge badge-green">Published</span>' :
+                        e.status === 'error' ? `<span class="badge badge-red" title="${e.error||''}">Error</span>` :
+                        '<span class="badge badge-gray">Unknown</span>';
+    const typeBadge = `<span class="badge badge-blue">${ARTICLE_TYPES_CLIENT[e.article_type]||e.article_type||'—'}</span>`;
+    return `<tr>
+      <td style="max-width:280px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${e.topic||'—'}</td>
+      <td>${site ? site.name||site.url : e.site_url||'—'}</td>
+      <td>${e.niche_name||'—'}</td>
+      <td>${typeBadge}</td>
+      <td>${statusBadge}</td>
+      <td>${e.created_at ? new Date(e.created_at).toLocaleDateString() : '—'}</td>
+      <td>${e.wp_url ? `<a href="${e.wp_url}" target="_blank" style="color:var(--accent3);">↗</a>` : '—'}</td>
+    </tr>`;
+  }).join('');
+}
+
+// ─── Settings ────────────────────────────────────────────────────────────────
+
+async function saveSettings() {
+  const keys = {
+    gemini:     document.getElementById('key-gemini').value,
+    groq:       document.getElementById('key-groq').value,
+    mistral:    document.getElementById('key-mistral').value,
+    openrouter: document.getElementById('key-openrouter').value,
+    anthropic:  document.getElementById('key-anthropic').value,
+    ollama_url: document.getElementById('key-ollama').value || 'http://localhost:11434'
+  };
+  await fetch(`${API}/config`, {
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({api_keys: keys})
+  });
+  toast('API keys saved', 'success');
+  loadConfig();
+}
+
+async function testOllama() {
+  const url = document.getElementById('key-ollama').value || 'http://localhost:11434';
+  const r = await fetch(`${API}/test_ollama`, {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({url})});
+  const d = await r.json();
+  const el = document.getElementById('ollama-models');
+  if (d.success) {
+    document.getElementById('ollama-status').textContent = '✓ Connected';
+    document.getElementById('ollama-status').classList.add('configured');
+    el.innerHTML = `Connected · Installed models: <strong style="color:var(--accent)">${d.models.join(', ') || 'none'}</strong><br>Pull more: ollama pull phi4 · ollama pull mistral`;
+    toast('Ollama connected! Models: ' + (d.models.join(', ')||'none'), 'success');
+  } else {
+    el.innerHTML = `<span style="color:var(--error);">Not running. Start Ollama first, then test again.</span>`;
+    toast('Ollama not reachable: ' + d.error, 'error');
+  }
+}
+
+// ─── Auto publish & Review toggles ───────────────────────────────────────────
+
+async function toggleAuto(enabled) {
+  await fetch(`${API}/auto_publish`, {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({enabled})});
+  document.getElementById('auto-dot').className = 'status-dot' + (enabled ? ' active' : '');
+  toast(enabled ? 'Auto-publish enabled' : 'Auto-publish disabled', 'info');
+}
+
+async function toggleReview(enabled) {
+  await fetch(`${API}/config`, {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({require_review: enabled})});
+  toast(enabled ? 'Review queue enabled' : 'Drafts will publish immediately', 'info');
+}
+
+// ─── Toast ────────────────────────────────────────────────────────────────────
+
+function toast(msg, type='info') {
+  const wrap = document.getElementById('toast-wrap');
+  const el = document.createElement('div');
+  el.className = `toast ${type}`;
+  el.textContent = msg;
+  wrap.appendChild(el);
+  setTimeout(() => el.classList.add('show'), 10);
+  setTimeout(() => { el.classList.remove('show'); setTimeout(() => el.remove(), 300); }, 3500);
+}
+
+init();
+</script>
+</body>
+</html>
