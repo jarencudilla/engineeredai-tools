@@ -4,7 +4,7 @@ AI without the BS.
 This repo hosts experiments, sarcastic 404 templates, structured data tests, and random AI toys featured on [EngineeredAI.net](https://engineeredai.net/tools).
 
 ## What’s Inside
-- **404-designs** → sarcastic error pages AI mocked up
+- **404-designs** → error pages AI mocked up (EAI Tic-tac-toe, HF ducky, MmP-Turtle, qaj-bugsquash)
 - **schema-experiments** → JSON-LD / structured data for LLM visibility
 - **prompt-toys** → tactical prompts worth reusing
 - **novelty** → pointless, sarcastic, entertaining AI builds
@@ -16,4 +16,4 @@ If it works, break it down. If it’s useless, make it funny.
 Pull requests welcome — if you can keep the sarcasm sharp.
 
 
-mkdir -p 404-designs/{broken-compass,redacted-notice,glitch-terminal}
+mkdir -p 404-designs/{EAI-Tic-tac-toe, HF-ducky, MmP-Turtle, qaj-bugsquash}
