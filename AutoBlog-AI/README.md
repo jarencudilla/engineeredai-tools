@@ -107,7 +107,7 @@ Follow the experiment: [engineeredai.net/autoblog-ai-experiment-001](https://eng
 
 ## Interested?
 
-Open to licensing or acquisition conversations. Contact via [EngineeredAI.net](https://engineeredai.net/about).
+Open to licensing or acquisition conversations. Contact via [EngineeredAI.net](https://engineeredai.net/contact).
 
 Pull requests welcome. If you break it, document it.
 
