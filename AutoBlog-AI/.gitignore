@@ -1,0 +1,5 @@
+config.json
+posts_log.json
+review_queue.json
+__pycache__/
+*.pyc

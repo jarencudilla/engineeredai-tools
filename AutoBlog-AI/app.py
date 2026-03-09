@@ -26,10 +26,10 @@ DEFAULT_CONFIG = {
     },
     "pipeline": {
         "stage1_strategist": {"provider": "groq", "model": "llama-3.3-70b-versatile"},
-        "stage2_writer":     {"provider": "gemini", "model": "gemini-2.5-pro-preview-06-05"},
+        "stage2_writer":  {"provider": "groq", "model": "llama-3.3-70b-versatile"},
         "stage3_editor":     {"provider": "groq", "model": "mixtral-8x7b-32768"},
-        "stage4_curator":    {"provider": "gemini", "model": "gemini-2.5-pro-preview-06-05"},
-        "stage5_metadata":   {"provider": "gemini", "model": "gemini-2.5-pro-preview-06-05"},
+        "stage4_curator": {"provider": "gemini", "model": "gemini-2.0-flash"},
+        "stage5_metadata":{"provider": "gemini", "model": "gemini-2.0-flash"},
         "stage6_proofread":  {"provider": "groq", "model": "llama-3.3-70b-versatile"}
     },
     "sites": [],
@@ -137,7 +137,7 @@ def call_groq(api_key, model, system_prompt, user_prompt):
             {"role": "user", "content": user_prompt}
         ],
         "temperature": 0.7,
-        "max_tokens": 4000
+        "max_tokens": 8000
     }
     r = requests.post("https://api.groq.com/openai/v1/chat/completions", headers=headers, json=payload, timeout=60)
     r.raise_for_status()
@@ -265,7 +265,7 @@ def run_pipeline(niche, site, article_type_key, cfg, progress_cb=None):
     if site.get("sitemap_url"):
         sitemap_posts = fetch_sitemap_posts(site["sitemap_url"])
 
-    existing_str = "\n".join(list(existing_topics)[:30]) if existing_topics else "None yet"
+    existing_str = "\n".join([str(t) for t in list(existing_topics)[:30]]) if existing_topics else "None yet"
     sitemap_str = "\n".join(sitemap_posts[:20]) if sitemap_posts else "No sitemap provided"
 
     # ── Stage 1: Strategist ──────────────────────────────────────────────────
@@ -348,6 +348,7 @@ Write the complete article in HTML (use <h2>, <h3>, <p>, <ul>, <li> tags only). 
         "improve clarity, and ensure the article delivers on its angle. "
         "Follow all formatting rules. Return only the improved HTML article."
     )
+    draft_html = draft_html[:5000] 
     s3_user = f"""
 Article type: {article_type['name']}
 Search intent: {topic_data['search_intent']}
@@ -668,6 +669,8 @@ def run_now():
                 save_log(log)
                 pipeline_status[niche_id] = {"running": False, "message": f"Published: {post_data['topic']}"}
         except Exception as e:
+            import traceback
+            traceback.print_exc()
             pipeline_status[niche_id] = {"running": False, "message": f"Error: {str(e)}"}
 
     t = threading.Thread(target=run, daemon=True)
