@@ -2,7 +2,16 @@
 AutoBlog AI v3.2
 ================
 Changelog:
+  v3.3 (2026-03-09) — Content Quality Fixes
+    - Stage 2 Writer: Banned filler transition phrases ("we will provide", "furthermore", "in addition to our review", etc.)
+    - Stage 2 Writer: Explicit rule against ending sections with meta-commentary about future sections
+    - Stage 2 Writer: Write like a person not a content robot — specific, direct, useful
+    - Stage 2 default reverted to Groq/llama-3.3-70b-versatile (Mistral 7B local not following prompt rules reliably)
+
   v3.2 (2026-03-09) — Prompt & Output Quality Fixes
+    - load_config: dashboard is now source of truth — existing pipeline values in config.json are never overridden by DEFAULT_CONFIG
+    - load_config: auto-replaces decommissioned models on startup (mixtral-8x7b-32768 → llama-3.3-70b-versatile)
+    - Root cause of original Stage 3 Groq 400: mixtral-8x7b-32768 was decommissioned by Groq, not a context size issue
     - DEFAULT_CONFIG: All 6 stages now default to groq/llama-3.3-70b-versatile — no Gemini or decommissioned models in defaults
     - DEFAULT_CONFIG: Removed mixtral-8x7b-32768 (decommissioned by Groq — was the root cause of original Stage 3 400 error)
     - Stage 2 Writer: Enforce body-only HTML output — no DOCTYPE, no html/head/body tags, start with first h2
@@ -119,13 +128,21 @@ def load_config():
     if os.path.exists(CONFIG_FILE):
         with open(CONFIG_FILE, "r") as f:
             cfg = json.load(f)
+        # Only fill top-level keys missing entirely - never override existing values
         for k, v in DEFAULT_CONFIG.items():
             if k not in cfg:
                 cfg[k] = v
-        # Ensure pipeline keys all exist
+        # Only add pipeline stages completely absent from config.json
+        # Never overwrite stages that already exist - dashboard is source of truth
         for stage_key, stage_val in DEFAULT_CONFIG["pipeline"].items():
             if stage_key not in cfg.get("pipeline", {}):
                 cfg.setdefault("pipeline", {})[stage_key] = stage_val
+        # Validate: remove any decommissioned models
+        decommissioned = ["mixtral-8x7b-32768"]
+        for stage_key, stage_val in cfg.get("pipeline", {}).items():
+            if stage_val.get("model") in decommissioned:
+                cfg["pipeline"][stage_key] = {"provider": "groq", "model": "llama-3.3-70b-versatile"}
+                print(f"[Config] Auto-replaced decommissioned model in {stage_key}")
         return cfg
     return DEFAULT_CONFIG.copy()
 
@@ -446,6 +463,9 @@ STRICT WRITING RULES:
 - Natural educational tone, human-first not robotic
 - Teach from experience, not generic advice
 - Each paragraph must introduce NEW information. Never repeat concepts already covered.
+- NEVER end a section with a transition like "In addition to our review..." or "We will also provide..." or "Furthermore we will discuss..." — these are filler. Cut them.
+- NEVER use phrases like "we will provide", "we will discuss", "we will explore", "in addition to", "moreover", "furthermore" as sentence starters
+- Write like a person, not a content robot. Specific, direct, useful.
 - Compelling intro that hooks immediately
 - Use H2 and H3 subheadings
 - Strong conclusion or call to action
