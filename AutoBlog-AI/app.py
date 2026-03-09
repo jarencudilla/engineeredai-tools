@@ -1,19 +1,28 @@
 """
-AutoBlog AI v3.1
+AutoBlog AI v3.2
 ================
 Changelog:
-  v3.1 (2026-03-09)
+  v3.2 (2026-03-09) — Prompt & Output Quality Fixes
+    - Stage 2 Writer: Enforce body-only HTML output — no DOCTYPE, no html/head/body tags, start with first h2
+    - Stage 2 Writer: Strict internal linking — only use URLs from sitemap list, never hallucinate URLs
+    - Stage 2 Writer: Each URL max once per article, only link when genuinely relevant
+    - Stage 2 Writer: No concept repetition for word padding — each paragraph must introduce new information
+    - Stage 2 Writer: Amazon affiliate links placed inline within content, descriptive anchor text, no Resources dump
+    - Stage 3 Editor: Safety strip — detects and removes full HTML boilerplate if Stage 2 returns a full document
+    - Stage 4 Curator: Safety strip — same boilerplate detection and removal as Stage 3
+    - Stage 5 Metadata: Removed old Amazon link appending block — links now handled inline by Stage 2
+
+  v3.1 (2026-03-09) — Pipeline Stability Fixes
     - Fixed default model strings (gemini-2.0-flash, not gemini-2.5-pro-preview-06-05)
     - Added proper error logging: prints Groq/Gemini full response body before raising
-    - Added rate limit retry handler: waits 60s and retries once on 429
-    - Added 3s delay between pipeline stages to prevent Gemini rate limit bursts
+    - Added rate limit retry handler: waits 65s and retries once on 429
+    - Added 3s delay between pipeline stages to prevent rate limit bursts
     - Removed all hardcoded model/provider values from pipeline logic
     - All model routing goes through call_model() and dashboard config only
     - Fixed existing_topics join error (str coercion on set items)
-    - Removed draft_html hard truncation (was masking real error, not fixing it)
 
-  v3.0 (2026-03-05)
-    - Initial 6-stage pipeline (Strategist, Writer, Editor, Curator, Metadata, Proofread)
+  v3.0 (2026-03-05) — Initial Release
+    - 6-stage pipeline (Strategist, Writer, Editor, Curator, Metadata, Proofread)
     - Multi-provider support: Groq, Gemini, Mistral, OpenRouter, Anthropic, Ollama
     - Review queue with inline editor
     - WordPress REST API publisher
@@ -401,15 +410,23 @@ Return this exact JSON structure:
     internal_links_str = ""
     if sitemap_posts:
         internal_links_str = (
-            f"\nThe site has these published pages. Link to them naturally where relevant:\n{sitemap_str}"
+            f"\nINTERNAL LINKING RULES (STRICT):\n"
+            f"- You MAY link to pages from this exact list only. Do NOT invent or guess any URLs.\n"
+            f"- Use each URL a maximum of ONE time in the entire article.\n"
+            f"- Only link when genuinely relevant to the sentence. Do not force links.\n"
+            f"- Approved URLs:\n{sitemap_str}"
         )
+    else:
+        internal_links_str = "\nDo NOT add any internal links. No sitemap was provided."
 
     tone_override = niche.get("tone_override", "")
     tone_note = f"\nTone override for this site: {tone_override}" if tone_override else ""
 
     s2_system = (
         "You are a skilled content writer. Write human-first articles that teach from experience. "
-        "Follow ALL formatting rules strictly. Return only the article HTML."
+        "Follow ALL formatting rules strictly. Return only the article body HTML. "
+        "NEVER return a full HTML document. Do not include DOCTYPE, <html>, <head>, or <body> tags. "
+        "Start your response directly with the first <h2> tag and nothing else."
     )
     s2_user = f"""
 Topic: {topic_data['topic']}
@@ -426,13 +443,18 @@ STRICT WRITING RULES:
 - NO unnecessary dashes, use commas or periods instead
 - Natural educational tone, human-first not robotic
 - Teach from experience, not generic advice
+- Each paragraph must introduce NEW information. Never repeat concepts already covered.
 - Compelling intro that hooks immediately
 - Use H2 and H3 subheadings
 - Strong conclusion or call to action
 {internal_links_str}
 
-Write the complete article using only these HTML tags: h2, h3, p, ul, li, a, strong.
-No preamble. Just the article HTML.
+OUTPUT FORMAT (CRITICAL):
+- Return ONLY article body HTML
+- NO DOCTYPE, NO <html>, NO <head>, NO <body> tags
+- Start directly with the first <h2> tag
+- Use only these tags: h2, h3, p, ul, li, a, strong
+- No preamble, no explanation, just the article HTML
 """
     draft_html = call_model(cfg, "stage2_writer", s2_system, s2_user)
     time.sleep(STAGE_DELAY)
@@ -462,6 +484,16 @@ Draft to edit:
 Return only the improved HTML article.
 """
     edited_html = call_model(cfg, "stage3_editor", s3_system, s3_user)
+
+    # Safety strip: remove full HTML boilerplate if model returned a full document
+    import re as _re
+    if "<!DOCTYPE" in edited_html or "<html" in edited_html:
+        body_match = _re.search(r'<body[^>]*>(.*?)</body>', edited_html, _re.DOTALL | _re.IGNORECASE)
+        if body_match:
+            edited_html = body_match.group(1).strip()
+        else:
+            edited_html = _re.sub(r'<(html|head|body|!DOCTYPE)[^>]*>', '', edited_html, flags=_re.IGNORECASE).strip()
+
     time.sleep(STAGE_DELAY)
 
     # ── Stage 4: Curator / Quality Gate ──────────────────────────────────────
@@ -488,6 +520,15 @@ Article to curate:
 Return only the curated HTML article.
 """
     curated_html = call_model(cfg, "stage4_curator", s4_system, s4_user)
+
+    # Safety strip: remove full HTML boilerplate if model returned a full document
+    if "<!DOCTYPE" in curated_html or "<html" in curated_html:
+        body_match = _re.search(r'<body[^>]*>(.*?)</body>', curated_html, _re.DOTALL | _re.IGNORECASE)
+        if body_match:
+            curated_html = body_match.group(1).strip()
+        else:
+            curated_html = _re.sub(r'<(html|head|body|!DOCTYPE)[^>]*>', '', curated_html, flags=_re.IGNORECASE).strip()
+
     time.sleep(STAGE_DELAY)
 
     # ── Stage 5: Metadata ─────────────────────────────────────────────────────
@@ -497,8 +538,12 @@ Return only the curated HTML article.
     amazon_note   = ""
     if article_type_key == "monetization" and associate_tag:
         amazon_note = (
-            f"\nFor monetization: identify 2-3 relevant products and build Amazon search links "
-            f"using tag={associate_tag} in this format: https://www.amazon.com/s?k=PRODUCT+NAME&tag={associate_tag}"
+            f"\nFor monetization articles, you must embed 2-3 Amazon affiliate links INLINE within the article content.\n"
+            f"Place each link naturally within a relevant paragraph where a product recommendation makes sense.\n"
+            f"Use descriptive anchor text matching the actual product (e.g. 'Fitbit Charge 5' not 'Check price on Amazon').\n"
+            f"Build links using this format: https://www.amazon.com/s?k=PRODUCT+NAME&tag={associate_tag}\n"
+            f"Replace PRODUCT+NAME with the actual product name using + for spaces.\n"
+            f"Do NOT add a Resources section or dump links at the bottom."
         )
 
     s5_system = (
@@ -531,15 +576,7 @@ Return this exact JSON:
     metadata = json.loads(s5_raw)
     time.sleep(STAGE_DELAY)
 
-    # Inject Amazon links for monetization
-    if article_type_key == "monetization" and associate_tag:
-        for tag in metadata.get("tags", [])[:2]:
-            link = build_amazon_link(tag, associate_tag)
-            if link and link not in curated_html:
-                curated_html += (
-                    f'\n<p><a href="{link}" target="_blank" rel="nofollow">'
-                    f'Check price on Amazon</a></p>'
-                )
+    # Amazon links are now handled inline by Stage 2 writer prompt for monetization articles
 
     # ── Stage 6: Proofread ────────────────────────────────────────────────────
     if progress_cb: progress_cb("Stage 6/6: Final proofread...")
