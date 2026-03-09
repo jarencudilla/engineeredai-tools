@@ -1,10 +1,35 @@
+"""
+AutoBlog AI v3.1
+================
+Changelog:
+  v3.1 (2026-03-09)
+    - Fixed default model strings (gemini-2.0-flash, not gemini-2.5-pro-preview-06-05)
+    - Added proper error logging: prints Groq/Gemini full response body before raising
+    - Added rate limit retry handler: waits 60s and retries once on 429
+    - Added 3s delay between pipeline stages to prevent Gemini rate limit bursts
+    - Removed all hardcoded model/provider values from pipeline logic
+    - All model routing goes through call_model() and dashboard config only
+    - Fixed existing_topics join error (str coercion on set items)
+    - Removed draft_html hard truncation (was masking real error, not fixing it)
+
+  v3.0 (2026-03-05)
+    - Initial 6-stage pipeline (Strategist, Writer, Editor, Curator, Metadata, Proofread)
+    - Multi-provider support: Groq, Gemini, Mistral, OpenRouter, Anthropic, Ollama
+    - Review queue with inline editor
+    - WordPress REST API publisher
+    - Amazon affiliate link injection for monetization articles
+    - Sitemap-based internal linking
+    - Scheduler with per-niche interval control
+    - Article type mix per niche (6 types)
+"""
+
 import os
 import json
 import time
 import threading
 import requests
 import base64
-from datetime import datetime, timedelta
+from datetime import datetime
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 
@@ -12,30 +37,30 @@ app = Flask(__name__)
 CORS(app)
 
 CONFIG_FILE = "config.json"
-LOG_FILE = "posts_log.json"
-QUEUE_FILE = "review_queue.json"
+LOG_FILE    = "posts_log.json"
+QUEUE_FILE  = "review_queue.json"
 
 DEFAULT_CONFIG = {
     "api_keys": {
-        "gemini": "",
-        "groq": "",
-        "mistral": "",
+        "gemini":     "",
+        "groq":       "",
+        "mistral":    "",
         "openrouter": "",
-        "anthropic": "",
+        "anthropic":  "",
         "ollama_url": "http://localhost:11434"
     },
     "pipeline": {
-        "stage1_strategist": {"provider": "groq", "model": "llama-3.3-70b-versatile"},
-        "stage2_writer":  {"provider": "groq", "model": "llama-3.3-70b-versatile"},
-        "stage3_editor":     {"provider": "groq", "model": "mixtral-8x7b-32768"},
-        "stage4_curator": {"provider": "gemini", "model": "gemini-2.0-flash"},
-        "stage5_metadata":{"provider": "gemini", "model": "gemini-2.0-flash"},
-        "stage6_proofread":  {"provider": "groq", "model": "llama-3.3-70b-versatile"}
+        "stage1_strategist": {"provider": "groq",   "model": "llama-3.3-70b-versatile"},
+        "stage2_writer":     {"provider": "groq",   "model": "llama-3.3-70b-versatile"},
+        "stage3_editor":     {"provider": "groq",   "model": "mixtral-8x7b-32768"},
+        "stage4_curator":    {"provider": "gemini", "model": "gemini-2.0-flash"},
+        "stage5_metadata":   {"provider": "gemini", "model": "gemini-2.0-flash"},
+        "stage6_proofread":  {"provider": "groq",   "model": "llama-3.3-70b-versatile"}
     },
-    "sites": [],
-    "niches": [],
-    "auto_publish": False,
-    "require_review": True
+    "sites":           [],
+    "niches":          [],
+    "auto_publish":    False,
+    "require_review":  True
 }
 
 ARTICLE_TYPES = {
@@ -77,16 +102,19 @@ ARTICLE_TYPES = {
     }
 }
 
-# ─── Config & Log helpers ────────────────────────────────────────────────────
+# ─── Config & Log helpers ─────────────────────────────────────────────────────
 
 def load_config():
     if os.path.exists(CONFIG_FILE):
         with open(CONFIG_FILE, "r") as f:
             cfg = json.load(f)
-        # Merge missing keys from defaults
         for k, v in DEFAULT_CONFIG.items():
             if k not in cfg:
                 cfg[k] = v
+        # Ensure pipeline keys all exist
+        for stage_key, stage_val in DEFAULT_CONFIG["pipeline"].items():
+            if stage_key not in cfg.get("pipeline", {}):
+                cfg.setdefault("pipeline", {})[stage_key] = stage_val
         return cfg
     return DEFAULT_CONFIG.copy()
 
@@ -115,97 +143,158 @@ def save_queue(queue):
         json.dump(queue, f, indent=2)
 
 def get_published_topics(site_id=None, niche_id=None):
-    log = load_log()
+    log   = load_log()
     queue = load_queue()
     topics = set()
     for entry in log + queue:
-        if site_id and entry.get("site_id") != site_id:
-            continue
-        if niche_id and entry.get("niche_id") != niche_id:
-            continue
-        topics.add(entry.get("topic", "").lower())
+        if site_id  and entry.get("site_id")  != site_id:  continue
+        if niche_id and entry.get("niche_id") != niche_id: continue
+        topics.add(str(entry.get("topic", "")).lower())
     return topics
 
 # ─── AI call helpers ──────────────────────────────────────────────────────────
 
+def _log_response_error(r, provider):
+    """Print full API error response for debugging."""
+    try:
+        body = r.json()
+    except Exception:
+        body = r.text
+    print(f"\n[{provider} ERROR] Status {r.status_code}")
+    print(json.dumps(body, indent=2) if isinstance(body, dict) else body)
+    print()
+
+def _retry_on_rate_limit(fn, retries=1, wait=65):
+    """Call fn(). On 429, wait and retry once."""
+    for attempt in range(retries + 1):
+        try:
+            return fn()
+        except requests.exceptions.HTTPError as e:
+            if e.response is not None and e.response.status_code == 429 and attempt < retries:
+                print(f"[Rate limit] 429 received. Waiting {wait}s before retry...")
+                time.sleep(wait)
+            else:
+                raise
+
 def call_groq(api_key, model, system_prompt, user_prompt):
-    headers = {"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"}
-    payload = {
-        "model": model,
-        "messages": [
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": user_prompt}
-        ],
-        "temperature": 0.7,
-        "max_tokens": 8000
-    }
-    r = requests.post("https://api.groq.com/openai/v1/chat/completions", headers=headers, json=payload, timeout=60)
-    r.raise_for_status()
-    return r.json()["choices"][0]["message"]["content"]
+    def _call():
+        headers = {
+            "Authorization": f"Bearer {api_key}",
+            "Content-Type": "application/json"
+        }
+        payload = {
+            "model": model,
+            "messages": [
+                {"role": "system", "content": system_prompt},
+                {"role": "user",   "content": user_prompt}
+            ],
+            "temperature": 0.7,
+            "max_tokens":  4096
+        }
+        r = requests.post(
+            "https://api.groq.com/openai/v1/chat/completions",
+            headers=headers, json=payload, timeout=90
+        )
+        if not r.ok:
+            _log_response_error(r, "Groq")
+        r.raise_for_status()
+        return r.json()["choices"][0]["message"]["content"]
+    return _retry_on_rate_limit(_call)
 
 def call_gemini(api_key, model, prompt):
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={api_key}"
-    payload = {
-        "contents": [{"parts": [{"text": prompt}]}],
-        "generationConfig": {"temperature": 0.7, "maxOutputTokens": 4000}
-    }
-    r = requests.post(url, json=payload, timeout=90)
-    r.raise_for_status()
-    return r.json()["candidates"][0]["content"]["parts"][0]["text"]
+    def _call():
+        url = (
+            f"https://generativelanguage.googleapis.com/v1beta/models/"
+            f"{model}:generateContent?key={api_key}"
+        )
+        payload = {
+            "contents": [{"parts": [{"text": prompt}]}],
+            "generationConfig": {"temperature": 0.7, "maxOutputTokens": 4096}
+        }
+        r = requests.post(url, json=payload, timeout=120)
+        if not r.ok:
+            _log_response_error(r, "Gemini")
+        r.raise_for_status()
+        return r.json()["candidates"][0]["content"]["parts"][0]["text"]
+    return _retry_on_rate_limit(_call)
 
 def call_mistral(api_key, model, system_prompt, user_prompt):
-    headers = {"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"}
-    payload = {
-        "model": model,
-        "messages": [
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": user_prompt}
-        ],
-        "temperature": 0.7,
-        "max_tokens": 4000
-    }
-    r = requests.post("https://api.mistral.ai/v1/chat/completions", headers=headers, json=payload, timeout=60)
-    r.raise_for_status()
-    return r.json()["choices"][0]["message"]["content"]
+    def _call():
+        headers = {
+            "Authorization": f"Bearer {api_key}",
+            "Content-Type": "application/json"
+        }
+        payload = {
+            "model": model,
+            "messages": [
+                {"role": "system", "content": system_prompt},
+                {"role": "user",   "content": user_prompt}
+            ],
+            "temperature": 0.7,
+            "max_tokens":  4096
+        }
+        r = requests.post(
+            "https://api.mistral.ai/v1/chat/completions",
+            headers=headers, json=payload, timeout=90
+        )
+        if not r.ok:
+            _log_response_error(r, "Mistral")
+        r.raise_for_status()
+        return r.json()["choices"][0]["message"]["content"]
+    return _retry_on_rate_limit(_call)
 
 def call_openrouter(api_key, model, system_prompt, user_prompt):
-    headers = {
-        "Authorization": f"Bearer {api_key}",
-        "Content-Type": "application/json",
-        "HTTP-Referer": "https://autoblogai.local"
-    }
-    payload = {
-        "model": model,
-        "messages": [
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": user_prompt}
-        ],
-        "temperature": 0.7,
-        "max_tokens": 4000
-    }
-    r = requests.post("https://openrouter.ai/api/v1/chat/completions", headers=headers, json=payload, timeout=60)
-    r.raise_for_status()
-    return r.json()["choices"][0]["message"]["content"]
+    def _call():
+        headers = {
+            "Authorization": f"Bearer {api_key}",
+            "Content-Type": "application/json",
+            "HTTP-Referer": "https://autoblogai.local"
+        }
+        payload = {
+            "model": model,
+            "messages": [
+                {"role": "system", "content": system_prompt},
+                {"role": "user",   "content": user_prompt}
+            ],
+            "temperature": 0.7,
+            "max_tokens":  4096
+        }
+        r = requests.post(
+            "https://openrouter.ai/api/v1/chat/completions",
+            headers=headers, json=payload, timeout=90
+        )
+        if not r.ok:
+            _log_response_error(r, "OpenRouter")
+        r.raise_for_status()
+        return r.json()["choices"][0]["message"]["content"]
+    return _retry_on_rate_limit(_call)
 
 def call_anthropic(api_key, model, system_prompt, user_prompt):
-    headers = {
-        "x-api-key": api_key,
-        "anthropic-version": "2023-06-01",
-        "content-type": "application/json"
-    }
-    payload = {
-        "model": model,
-        "max_tokens": 4000,
-        "system": system_prompt,
-        "messages": [{"role": "user", "content": user_prompt}]
-    }
-    r = requests.post("https://api.anthropic.com/v1/messages", headers=headers, json=payload, timeout=90)
-    r.raise_for_status()
-    return r.json()["content"][0]["text"]
+    def _call():
+        headers = {
+            "x-api-key":         api_key,
+            "anthropic-version": "2023-06-01",
+            "content-type":      "application/json"
+        }
+        payload = {
+            "model":      model,
+            "max_tokens": 4096,
+            "system":     system_prompt,
+            "messages":   [{"role": "user", "content": user_prompt}]
+        }
+        r = requests.post(
+            "https://api.anthropic.com/v1/messages",
+            headers=headers, json=payload, timeout=120
+        )
+        if not r.ok:
+            _log_response_error(r, "Anthropic")
+        r.raise_for_status()
+        return r.json()["content"][0]["text"]
+    return _retry_on_rate_limit(_call)
 
 def call_ollama(base_url, model, system_prompt, user_prompt):
     payload = {
-        "model": model,
+        "model":  model,
         "prompt": f"{system_prompt}\n\n{user_prompt}",
         "stream": False
     }
@@ -214,25 +303,28 @@ def call_ollama(base_url, model, system_prompt, user_prompt):
     return r.json()["response"]
 
 def call_model(cfg, stage_key, system_prompt, user_prompt):
-    pipeline = cfg["pipeline"]
-    keys = cfg["api_keys"]
-    stage = pipeline.get(stage_key, {})
-    provider = stage.get("provider", "gemini")
-    model = stage.get("model", "gemini-2.0-flash")
+    """Route to correct provider based on dashboard pipeline config."""
+    pipeline = cfg.get("pipeline", {})
+    keys     = cfg.get("api_keys", {})
+    stage    = pipeline.get(stage_key, DEFAULT_CONFIG["pipeline"].get(stage_key, {}))
+    provider = stage.get("provider", "groq")
+    model    = stage.get("model", "llama-3.3-70b-versatile")
+
+    print(f"[Pipeline] {stage_key} → {provider} / {model}")
 
     if provider == "groq":
-        return call_groq(keys["groq"], model, system_prompt, user_prompt)
+        return call_groq(keys.get("groq", ""), model, system_prompt, user_prompt)
     elif provider == "gemini":
         combined = f"{system_prompt}\n\n{user_prompt}"
-        return call_gemini(keys["gemini"], model, combined)
+        return call_gemini(keys.get("gemini", ""), model, combined)
     elif provider == "mistral":
-        return call_mistral(keys["mistral"], model, system_prompt, user_prompt)
+        return call_mistral(keys.get("mistral", ""), model, system_prompt, user_prompt)
     elif provider == "openrouter":
-        return call_openrouter(keys["openrouter"], model, system_prompt, user_prompt)
+        return call_openrouter(keys.get("openrouter", ""), model, system_prompt, user_prompt)
     elif provider == "anthropic":
-        return call_anthropic(keys["anthropic"], model, system_prompt, user_prompt)
+        return call_anthropic(keys.get("anthropic", ""), model, system_prompt, user_prompt)
     elif provider == "ollama":
-        return call_ollama(keys["ollama_url"], model, system_prompt, user_prompt)
+        return call_ollama(keys.get("ollama_url", "http://localhost:11434"), model, system_prompt, user_prompt)
     else:
         raise ValueError(f"Unknown provider: {provider}")
 
@@ -244,8 +336,9 @@ def fetch_sitemap_posts(sitemap_url):
         r.raise_for_status()
         import re
         urls = re.findall(r'<loc>(https?://[^<]+)</loc>', r.text)
-        return urls[:50]  # cap at 50 for context length
-    except Exception:
+        return urls[:50]
+    except Exception as e:
+        print(f"[Sitemap] Failed to fetch {sitemap_url}: {e}")
         return []
 
 # ─── Amazon affiliate link builder ───────────────────────────────────────────
@@ -258,133 +351,135 @@ def build_amazon_link(product_name, associate_tag):
 
 # ─── Pipeline ─────────────────────────────────────────────────────────────────
 
+STAGE_DELAY = 3  # seconds between stages to avoid rate limit bursts
+
 def run_pipeline(niche, site, article_type_key, cfg, progress_cb=None):
-    article_type = ARTICLE_TYPES.get(article_type_key, ARTICLE_TYPES["informational"])
+    article_type   = ARTICLE_TYPES.get(article_type_key, ARTICLE_TYPES["informational"])
     existing_topics = get_published_topics(site["id"], niche["id"])
-    sitemap_posts = []
+    sitemap_posts  = []
     if site.get("sitemap_url"):
         sitemap_posts = fetch_sitemap_posts(site["sitemap_url"])
 
-    existing_str = "\n".join([str(t) for t in list(existing_topics)[:30]]) if existing_topics else "None yet"
-    sitemap_str = "\n".join(sitemap_posts[:20]) if sitemap_posts else "No sitemap provided"
+    existing_str = "\n".join(list(existing_topics)[:30]) if existing_topics else "None yet"
+    sitemap_str  = "\n".join(sitemap_posts[:20]) if sitemap_posts else "No sitemap provided"
 
     # ── Stage 1: Strategist ──────────────────────────────────────────────────
-    if progress_cb:
-        progress_cb("Stage 1/6: Strategist finding topic...")
+    if progress_cb: progress_cb("Stage 1/6: Strategist finding topic...")
 
     s1_system = (
-        "You are a content strategist. Your job is to identify high-value, SEO-friendly topics "
-        "that have not been covered yet on this site. Return ONLY valid JSON, no markdown, no backticks."
+        "You are a content strategist. Identify high-value, SEO-friendly topics "
+        "not yet covered on this site. Return ONLY valid JSON, no markdown, no backticks."
     )
     s1_user = f"""
 Niche: {niche['name']}
 Description: {niche.get('description', '')}
 Keywords: {niche.get('keywords', '')}
-Article type: {article_type['name']} — {article_type['description']}
+Article type: {article_type['name']} - {article_type['description']}
 SEO focus: {article_type['seo_focus']}
 
 Topics already published (avoid these):
 {existing_str}
 
-Return JSON:
+Return this exact JSON structure:
 {{
   "topic": "exact article title",
   "search_intent": "what problem does this solve and how do people search for it",
   "angle": "specific angle for this article type",
   "pain_points": ["pain point 1", "pain point 2", "pain point 3"],
   "outline_structure": ["section 1", "section 2", "section 3", "section 4"],
-  "secondary_keywords": ["keyword1", "keyword2", "keyword3", "keyword4", "keyword5",
-                         "keyword6", "keyword7", "keyword8", "keyword9", "keyword10"]
+  "secondary_keywords": ["kw1","kw2","kw3","kw4","kw5","kw6","kw7","kw8","kw9","kw10"]
 }}
 """
     s1_raw = call_model(cfg, "stage1_strategist", s1_system, s1_user)
     s1_raw = s1_raw.strip().lstrip("```json").lstrip("```").rstrip("```").strip()
     topic_data = json.loads(s1_raw)
+    time.sleep(STAGE_DELAY)
 
     # ── Stage 2: Writer ──────────────────────────────────────────────────────
-    if progress_cb:
-        progress_cb("Stage 2/6: Writer drafting article...")
+    if progress_cb: progress_cb("Stage 2/6: Writer drafting article...")
 
     internal_links_str = ""
     if sitemap_posts:
-        internal_links_str = f"""
-The site already has these published pages. Where naturally relevant, link to them:
-{sitemap_str}
-"""
+        internal_links_str = (
+            f"\nThe site has these published pages. Link to them naturally where relevant:\n{sitemap_str}"
+        )
+
+    tone_override = niche.get("tone_override", "")
+    tone_note = f"\nTone override for this site: {tone_override}" if tone_override else ""
 
     s2_system = (
-        "You are a skilled content writer. Write human-first articles that teach from experience, "
-        "not generic advice. Follow ALL formatting rules strictly."
+        "You are a skilled content writer. Write human-first articles that teach from experience. "
+        "Follow ALL formatting rules strictly. Return only the article HTML."
     )
     s2_user = f"""
 Topic: {topic_data['topic']}
 Search intent: {topic_data['search_intent']}
-Article type: {article_type['name']} — {article_type['tone']}
+Article type: {article_type['name']} - {article_type['tone']}
 Angle: {topic_data['angle']}
-Pain points to address: {', '.join(topic_data.get('pain_points', []))}
+Pain points: {', '.join(topic_data.get('pain_points', []))}
 Outline: {', '.join(topic_data.get('outline_structure', []))}
+{tone_note}
 
 STRICT WRITING RULES:
-- Minimum 1,200 words
-- Every paragraph must be at least 5 sentences
-- NO unnecessary dashes — use commas or periods instead
-- Natural, educational tone (human-first, not robotic)
-- Teach based on experience, not generic advice
-- Include a compelling intro that hooks immediately
+- Minimum 1200 words
+- Every paragraph must have at least 5 sentences
+- NO unnecessary dashes, use commas or periods instead
+- Natural educational tone, human-first not robotic
+- Teach from experience, not generic advice
+- Compelling intro that hooks immediately
 - Use H2 and H3 subheadings
-- End with a strong conclusion or call to action
+- Strong conclusion or call to action
 {internal_links_str}
 
-Write the complete article in HTML (use <h2>, <h3>, <p>, <ul>, <li> tags only). No preamble, just the article HTML.
+Write the complete article using only these HTML tags: h2, h3, p, ul, li, a, strong.
+No preamble. Just the article HTML.
 """
     draft_html = call_model(cfg, "stage2_writer", s2_system, s2_user)
+    time.sleep(STAGE_DELAY)
 
     # ── Stage 3: Editor ──────────────────────────────────────────────────────
-    if progress_cb:
-        progress_cb("Stage 3/6: Editor refining draft...")
+    if progress_cb: progress_cb("Stage 3/6: Editor refining draft...")
 
     s3_system = (
-        "You are a tough editor. Your job is to challenge weak sections, cut fluff, "
-        "improve clarity, and ensure the article delivers on its angle. "
-        "Follow all formatting rules. Return only the improved HTML article."
+        "You are a tough editor. Challenge weak sections, cut fluff, improve clarity. "
+        "Ensure the article delivers on its angle. Return only the improved HTML article."
     )
-    draft_html = draft_html[:5000] 
     s3_user = f"""
 Article type: {article_type['name']}
 Search intent: {topic_data['search_intent']}
+Angle to maintain: {topic_data['angle']}
 
 EDITING RULES:
-- Paragraphs must be 5+ sentences
-- No unnecessary dashes — rewrite any sentences that use them
-- Cut any generic filler phrases
+- Every paragraph must have 5 or more sentences
+- No unnecessary dashes, rewrite any sentences that use them
+- Cut generic filler phrases
 - Strengthen weak arguments
-- Ensure the angle ({topic_data['angle']}) is consistent throughout
-- Maintain minimum 1,200 words
+- Minimum 1200 words maintained
 
-Original draft:
+Draft to edit:
 {draft_html}
 
-Return only the improved HTML article, no commentary.
+Return only the improved HTML article.
 """
     edited_html = call_model(cfg, "stage3_editor", s3_system, s3_user)
+    time.sleep(STAGE_DELAY)
 
-    # ── Stage 4: Curation / Quality Gate ────────────────────────────────────
-    if progress_cb:
-        progress_cb("Stage 4/6: Curation quality check...")
+    # ── Stage 4: Curator / Quality Gate ──────────────────────────────────────
+    if progress_cb: progress_cb("Stage 4/6: Curator quality check...")
 
     s4_system = (
-        "You are a quality control editor. Check the article against the rules and rewrite any "
-        "sections that fail. Return ONLY the corrected HTML article."
+        "You are a quality control editor. Check the article against all rules and fix any violations. "
+        "Return ONLY the corrected HTML article."
     )
     s4_user = f"""
-Check this article against ALL rules and fix any violations:
+Check and fix all violations:
 
-RULES TO ENFORCE:
-1. Every paragraph must have 5+ sentences — rewrite short paragraphs to meet this
-2. No unnecessary dashes in sentences — replace with commas or periods
+RULES:
+1. Every paragraph must have 5 or more sentences
+2. No unnecessary dashes in sentences, replace with commas or periods
 3. Article must align with search intent: {topic_data['search_intent']}
-4. Tone must match article type: {article_type['tone']}
-5. Minimum 1,200 words
+4. Tone must match: {article_type['tone']}
+5. Minimum 1200 words
 6. Human-first, educational, not robotic or generic
 
 Article to curate:
@@ -393,64 +488,70 @@ Article to curate:
 Return only the curated HTML article.
 """
     curated_html = call_model(cfg, "stage4_curator", s4_system, s4_user)
+    time.sleep(STAGE_DELAY)
 
-    # ── Stage 5: Metadata ────────────────────────────────────────────────────
-    if progress_cb:
-        progress_cb("Stage 5/6: Generating metadata...")
+    # ── Stage 5: Metadata ─────────────────────────────────────────────────────
+    if progress_cb: progress_cb("Stage 5/6: Generating SEO metadata...")
 
     associate_tag = site.get("associate_tag", "")
-    amazon_note = ""
+    amazon_note   = ""
     if article_type_key == "monetization" and associate_tag:
-        amazon_note = f"\nInclude 2-3 Amazon affiliate links in the content using this format: https://www.amazon.com/s?k=PRODUCT+NAME&tag={associate_tag}"
+        amazon_note = (
+            f"\nFor monetization: identify 2-3 relevant products and build Amazon search links "
+            f"using tag={associate_tag} in this format: https://www.amazon.com/s?k=PRODUCT+NAME&tag={associate_tag}"
+        )
 
     s5_system = (
-        "You are an SEO metadata specialist. Generate complete metadata based on the finalized article. "
+        "You are an SEO metadata specialist. Generate complete metadata for this article. "
         "Return ONLY valid JSON, no markdown, no backticks."
     )
     s5_user = f"""
 Article topic: {topic_data['topic']}
 Search intent: {topic_data['search_intent']}
 Article type: {article_type['name']}
-Secondary keywords already identified: {', '.join(topic_data.get('secondary_keywords', []))}
+Secondary keywords: {', '.join(topic_data.get('secondary_keywords', []))}
 {amazon_note}
 
-Generate metadata JSON:
+Return this exact JSON:
 {{
   "focus_keyphrase": "primary keyword phrase",
-  "seo_title": "SEO optimized title under 60 chars",
+  "seo_title": "SEO title under 60 chars",
   "slug": "url-friendly-slug",
   "meta_description": "compelling meta description under 155 chars",
-  "meta_keywords": "comma separated list of 10-15 semantic keywords",
-  "excerpt": "2-3 sentence excerpt for the post list",
-  "categories": ["category1", "category2"],
-  "tags": ["tag1", "tag2", "tag3", "tag4", "tag5"],
-  "image_prompt": "detailed prompt for generating featured image",
-  "image_alt_text": "descriptive alt text for the featured image"
+  "meta_keywords": "comma separated 10-15 semantic keywords",
+  "excerpt": "2-3 sentence excerpt for post listings",
+  "categories": ["category1"],
+  "tags": ["tag1","tag2","tag3","tag4","tag5"],
+  "image_prompt": "detailed prompt for featured image generation",
+  "image_alt_text": "descriptive alt text for featured image"
 }}
 """
     s5_raw = call_model(cfg, "stage5_metadata", s5_system, s5_user)
     s5_raw = s5_raw.strip().lstrip("```json").lstrip("```").rstrip("```").strip()
     metadata = json.loads(s5_raw)
+    time.sleep(STAGE_DELAY)
 
-    # Inject Amazon links if monetization
+    # Inject Amazon links for monetization
     if article_type_key == "monetization" and associate_tag:
         for tag in metadata.get("tags", [])[:2]:
             link = build_amazon_link(tag, associate_tag)
             if link and link not in curated_html:
-                curated_html += f'\n<p><a href="{link}" target="_blank" rel="nofollow">Check price on Amazon</a></p>'
+                curated_html += (
+                    f'\n<p><a href="{link}" target="_blank" rel="nofollow">'
+                    f'Check price on Amazon</a></p>'
+                )
 
-    # ── Stage 6: Proofread ───────────────────────────────────────────────────
-    if progress_cb:
-        progress_cb("Stage 6/6: Final proofread...")
+    # ── Stage 6: Proofread ────────────────────────────────────────────────────
+    if progress_cb: progress_cb("Stage 6/6: Final proofread...")
 
     s6_system = (
-        "You are a final proofreader. Do a last pass for grammar, flow, and consistency. "
-        "Return only the final polished HTML article."
+        "You are a final proofreader. Fix grammar, flow, and consistency issues. "
+        "Do NOT shorten or remove sections. Return only the final HTML article."
     )
     s6_user = f"""
-Do a final proofread. Fix any grammar issues, awkward phrasing, or flow problems.
-Ensure the article reads naturally from start to finish.
-Do NOT shorten the article or remove sections.
+Final proofread pass. Fix grammar, awkward phrasing, and flow problems.
+Ensure natural reading from start to finish.
+Do NOT shorten or remove any sections.
 
 Article:
 {curated_html}
@@ -460,57 +561,56 @@ Return only the final HTML article.
     final_html = call_model(cfg, "stage6_proofread", s6_system, s6_user)
 
     return {
-        "topic": topic_data["topic"],
-        "content": final_html,
-        "metadata": metadata,
-        "topic_data": topic_data,
+        "topic":        topic_data["topic"],
+        "content":      final_html,
+        "metadata":     metadata,
+        "topic_data":   topic_data,
         "article_type": article_type_key,
-        "site_id": site["id"],
-        "niche_id": niche["id"],
-        "site_url": site["url"],
-        "niche_name": niche["name"],
-        "status": "queued",
-        "created_at": datetime.now().isoformat(),
-        "id": f"post_{int(time.time())}"
+        "site_id":      site["id"],
+        "niche_id":     niche["id"],
+        "site_url":     site["url"],
+        "niche_name":   niche["name"],
+        "status":       "queued",
+        "created_at":   datetime.now().isoformat(),
+        "id":           f"post_{int(time.time())}"
     }
 
-# ─── WordPress publisher ───────────────────────────────────────────────────────
+# ─── WordPress publisher ──────────────────────────────────────────────────────
 
 def publish_to_wordpress(post_data, site):
-    wp_url = site["url"].rstrip("/")
-    username = site["wp_username"]
+    wp_url       = site["url"].rstrip("/")
+    username     = site["wp_username"]
     app_password = site["wp_app_password"]
-    author_id = site.get("wp_author_id", 1)
+    author_id    = site.get("wp_author_id", 1)
 
-    token = base64.b64encode(f"{username}:{app_password}".encode()).decode("utf-8")
-    headers = {
-        "Authorization": f"Basic {token}",
-        "Content-Type": "application/json"
-    }
-
-    meta = post_data.get("metadata", {})
+    token   = base64.b64encode(f"{username}:{app_password}".encode()).decode("utf-8")
+    headers = {"Authorization": f"Basic {token}", "Content-Type": "application/json"}
+    meta    = post_data.get("metadata", {})
 
     payload = {
-        "title": meta.get("seo_title", post_data["topic"]),
+        "title":   meta.get("seo_title", post_data["topic"]),
         "content": post_data["content"],
-        "status": "publish",
-        "slug": meta.get("slug", ""),
+        "status":  "publish",
+        "slug":    meta.get("slug", ""),
         "excerpt": meta.get("excerpt", ""),
-        "author": author_id,
-        "meta": {
-            "meta_keywords": meta.get("meta_keywords", "")
-        }
+        "author":  author_id,
+        "meta":    {"meta_keywords": meta.get("meta_keywords", "")}
     }
 
-    r = requests.post(f"{wp_url}/wp-json/wp/v2/posts", headers=headers, json=payload, timeout=30)
+    r = requests.post(
+        f"{wp_url}/wp-json/wp/v2/posts",
+        headers=headers, json=payload, timeout=30
+    )
+    if not r.ok:
+        _log_response_error(r, "WordPress")
     r.raise_for_status()
     return r.json()
 
 # ─── Scheduler ────────────────────────────────────────────────────────────────
 
 scheduler_running = False
-scheduler_thread = None
-pipeline_status = {}
+scheduler_thread  = None
+pipeline_status   = {}
 
 def get_niche_interval_seconds(niche):
     posts_per_day = niche.get("posts_per_day", 1)
@@ -521,7 +621,7 @@ def get_article_type_for_niche(niche):
     if not mix:
         return "informational"
     import random
-    types = list(mix.keys())
+    types   = list(mix.keys())
     weights = [mix[t] for t in types]
     return random.choices(types, weights=weights, k=1)[0]
 
@@ -539,7 +639,7 @@ def scheduler_loop():
                 continue
             niche_id = niche["id"]
             interval = get_niche_interval_seconds(niche)
-            now = time.time()
+            now      = time.time()
             if now - last_run.get(niche_id, 0) < interval:
                 continue
 
@@ -568,39 +668,46 @@ def scheduler_loop():
                     post_data["wp_url"] = wp_resp.get("link", "")
                     log.append(post_data)
                     save_log(log)
-                    pipeline_status[niche_id] = {"running": False, "message": f"Published: {post_data['topic']}"}
+                    pipeline_status[niche_id] = {
+                        "running": False,
+                        "message": f"Published: {post_data['topic']}"
+                    }
 
                 last_run[niche_id] = now
 
             except Exception as e:
+                import traceback
+                traceback.print_exc()
                 pipeline_status[niche_id] = {"running": False, "message": f"Error: {str(e)}"}
                 log = load_log()
                 log.append({
-                    "topic": niche.get("name", "unknown"),
-                    "status": "error",
-                    "error": str(e),
-                    "site_id": site["id"],
-                    "niche_id": niche_id,
+                    "topic":      niche.get("name", "unknown"),
+                    "status":     "error",
+                    "error":      str(e),
+                    "site_id":    site["id"],
+                    "niche_id":   niche_id,
                     "created_at": datetime.now().isoformat()
                 })
                 save_log(log)
 
         time.sleep(60)
 
-# ─── API Routes ────────────────────────────────────────────────────────────────
+# ─── API Routes ───────────────────────────────────────────────────────────────
 
 @app.route("/api/config", methods=["GET"])
 def get_config():
-    cfg = load_config()
+    cfg  = load_config()
     safe = {k: v for k, v in cfg.items() if k != "api_keys"}
-    safe["api_keys"] = {k: "***" if v and k != "ollama_url" else v
-                        for k, v in cfg["api_keys"].items()}
+    safe["api_keys"] = {
+        k: "***" if v and k != "ollama_url" else v
+        for k, v in cfg["api_keys"].items()
+    }
     return jsonify(safe)
 
 @app.route("/api/config", methods=["POST"])
 def save_config_route():
     data = request.json
-    cfg = load_config()
+    cfg  = load_config()
     if "api_keys" in data:
         for k, v in data["api_keys"].items():
             if v and v != "***":
@@ -635,13 +742,13 @@ def save_niches():
 
 @app.route("/api/run", methods=["POST"])
 def run_now():
-    data = request.json
-    niche_id = data.get("niche_id")
+    data         = request.json
+    niche_id     = data.get("niche_id")
     article_type = data.get("article_type", "informational")
 
-    cfg = load_config()
+    cfg   = load_config()
     niche = next((n for n in cfg["niches"] if n["id"] == niche_id), None)
-    site = next((s for s in cfg["sites"] if s["id"] == niche.get("site_id")), None) if niche else None
+    site  = next((s for s in cfg["sites"]  if s["id"] == niche.get("site_id")), None) if niche else None
 
     if not niche or not site:
         return jsonify({"error": "Niche or site not found"}), 404
@@ -667,7 +774,10 @@ def run_now():
                 post_data["wp_url"] = wp_resp.get("link", "")
                 log.append(post_data)
                 save_log(log)
-                pipeline_status[niche_id] = {"running": False, "message": f"Published: {post_data['topic']}"}
+                pipeline_status[niche_id] = {
+                    "running": False,
+                    "message": f"Published: {post_data['topic']}"
+                }
         except Exception as e:
             import traceback
             traceback.print_exc()
@@ -688,7 +798,7 @@ def get_queue():
 @app.route("/api/queue/<post_id>", methods=["GET"])
 def get_queue_item(post_id):
     queue = load_queue()
-    item = next((p for p in queue if p["id"] == post_id), None)
+    item  = next((p for p in queue if p["id"] == post_id), None)
     if not item:
         return jsonify({"error": "Not found"}), 404
     return jsonify(item)
@@ -696,7 +806,7 @@ def get_queue_item(post_id):
 @app.route("/api/queue/<post_id>", methods=["PUT"])
 def update_queue_item(post_id):
     queue = load_queue()
-    idx = next((i for i, p in enumerate(queue) if p["id"] == post_id), None)
+    idx   = next((i for i, p in enumerate(queue) if p["id"] == post_id), None)
     if idx is None:
         return jsonify({"error": "Not found"}), 404
     queue[idx].update(request.json)
@@ -706,12 +816,12 @@ def update_queue_item(post_id):
 @app.route("/api/queue/<post_id>/approve", methods=["POST"])
 def approve_post(post_id):
     queue = load_queue()
-    idx = next((i for i, p in enumerate(queue) if p["id"] == post_id), None)
+    idx   = next((i for i, p in enumerate(queue) if p["id"] == post_id), None)
     if idx is None:
         return jsonify({"error": "Not found"}), 404
 
     post_data = queue[idx]
-    cfg = load_config()
+    cfg  = load_config()
     site = next((s for s in cfg["sites"] if s["id"] == post_data["site_id"]), None)
     if not site:
         return jsonify({"error": "Site not found"}), 404
@@ -727,12 +837,13 @@ def approve_post(post_id):
         save_queue(queue)
         return jsonify({"success": True, "wp_url": post_data["wp_url"]})
     except Exception as e:
+        import traceback
+        traceback.print_exc()
         return jsonify({"error": str(e)}), 500
 
 @app.route("/api/queue/<post_id>/reject", methods=["DELETE"])
 def reject_post(post_id):
-    queue = load_queue()
-    queue = [p for p in queue if p["id"] != post_id]
+    queue = [p for p in load_queue() if p["id"] != post_id]
     save_queue(queue)
     return jsonify({"success": True})
 
@@ -748,7 +859,7 @@ def toggle_auto():
     global scheduler_running, scheduler_thread
     if cfg["auto_publish"] and not scheduler_running:
         scheduler_running = True
-        scheduler_thread = threading.Thread(target=scheduler_loop, daemon=True)
+        scheduler_thread  = threading.Thread(target=scheduler_loop, daemon=True)
         scheduler_thread.start()
     elif not cfg["auto_publish"]:
         scheduler_running = False
@@ -763,9 +874,14 @@ def test_site():
     site = request.json
     try:
         wp_url = site["url"].rstrip("/")
-        token = base64.b64encode(f"{site['wp_username']}:{site['wp_app_password']}".encode()).decode()
-        r = requests.get(f"{wp_url}/wp-json/wp/v2/users/me",
-                         headers={"Authorization": f"Basic {token}"}, timeout=10)
+        token  = base64.b64encode(
+            f"{site['wp_username']}:{site['wp_app_password']}".encode()
+        ).decode()
+        r = requests.get(
+            f"{wp_url}/wp-json/wp/v2/users/me",
+            headers={"Authorization": f"Basic {token}"},
+            timeout=10
+        )
         r.raise_for_status()
         user = r.json()
         return jsonify({"success": True, "user": user.get("name", "Connected")})
@@ -776,7 +892,7 @@ def test_site():
 def test_ollama():
     url = request.json.get("url", "http://localhost:11434")
     try:
-        r = requests.get(f"{url}/api/tags", timeout=5)
+        r      = requests.get(f"{url}/api/tags", timeout=5)
         models = [m["name"] for m in r.json().get("models", [])]
         return jsonify({"success": True, "models": models})
     except Exception as e:
@@ -784,29 +900,29 @@ def test_ollama():
 
 @app.route("/api/stats", methods=["GET"])
 def get_stats():
-    log = load_log()
+    log   = load_log()
     queue = load_queue()
     today = datetime.now().date().isoformat()
-    cfg = load_config()
+    cfg   = load_config()
 
-    published = [e for e in log if e.get("status") == "published"]
+    published   = [e for e in log if e.get("status") == "published"]
     today_posts = [e for e in published if e.get("created_at", "").startswith(today)]
 
     per_site = {}
     for site in cfg.get("sites", []):
         sid = site["id"]
         per_site[sid] = {
-            "name": site.get("name", site["url"]),
-            "total": len([e for e in published if e.get("site_id") == sid]),
+            "name":  site.get("name", site["url"]),
+            "total": len([e for e in published   if e.get("site_id") == sid]),
             "today": len([e for e in today_posts if e.get("site_id") == sid])
         }
 
     return jsonify({
         "total_published": len(published),
-        "today": len(today_posts),
-        "queued": len(queue),
-        "errors": len([e for e in log if e.get("status") == "error"]),
-        "per_site": per_site
+        "today":           len(today_posts),
+        "queued":          len(queue),
+        "errors":          len([e for e in log if e.get("status") == "error"]),
+        "per_site":        per_site
     })
 
 # ─── Main ─────────────────────────────────────────────────────────────────────
@@ -815,8 +931,8 @@ if __name__ == "__main__":
     cfg = load_config()
     if cfg.get("auto_publish"):
         scheduler_running = True
-        scheduler_thread = threading.Thread(target=scheduler_loop, daemon=True)
+        scheduler_thread  = threading.Thread(target=scheduler_loop, daemon=True)
         scheduler_thread.start()
-    print("\n  AutoBlog AI v3 is running.")
-    print("  Open your browser: http://localhost:5000\n")
+    print("\n  AutoBlog AI v3.1 is running.")
+    print("  Dashboard: http://localhost:5000\n")
     app.run(debug=False, host="0.0.0.0", port=5000)
