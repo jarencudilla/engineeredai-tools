@@ -2,6 +2,15 @@
 
 ---
 
+## v3.4 (2026-03-09) — Dashboard as Sole Source of Truth
+
+- Removed ALL runtime defaults from load_config — config.json is never overwritten at runtime
+- Removed decommissioned model auto-replace from load_config (was silently overwriting dashboard changes on every API call)
+- Added migrate_config() — runs ONCE at startup only, fixes known bad model strings, writes permanently to config.json, never runs again
+- Dashboard pipeline selector now fully respected — what you set is what runs, no exceptions
+
+---
+
 ## v3.3 (2026-03-09) — Content Quality Fixes
 
 - Stage 2 Writer: Banned filler transition phrases ("we will provide", "furthermore", "in addition to our review", "moreover", "we will explore", etc.)

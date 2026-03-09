@@ -1,48 +1,3 @@
-"""
-AutoBlog AI v3.2
-================
-Changelog:
-  v3.3 (2026-03-09) — Content Quality Fixes
-    - Stage 2 Writer: Banned filler transition phrases ("we will provide", "furthermore", "in addition to our review", etc.)
-    - Stage 2 Writer: Explicit rule against ending sections with meta-commentary about future sections
-    - Stage 2 Writer: Write like a person not a content robot — specific, direct, useful
-    - Stage 2 default reverted to Groq/llama-3.3-70b-versatile (Mistral 7B local not following prompt rules reliably)
-
-  v3.2 (2026-03-09) — Prompt & Output Quality Fixes
-    - load_config: dashboard is now source of truth — existing pipeline values in config.json are never overridden by DEFAULT_CONFIG
-    - load_config: auto-replaces decommissioned models on startup (mixtral-8x7b-32768 → llama-3.3-70b-versatile)
-    - Root cause of original Stage 3 Groq 400: mixtral-8x7b-32768 was decommissioned by Groq, not a context size issue
-    - DEFAULT_CONFIG: All 6 stages now default to groq/llama-3.3-70b-versatile — no Gemini or decommissioned models in defaults
-    - DEFAULT_CONFIG: Removed mixtral-8x7b-32768 (decommissioned by Groq — was the root cause of original Stage 3 400 error)
-    - Stage 2 Writer: Enforce body-only HTML output — no DOCTYPE, no html/head/body tags, start with first h2
-    - Stage 2 Writer: Strict internal linking — only use URLs from sitemap list, never hallucinate URLs
-    - Stage 2 Writer: Each URL max once per article, only link when genuinely relevant
-    - Stage 2 Writer: No concept repetition for word padding — each paragraph must introduce new information
-    - Stage 2 Writer: Amazon affiliate links placed inline within content, descriptive anchor text, no Resources dump
-    - Stage 3 Editor: Safety strip — detects and removes full HTML boilerplate if Stage 2 returns a full document
-    - Stage 4 Curator: Safety strip — same boilerplate detection and removal as Stage 3
-    - Stage 5 Metadata: Removed old Amazon link appending block — links now handled inline by Stage 2
-
-  v3.1 (2026-03-09) — Pipeline Stability Fixes
-    - Fixed default model strings (gemini-2.0-flash, not gemini-2.5-pro-preview-06-05)
-    - Added proper error logging: prints Groq/Gemini full response body before raising
-    - Added rate limit retry handler: waits 65s and retries once on 429
-    - Added 3s delay between pipeline stages to prevent rate limit bursts
-    - Removed all hardcoded model/provider values from pipeline logic
-    - All model routing goes through call_model() and dashboard config only
-    - Fixed existing_topics join error (str coercion on set items)
-
-  v3.0 (2026-03-05) — Initial Release
-    - 6-stage pipeline (Strategist, Writer, Editor, Curator, Metadata, Proofread)
-    - Multi-provider support: Groq, Gemini, Mistral, OpenRouter, Anthropic, Ollama
-    - Review queue with inline editor
-    - WordPress REST API publisher
-    - Amazon affiliate link injection for monetization articles
-    - Sitemap-based internal linking
-    - Scheduler with per-niche interval control
-    - Article type mix per niche (6 types)
-"""
-
 import os
 import json
 import time
@@ -125,25 +80,22 @@ ARTICLE_TYPES = {
 # ─── Config & Log helpers ─────────────────────────────────────────────────────
 
 def load_config():
+    """Load config.json as-is. Dashboard is the ONLY source of truth for pipeline config.
+    DEFAULT_CONFIG is only used when config.json does not exist at all.
+    Never overwrite existing values from config.json."""
     if os.path.exists(CONFIG_FILE):
         with open(CONFIG_FILE, "r") as f:
             cfg = json.load(f)
-        # Only fill top-level keys missing entirely - never override existing values
+        # Only fill top-level keys that are completely missing from config.json
         for k, v in DEFAULT_CONFIG.items():
             if k not in cfg:
                 cfg[k] = v
-        # Only add pipeline stages completely absent from config.json
-        # Never overwrite stages that already exist - dashboard is source of truth
+        # Only add pipeline stages that are completely absent - never overwrite existing
         for stage_key, stage_val in DEFAULT_CONFIG["pipeline"].items():
             if stage_key not in cfg.get("pipeline", {}):
                 cfg.setdefault("pipeline", {})[stage_key] = stage_val
-        # Validate: remove any decommissioned models
-        decommissioned = ["mixtral-8x7b-32768"]
-        for stage_key, stage_val in cfg.get("pipeline", {}).items():
-            if stage_val.get("model") in decommissioned:
-                cfg["pipeline"][stage_key] = {"provider": "groq", "model": "llama-3.3-70b-versatile"}
-                print(f"[Config] Auto-replaced decommissioned model in {stage_key}")
         return cfg
+    # No config.json exists at all - bootstrap from defaults
     return DEFAULT_CONFIG.copy()
 
 def save_config(cfg):
@@ -986,12 +938,31 @@ def get_stats():
 
 # ─── Main ─────────────────────────────────────────────────────────────────────
 
+def migrate_config():
+    """One-time migrations on startup. Fixes known bad values and writes permanently to config.json.
+    After this runs, dashboard is the sole source of truth. This never touches config at runtime."""
+    if not os.path.exists(CONFIG_FILE):
+        return
+    cfg = load_config()
+    changed = False
+    decommissioned = {"mixtral-8x7b-32768": "llama-3.3-70b-versatile"}
+    for stage_key, stage_val in cfg.get("pipeline", {}).items():
+        if stage_val.get("model") in decommissioned:
+            replacement = decommissioned[stage_val["model"]]
+            print(f"[Migrate] {stage_key}: {stage_val['model']} → {replacement} (decommissioned)")
+            cfg["pipeline"][stage_key]["model"] = replacement
+            changed = True
+    if changed:
+        save_config(cfg)
+        print("[Migrate] config.json updated. Dashboard now reflects correct models.")
+
 if __name__ == "__main__":
+    migrate_config()
     cfg = load_config()
     if cfg.get("auto_publish"):
         scheduler_running = True
         scheduler_thread  = threading.Thread(target=scheduler_loop, daemon=True)
         scheduler_thread.start()
-    print("\n  AutoBlog AI v3.1 is running.")
+    print("\n  AutoBlog AI v3.4 is running.")
     print("  Dashboard: http://localhost:5000\n")
     app.run(debug=False, host="0.0.0.0", port=5000)
