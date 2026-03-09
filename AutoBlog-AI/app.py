@@ -3,6 +3,8 @@ AutoBlog AI v3.2
 ================
 Changelog:
   v3.2 (2026-03-09) — Prompt & Output Quality Fixes
+    - DEFAULT_CONFIG: All 6 stages now default to groq/llama-3.3-70b-versatile — no Gemini or decommissioned models in defaults
+    - DEFAULT_CONFIG: Removed mixtral-8x7b-32768 (decommissioned by Groq — was the root cause of original Stage 3 400 error)
     - Stage 2 Writer: Enforce body-only HTML output — no DOCTYPE, no html/head/body tags, start with first h2
     - Stage 2 Writer: Strict internal linking — only use URLs from sitemap list, never hallucinate URLs
     - Stage 2 Writer: Each URL max once per article, only link when genuinely relevant
@@ -59,12 +61,12 @@ DEFAULT_CONFIG = {
         "ollama_url": "http://localhost:11434"
     },
     "pipeline": {
-        "stage1_strategist": {"provider": "groq",   "model": "llama-3.3-70b-versatile"},
-        "stage2_writer":     {"provider": "groq",   "model": "llama-3.3-70b-versatile"},
-        "stage3_editor":     {"provider": "groq",   "model": "mixtral-8x7b-32768"},
-        "stage4_curator":    {"provider": "gemini", "model": "gemini-2.0-flash"},
-        "stage5_metadata":   {"provider": "gemini", "model": "gemini-2.0-flash"},
-        "stage6_proofread":  {"provider": "groq",   "model": "llama-3.3-70b-versatile"}
+        "stage1_strategist": {"provider": "groq", "model": "llama-3.3-70b-versatile"},
+        "stage2_writer":     {"provider": "groq", "model": "llama-3.3-70b-versatile"},
+        "stage3_editor":     {"provider": "groq", "model": "llama-3.3-70b-versatile"},
+        "stage4_curator":    {"provider": "groq", "model": "llama-3.3-70b-versatile"},
+        "stage5_metadata":   {"provider": "groq", "model": "llama-3.3-70b-versatile"},
+        "stage6_proofread":  {"provider": "groq", "model": "llama-3.3-70b-versatile"}
     },
     "sites":           [],
     "niches":          [],
