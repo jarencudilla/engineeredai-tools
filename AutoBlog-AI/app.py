@@ -7,6 +7,29 @@ import base64
 from datetime import datetime
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+import re
+
+def extract_json(text):
+    """
+    Safely extract JSON from LLM responses that may contain
+    explanations, markdown, or extra text.
+    """
+    if not text:
+        raise ValueError("Empty model response")
+
+    text = text.strip()
+
+    # remove markdown code fences
+    text = text.replace("```json", "").replace("```", "")
+
+    match = re.search(r"\{.*\}", text, re.S)
+    if not match:
+        raise ValueError(f"Could not locate JSON in response:\n{text[:500]}")
+
+    try:
+        return json.loads(match.group())
+    except Exception as e:
+        raise ValueError(f"Invalid JSON returned:\n{match.group()[:500]}") from e
 
 app = Flask(__name__)
 CORS(app)
@@ -278,35 +301,64 @@ def call_ollama(base_url, model, system_prompt, user_prompt):
         "prompt": f"{system_prompt}\n\n{user_prompt}",
         "stream": False
     }
-    r = requests.post(f"{base_url}/api/generate", json=payload, timeout=300)
+    r = requests.post(f"{base_url}/api/generate", json=payload, timeout=600)
     r.raise_for_status()
     return r.json()["response"]
 
 def call_model(cfg, stage_key, system_prompt, user_prompt):
-    """Route to correct provider based on dashboard pipeline config."""
+    """
+    Route model calls with automatic fallback if a provider fails.
+    """
+
     pipeline = cfg.get("pipeline", {})
-    keys     = cfg.get("api_keys", {})
-    stage    = pipeline.get(stage_key, DEFAULT_CONFIG["pipeline"].get(stage_key, {}))
+    keys = cfg.get("api_keys", {})
+
+    stage = pipeline.get(stage_key, DEFAULT_CONFIG["pipeline"].get(stage_key, {}))
     provider = stage.get("provider", "groq")
-    model    = stage.get("model", "llama-3.3-70b-versatile")
+    model = stage.get("model", "llama-3.3-70b-versatile")
 
     print(f"[Pipeline] {stage_key} → {provider} / {model}")
 
-    if provider == "groq":
-        return call_groq(keys.get("groq", ""), model, system_prompt, user_prompt)
-    elif provider == "gemini":
-        combined = f"{system_prompt}\n\n{user_prompt}"
-        return call_gemini(keys.get("gemini", ""), model, combined)
-    elif provider == "mistral":
-        return call_mistral(keys.get("mistral", ""), model, system_prompt, user_prompt)
-    elif provider == "openrouter":
-        return call_openrouter(keys.get("openrouter", ""), model, system_prompt, user_prompt)
-    elif provider == "anthropic":
-        return call_anthropic(keys.get("anthropic", ""), model, system_prompt, user_prompt)
-    elif provider == "ollama":
-        return call_ollama(keys.get("ollama_url", "http://localhost:11434"), model, system_prompt, user_prompt)
-    else:
-        raise ValueError(f"Unknown provider: {provider}")
+    try:
+
+        if provider == "groq":
+            return call_groq(keys.get("groq", ""), model, system_prompt, user_prompt)
+
+        elif provider == "gemini":
+            combined = f"{system_prompt}\n\n{user_prompt}"
+            return call_gemini(keys.get("gemini", ""), model, combined)
+
+        elif provider == "mistral":
+            return call_mistral(keys.get("mistral", ""), model, system_prompt, user_prompt)
+
+        elif provider == "openrouter":
+            return call_openrouter(keys.get("openrouter", ""), model, system_prompt, user_prompt)
+
+        elif provider == "anthropic":
+            return call_anthropic(keys.get("anthropic", ""), model, system_prompt, user_prompt)
+
+        elif provider == "ollama":
+            return call_ollama(
+                keys.get("ollama_url", "http://localhost:11434"),
+                model,
+                system_prompt,
+                user_prompt
+            )
+
+        else:
+            raise ValueError(f"Unknown provider: {provider}")
+
+    except Exception as e:
+
+        print(f"[Pipeline ERROR] {stage_key} failed with {provider}: {e}")
+        print("[Pipeline Fallback] Retrying with Groq")
+
+        return call_groq(
+            keys.get("groq", ""),
+            "llama-3.3-70b-versatile",
+            system_prompt,
+            user_prompt
+        )
 
 # ─── Sitemap fetcher ──────────────────────────────────────────────────────────
 
@@ -371,8 +423,7 @@ Return this exact JSON structure:
 }}
 """
     s1_raw = call_model(cfg, "stage1_strategist", s1_system, s1_user)
-    s1_raw = s1_raw.strip().lstrip("```json").lstrip("```").rstrip("```").strip()
-    topic_data = json.loads(s1_raw)
+    topic_data = extract_json(s1_raw)
     time.sleep(STAGE_DELAY)
 
     # ── Stage 2: Writer ──────────────────────────────────────────────────────
@@ -546,8 +597,7 @@ Return this exact JSON:
 }}
 """
     s5_raw = call_model(cfg, "stage5_metadata", s5_system, s5_user)
-    s5_raw = s5_raw.strip().lstrip("```json").lstrip("```").rstrip("```").strip()
-    metadata = json.loads(s5_raw)
+    metadata = extract_json(s5_raw)
     time.sleep(STAGE_DELAY)
 
     # Amazon links are now handled inline by Stage 2 writer prompt for monetization articles
@@ -945,7 +995,11 @@ def migrate_config():
         return
     cfg = load_config()
     changed = False
-    decommissioned = {"mixtral-8x7b-32768": "llama-3.3-70b-versatile"}
+    decommissioned = {
+    "mixtral-8x7b-32768": "llama-3.3-70b-versatile",
+    "gemini-2.0-flash": "gemini-1.5-flash",
+    "gemini-2.5-pro-preview": "gemini-1.5-pro"
+}
     for stage_key, stage_val in cfg.get("pipeline", {}).items():
         if stage_val.get("model") in decommissioned:
             replacement = decommissioned[stage_val["model"]]
