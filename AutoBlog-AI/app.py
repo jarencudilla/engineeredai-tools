@@ -666,6 +666,28 @@ def get_or_create_term_id(site, name, taxonomy):
     r.raise_for_status()
     return r.json()["id"]
 
+def get_site_categories(site):
+
+    wp_url = site["url"].rstrip("/")
+    username = site["wp_username"]
+    password = site["wp_app_password"]
+
+    token = base64.b64encode(f"{username}:{password}".encode()).decode()
+
+    headers = {
+        "Authorization": f"Basic {token}",
+        "Content-Type": "application/json"
+    }
+
+    r = requests.get(
+        f"{wp_url}/wp-json/wp/v2/categories?per_page=100",
+        headers=headers
+    )
+
+    r.raise_for_status()
+
+    return {c["name"]: c["id"] for c in r.json()}
+
 def publish_to_wordpress(post_data, site):
     wp_url       = site["url"].rstrip("/")
     username     = site["wp_username"]
@@ -675,9 +697,12 @@ def publish_to_wordpress(post_data, site):
     token   = base64.b64encode(f"{username}:{app_password}".encode()).decode("utf-8")
     headers = {"Authorization": f"Basic {token}", "Content-Type": "application/json"}
     meta    = post_data.get("metadata", {})
+    site_categories = get_site_categories(site)
+
     categories = []
     for cat in meta.get("categories", []):
-        categories.append(get_or_create_term_id(site, cat, "categories"))
+        if cat in site_categories:
+            categories.append(site_categories[cat])
 
     tags = []
     for tag in meta.get("tags", []):
