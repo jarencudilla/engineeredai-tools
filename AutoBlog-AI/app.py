@@ -637,6 +637,34 @@ Return only the final HTML article.
     }
 
 # ─── WordPress publisher ──────────────────────────────────────────────────────
+def get_or_create_term_id(site, name, taxonomy):
+    wp_url = site["url"].rstrip("/")
+    username = site["wp_username"]
+    password = site["wp_app_password"]
+
+    token = base64.b64encode(f"{username}:{password}".encode()).decode()
+    headers = {"Authorization": f"Basic {token}", "Content-Type": "application/json"}
+
+    # Try to find term
+    r = requests.get(
+        f"{wp_url}/wp-json/wp/v2/{taxonomy}?search={name}",
+        headers=headers
+    )
+    r.raise_for_status()
+    results = r.json()
+
+    for term in results:
+        if term["name"].lower() == name.lower():
+            return term["id"]
+
+    # Create if missing
+    r = requests.post(
+        f"{wp_url}/wp-json/wp/v2/{taxonomy}",
+        headers=headers,
+        json={"name": name}
+    )
+    r.raise_for_status()
+    return r.json()["id"]
 
 def publish_to_wordpress(post_data, site):
     wp_url       = site["url"].rstrip("/")
@@ -647,16 +675,34 @@ def publish_to_wordpress(post_data, site):
     token   = base64.b64encode(f"{username}:{app_password}".encode()).decode("utf-8")
     headers = {"Authorization": f"Basic {token}", "Content-Type": "application/json"}
     meta    = post_data.get("metadata", {})
+    categories = []
+    for cat in meta.get("categories", []):
+        categories.append(get_or_create_term_id(site, cat, "categories"))
+
+    tags = []
+    for tag in meta.get("tags", []):
+        tags.append(get_or_create_term_id(site, tag, "tags"))
 
     payload = {
-        "title":   meta.get("seo_title", post_data["topic"]),
-        "content": post_data["content"],
-        "status":  "publish",
-        "slug":    meta.get("slug", ""),
-        "excerpt": meta.get("excerpt", ""),
-        "author":  author_id,
-        "meta":    {"meta_keywords": meta.get("meta_keywords", "")}
+    "title": meta.get("seo_title", post_data["topic"]),
+    "content": post_data["content"],
+    "status": "publish",
+    "slug": meta.get("slug", ""),
+    "excerpt": meta.get("excerpt", ""),
+    "author": author_id,
+
+    # Categories and tags
+    "categories": categories,
+    "tags": tags,
+
+    # Yoast SEO + custom metadata
+    "meta": {
+        "_yoast_wpseo_title": meta.get("seo_title", ""),
+        "_yoast_wpseo_metadesc": meta.get("meta_description", ""),
+        "_yoast_wpseo_focuskw": meta.get("focus_keyphrase", ""),
+        "meta_keywords": meta.get("meta_keywords", "")
     }
+}
 
     r = requests.post(
         f"{wp_url}/wp-json/wp/v2/posts",
