@@ -2,6 +2,26 @@
 
 ---
 
+## v3.6 (2026-03-12) — CMS Integration Fixes
+
+- Added get_site_categories() function: fetches live taxonomy from /wp-json/wp/v2/categories and builds name-to-ID map per site
+- Added get_term_id() function: replaces get_or_create_term_id(), lookup only, no creation attempt
+- Removed category and tag creation logic from publisher, pipeline now maps to existing taxonomy only
+- Updated publish payload to pass category and tag IDs correctly
+- Yoast SEO field mapping added to publish payload: _yoast_wpseo_title, _yoast_wpseo_metadesc, _yoast_wpseo_focuskw
+  meta_keywords custom field now correctly passed through REST API meta object
+- Categories and tags passed into Stage 5 metadata prompt as allowed list, AI constrained to site taxonomy
+
+## v3.5 (2026-03-12) — Pipeline Stability and Content Quality
+
+- Added extract_json() utility: regex-based JSON extraction from raw model responses, replaces bare json.loads() in Stage 1 and Stage 5
+- Added provider fallback in call_model(): on any provider exception, retries Stage with Groq llama-3.3-70b-versatile before raising
+- Extended Ollama timeout from 300s to 600s
+- Expanded decommissioned model migration list: gemini-2.0-flash, gemini-2.5-pro-preview added
+- Stage 2 Writer: removed conflicting paragraph rules that caused AI padding behavior, replaced 5-sentence minimum with 3 to 5 sentence range for readability
+- Stage 2 Writer: added explicit ban on restating concepts already covered in the article
+- H1 and SEO title alignment enforced: seo_title from metadata now used consistently as the WordPress post title
+
 ## v3.4 (2026-03-09) — Dashboard as Sole Source of Truth
 
 - Removed ALL runtime defaults from load_config — config.json is never overwritten at runtime
