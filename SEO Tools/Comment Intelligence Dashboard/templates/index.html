@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Comment Intel Dashboard</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        .card { border: 1px solid #ccc; padding: 10px; margin-bottom: 15px; }
+        .url { font-weight: bold; }
+        .status { float: right; }
+        textarea { width: 100%; height: 80px; margin-top: 5px; }
+        button { margin-top: 5px; }
+    </style>
+</head>
+<body>
+
+<h2>Comment Intelligence Dashboard</h2>
+
+<form method="POST" action="/add">
+    <input type="text" name="url" placeholder="Paste URL here" style="width:60%" required>
+    <button type="submit">Add URL</button>
+</form>
+
+<form method="POST" action="/discover" style="margin-top:10px;">
+    <input type="text" name="seed_site" placeholder="Seed Site (example: engineeredai.net)" style="width:30%" required>
+    <input type="text" name="keywords" placeholder="Topic keywords" style="width:30%" required>
+    <button type="submit">Discover URLs</button>
+</form>
+
+<hr>
+
+{% for row in rows %}
+<div class="card">
+    <div class="url">
+        <a href="{{ row[1] }}" target="_blank">{{ row[1] }}</a>
+        <span class="status">[{{ row[8] }}]</span>
+    </div>
+
+    {% if row[2] %}
+        <p><b>Summary:</b> {{ row[2] }}</p>
+        <p><b>Gap:</b> {{ row[3] }}</p>
+        <p><b>Weakness:</b> {{ row[4] }}</p>
+
+        <textarea>{{ row[5] }}</textarea>
+        <textarea>{{ row[6] }}</textarea>
+        <textarea>{{ row[7] }}</textarea>
+
+        <a href="/mark/{{ row[0] }}"><button>Mark Posted</button></a>
+    {% else %}
+        <a href="/process/{{ row[0] }}"><button>Process</button></a>
+    {% endif %}
+</div>
+{% endfor %}
+
+</body>
+</html>
