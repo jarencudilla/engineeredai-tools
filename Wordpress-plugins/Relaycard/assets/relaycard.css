@@ -1,0 +1,184 @@
+/* =====================================================
+   RelayCard — Frontend Styles
+   All card styles, font categories, ratio presets.
+   Uses --rc-accent CSS variable set per card inline.
+   ===================================================== */
+
+/* — Base card wrapper — */
+.relaycard {
+    margin: 2rem 0;
+    overflow: hidden;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+.relaycard a,
+.relaycard a:hover {
+    text-decoration: none !important;
+    color: inherit;
+}
+
+/* ── Font Categories ── */
+.relaycard-font-sans  { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+.relaycard-font-mono  { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; }
+.relaycard-font-script { font-family: Georgia, "Times New Roman", serif; }
+
+/* ── SPLIT STYLE ── */
+.relaycard-style-split .relaycard-split-inner {
+    display: flex;
+    align-items: stretch;
+    min-height: 180px;
+    border: 1px solid rgba(0,0,0,0.1);
+    transition: box-shadow 0.2s;
+}
+.relaycard-style-split .relaycard-split-inner:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+}
+.relaycard-style-split .relaycard-img {
+    flex-shrink: 0;
+    background-size: cover;
+    background-position: center;
+    min-height: 180px;
+}
+.relaycard-style-split .relaycard-split-body {
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.75rem;
+    background: #fff;
+}
+
+/* Ratio presets for split */
+.relaycard-ratio-50 .relaycard-img { width: 50%; }
+.relaycard-ratio-50 .relaycard-split-body { width: 50%; }
+.relaycard-ratio-60 .relaycard-img { width: 60%; }
+.relaycard-ratio-60 .relaycard-split-body { width: 40%; }
+.relaycard-ratio-70 .relaycard-img { width: 70%; }
+.relaycard-ratio-70 .relaycard-split-body { width: 30%; }
+
+/* ── OVERLAY STYLE ── */
+.relaycard-style-overlay .relaycard-img {
+    position: relative;
+    width: 100%;
+    min-height: 280px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+}
+.relaycard-style-overlay .relaycard-img::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.75) 100%);
+}
+.relaycard-overlay-body {
+    position: relative;
+    z-index: 1;
+    padding: 1.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1rem;
+}
+.relaycard-style-overlay .relaycard-title { color: #fff; }
+.relaycard-style-overlay .relaycard-cta   { color: var(--rc-accent, #e05a2b); white-space: nowrap; }
+
+/* ── CINEMATIC STYLE ── */
+.relaycard-style-cinematic .relaycard-img--cinematic {
+    position: relative;
+    width: 100%;
+    min-height: 360px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.relaycard-style-cinematic .relaycard-img--cinematic::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+}
+.relaycard-cinematic-body {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 2rem;
+}
+.relaycard-style-cinematic .relaycard-title { color: #fff; font-size: 1.4rem; }
+.relaycard-style-cinematic .relaycard-cta   { color: var(--rc-accent, #e05a2b); display: block; margin-top: 1rem; }
+
+/* ── MINIMAL STYLE ── */
+.relaycard-style-minimal .relaycard-minimal-inner {
+    display: block;
+    padding: 1.5rem 2rem;
+    border-left: 3px solid var(--rc-accent, #e05a2b);
+    background: #f9f9f9;
+    transition: background 0.2s;
+}
+.relaycard-style-minimal .relaycard-minimal-inner:hover { background: #f0f0f0; }
+
+/* ── STORY STYLE ── */
+.relaycard-style-story .relaycard-img--story {
+    width: 100%;
+    min-height: 220px;
+    background-size: cover;
+    background-position: center;
+}
+.relaycard-story-body {
+    padding: 1.25rem;
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-top: none;
+}
+
+/* ── Shared title + CTA ── */
+.relaycard-title {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #111;
+}
+.relaycard-cta {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--rc-accent, #e05a2b);
+    display: block;
+    margin-top: 0.5rem;
+}
+.relaycard-label {
+    display: block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--rc-accent, #e05a2b);
+    margin-bottom: 0.5rem;
+    opacity: 0.8;
+}
+
+/* ── Attribution ── */
+.relaycard-attribution {
+    font-size: 0.6rem;
+    font-family: monospace;
+    text-align: right;
+    padding: 0.25rem 0.5rem;
+    opacity: 0.4;
+}
+.relaycard-attribution a {
+    color: inherit !important;
+    text-decoration: none !important;
+}
+
+/* ── Mobile ── */
+@media (max-width: 600px) {
+    .relaycard-style-split .relaycard-split-inner { flex-direction: column; }
+    .relaycard-style-split .relaycard-img,
+    .relaycard-style-split .relaycard-split-body  { width: 100% !important; }
+    .relaycard-style-split .relaycard-img         { min-height: 200px; }
+    .relaycard-overlay-body                        { flex-direction: column; align-items: flex-start; }
+}

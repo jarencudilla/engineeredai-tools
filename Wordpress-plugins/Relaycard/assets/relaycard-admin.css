@@ -1,0 +1,145 @@
+/* =====================================================
+   RelayCard — Admin Styles
+   ===================================================== */
+
+.relaycard-admin h1 {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+.relaycard-version {
+    font-size: 0.75rem;
+    font-weight: 400;
+    background: #111;
+    color: #fff;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    font-family: monospace;
+}
+.relaycard-tagline {
+    color: #666;
+    margin-top: -0.5rem;
+    margin-bottom: 1.5rem;
+}
+.relaycard-admin-layout {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 2rem;
+    align-items: start;
+}
+.relaycard-section {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #e5e5e5;
+}
+.relaycard-section h2 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.75rem;
+    color: #333;
+}
+.relaycard-note {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: #999;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+/* Style picker */
+.relaycard-style-picker {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.relaycard-style-option {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: border-color 0.15s;
+}
+.relaycard-style-option.is-selected,
+.relaycard-style-option:hover { border-color: #e05a2b; }
+.relaycard-style-option input { display: none; }
+.relaycard-style-thumb {
+    width: 48px;
+    height: 32px;
+    background: #eee;
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+.relaycard-style-thumb--split     { background: linear-gradient(90deg, #999 60%, #eee 40%); }
+.relaycard-style-thumb--overlay   { background: linear-gradient(to bottom, #666, #111); }
+.relaycard-style-thumb--cinematic { background: radial-gradient(circle, #444 30%, #111 100%); }
+.relaycard-style-thumb--minimal   { background: #f5f5f5; border-left: 3px solid #e05a2b; }
+.relaycard-style-thumb--story     { background: linear-gradient(to bottom, #999 50%, #fff 50%); }
+
+/* Ratio picker */
+.relaycard-ratio-picker,
+.relaycard-font-picker {
+    display: flex;
+    gap: 0.75rem;
+}
+.relaycard-ratio-option,
+.relaycard-font-option {
+    padding: 0.5rem 1rem;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: border-color 0.15s;
+}
+.relaycard-ratio-option input,
+.relaycard-font-option input { display: none; }
+.relaycard-ratio-option.is-selected,
+.relaycard-ratio-option:hover,
+.relaycard-font-option.is-selected,
+.relaycard-font-option:hover { border-color: #e05a2b; }
+
+.relaycard-font-preview--sans   { font-family: -apple-system, sans-serif; }
+.relaycard-font-preview--mono   { font-family: monospace; }
+.relaycard-font-preview--script { font-family: Georgia, serif; }
+
+/* Accent */
+.relaycard-accent-hex {
+    margin-left: 0.5rem;
+    font-family: monospace;
+    font-size: 0.85rem;
+    color: #555;
+}
+
+/* Preview */
+.relaycard-admin-preview {
+    position: sticky;
+    top: 2rem;
+    background: #f9f9f9;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    padding: 1.5rem;
+}
+.relaycard-admin-preview h2 {
+    margin-top: 0;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+#relaycard-preview-frame {
+    min-height: 200px;
+    margin-bottom: 1rem;
+}
+.relaycard-preview-placeholder {
+    color: #aaa;
+    font-size: 0.85rem;
+    text-align: center;
+    padding: 3rem 0;
+}
+
+@media (max-width: 900px) {
+    .relaycard-admin-layout { grid-template-columns: 1fr; }
+    .relaycard-admin-preview { position: static; }
+}
