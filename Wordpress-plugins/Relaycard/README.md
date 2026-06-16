@@ -4,7 +4,7 @@ Tags: related posts, inline related posts, content cards, post cards, internal l
 Requires at least: 6.0
 Tested up to: 6.7
 Requires PHP: 8.0
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -114,7 +114,12 @@ The attribution (`// built with RelayCard — engineeredai.net`) is present on t
 * SEO plugin detection: RankMath, Yoast, AIOSEO
 * Attribution: // built with RelayCard — engineeredai.net
 
+= 1.0.1 =
+* Updated enqueue styles
+
 == Upgrade Notice ==
 
 = 1.0.0 =
 Initial release.
+= 1.0.1 =
+Relaycard Stable

@@ -3,7 +3,7 @@
  * Plugin Name:       RelayCard
  * Plugin URI:        https://engineeredai.net/relaycard
  * Description:       Inline post cards that read like ads, link like content. Image-dominant related post cards injected automatically into your content — heading-aware, config-driven, AI hook title generation optional.
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            EngineeredAI
  * Author URI:        https://engineeredai.net
  * License:           GPL2
@@ -20,7 +20,7 @@
  * @package     RelayCard
  * @author      Jaren Cudilla / EngineeredAI
  * @link        https://engineeredai.net
- * @version     1.0.0
+ * @version     1.0.1
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit;
@@ -38,16 +38,10 @@ require_once RELAYCARD_PATH . 'admin/admin-page.php';
 require_once RELAYCARD_PATH . 'admin/preview-ajax.php';
 
 // — Enqueue frontend CSS —
-add_action( 'wp_enqueue_scripts', 'relaycard_enqueue_styles' );
-function relaycard_enqueue_styles() {
+add_action( 'wp_head', function() {
     if ( ! is_single() ) return;
-    wp_enqueue_style(
-        'relaycard',
-        RELAYCARD_URL . 'assets/relaycard.css',
-        [],
-        RELAYCARD_VERSION
-    );
-}
+    echo '<link rel="stylesheet" href="' . RELAYCARD_URL . 'assets/relaycard.css?ver=' . RELAYCARD_VERSION . '">';
+} );
 
 // — Enqueue admin assets —
 add_action( 'admin_enqueue_scripts', 'relaycard_enqueue_admin_assets' );
