@@ -1,3 +1,5 @@
-EngineeredAI-Tools 
+# EngineeredAI Tools
 
-Collection of patterns, scripts and snippets.
+[EAI] (https://EngineeredAI.net)
+
+A Collection of configs, workflows and tool setups.
