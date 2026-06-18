@@ -67,7 +67,7 @@ function relaycard_admin_page() {
     $ai_key  = $options['ai_key']      ?? '';
     ?>
     <div class="wrap relaycard-admin">
-        <h1>RelayCard <span class="relaycard-version">v<?php echo RELAYCARD_VERSION; ?></span></h1>
+        <h1>RelayCard <span class="relaycard-version">v<?php echo esc_html( RELAYCARD_VERSION ); ?></span></h1>
         <p class="relaycard-tagline">Inline post cards that read like ads, link like content. <a href="https://engineeredai.net" target="_blank">engineeredai.net</a></p>
 
         <div class="relaycard-admin-layout">
@@ -92,9 +92,9 @@ function relaycard_admin_page() {
                             foreach ( $styles as $val => $label_text ) :
                             ?>
                             <label class="relaycard-style-option <?php echo $style === $val ? 'is-selected' : ''; ?>">
-                                <input type="radio" name="relaycard_settings[card_style]" value="<?php echo $val; ?>" <?php checked( $style, $val ); ?>>
-                                <span class="relaycard-style-thumb relaycard-style-thumb--<?php echo $val; ?>"></span>
-                                <span class="relaycard-style-label"><?php echo $label_text; ?></span>
+                                <input type="radio" name="relaycard_settings[card_style]" value="<?php echo esc_attr( $val ); ?>" <?php checked( $style, $val ); ?>>
+                                <span class="relaycard-style-thumb relaycard-style-thumb--<?php echo esc_attr( $val ); ?>"></span>
+                                <span class="relaycard-style-label"><?php echo esc_html( $label_text ); ?></span>
                             </label>
                             <?php endforeach; ?>
                         </div>
@@ -106,8 +106,8 @@ function relaycard_admin_page() {
                         <div class="relaycard-ratio-picker">
                             <?php foreach ( [ '50' => '50 / 50', '60' => '60 / 40', '70' => '70 / 30' ] as $val => $lbl ) : ?>
                             <label class="relaycard-ratio-option <?php echo $ratio === $val ? 'is-selected' : ''; ?>">
-                                <input type="radio" name="relaycard_settings[img_ratio]" value="<?php echo $val; ?>" <?php checked( $ratio, $val ); ?>>
-                                <?php echo $lbl; ?>
+                                <input type="radio" name="relaycard_settings[img_ratio]" value="<?php echo esc_attr( $val ); ?>" <?php checked( $ratio, $val ); ?>>
+                                <?php echo esc_html( $lbl ); ?>
                             </label>
                             <?php endforeach; ?>
                         </div>
@@ -119,8 +119,8 @@ function relaycard_admin_page() {
                         <div class="relaycard-font-picker">
                             <?php foreach ( [ 'sans' => 'Sans-serif', 'mono' => 'Monospace', 'script' => 'Script' ] as $val => $lbl ) : ?>
                             <label class="relaycard-font-option <?php echo $font === $val ? 'is-selected' : ''; ?>">
-                                <input type="radio" name="relaycard_settings[font_cat]" value="<?php echo $val; ?>" <?php checked( $font, $val ); ?>>
-                                <span class="relaycard-font-preview relaycard-font-preview--<?php echo $val; ?>"><?php echo $lbl; ?></span>
+                                <input type="radio" name="relaycard_settings[font_cat]" value="<?php echo esc_attr( $val ); ?>" <?php checked( $font, $val ); ?>>
+                                <span class="relaycard-font-preview relaycard-font-preview--<?php echo esc_attr( $val ); ?>"><?php echo esc_html( $lbl ); ?></span>
                             </label>
                             <?php endforeach; ?>
                         </div>

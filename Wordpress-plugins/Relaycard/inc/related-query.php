@@ -25,8 +25,7 @@ function relaycard_get_related_posts( $post_id, $max_cards ) {
     $cat_ids = array_map( function( $c ) { return $c->term_id; }, $cats );
 
     $q = new WP_Query( [
-        'posts_per_page'      => $max_cards + 2, // fetch extra to account for missing thumbs
-        'post__not_in'        => [ $post_id ],
+        'posts_per_page'      => $max_cards + 3, // fetch extra to account for missing thumbs + current post
         'category__in'        => $cat_ids,
         'orderby'             => 'rand',
         'ignore_sticky_posts' => true,
@@ -37,6 +36,9 @@ function relaycard_get_related_posts( $post_id, $max_cards ) {
 
     while ( $q->have_posts() ) {
         $q->the_post();
+
+        if ( get_the_ID() === (int) $post_id ) continue; // exclude current post in PHP, not SQL
+
         $thumb = get_the_post_thumbnail_url( null, 'medium_large' );
         if ( ! $thumb ) continue; // skip posts with no image — card requires visual
 
