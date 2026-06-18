@@ -1,6 +1,6 @@
 <?php
 /*
- * Plugin Name:       RelayCard
+ * Plugin Name:       EngineeredAI RelayCard — Inline Related Post Cards
  * Plugin URI:        https://engineeredai.net/relaycard
  * Description:       Inline post cards that read like ads, link like content. Image-dominant related post cards injected automatically into your content — heading-aware, config-driven, AI hook title generation optional.
  * Version:           1.0.1

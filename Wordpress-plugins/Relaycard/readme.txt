@@ -1,8 +1,8 @@
-=== RelayCard ===
+=== EngineeredAI RelayCard — Inline Related Post Cards ===
 Contributors: engineeredai
 Tags: related posts, inline related posts, content cards, post cards, internal linking
 Requires at least: 6.0
-Tested up to: 6.7
+Tested up to: 7.0
 Requires PHP: 8.0
 Stable tag: 1.0.1
 License: GPLv2 or later
@@ -123,3 +123,4 @@ The attribution (`// built with RelayCard — engineeredai.net`) is present on t
 Initial release.
 = 1.0.1 =
 Relaycard Stable
+
