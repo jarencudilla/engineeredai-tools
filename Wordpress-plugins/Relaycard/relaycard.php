@@ -25,7 +25,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-define( 'RELAYCARD_VERSION', '1.0.0' );
+define( 'RELAYCARD_VERSION', '1.0.1' );
 define( 'RELAYCARD_PATH', plugin_dir_path( __FILE__ ) );
 define( 'RELAYCARD_URL', plugin_dir_url( __FILE__ ) );
 
@@ -38,10 +38,18 @@ require_once RELAYCARD_PATH . 'admin/admin-page.php';
 require_once RELAYCARD_PATH . 'admin/preview-ajax.php';
 
 // — Enqueue frontend CSS —
-add_action( 'wp_head', function() {
-    if ( ! is_single() ) return;
-    echo '<link rel="stylesheet" href="' . RELAYCARD_URL . 'assets/relaycard.css?ver=' . RELAYCARD_VERSION . '">';
-} );
+add_action( 'wp_enqueue_scripts', 'relaycard_enqueue_frontend_assets' );
+function relaycard_enqueue_frontend_assets() {
+    if ( ! is_single() ) {
+        return;
+    }
+    wp_enqueue_style(
+        'relaycard',
+        RELAYCARD_URL . 'assets/relaycard.css',
+        [],
+        RELAYCARD_VERSION
+    );
+}
 
 // — Enqueue admin assets —
 add_action( 'admin_enqueue_scripts', 'relaycard_enqueue_admin_assets' );
