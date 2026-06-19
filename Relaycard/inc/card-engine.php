@@ -108,7 +108,7 @@ function relaycard_build_card( $thumb, $title, $link, $options ) {
                     ' . $label_html . '
                     <div class="relaycard-overlay-body">
                         <div class="relaycard-title">' . esc_html( $title ) . '</div>
-                        <span class="relaycard-cta">' . $cta . '</span>
+                        <span class="relaycard-cta">' . wp_kses_post( $cta ) . '</span>
                     </div>
                 </div>
             </a>
@@ -124,7 +124,7 @@ function relaycard_build_card( $thumb, $title, $link, $options ) {
                     ' . $label_html . '
                     <div class="relaycard-cinematic-body">
                         <div class="relaycard-title">' . esc_html( $title ) . '</div>
-                        <span class="relaycard-cta">' . $cta . '</span>
+                        <span class="relaycard-cta">' . wp_kses_post( $cta ) . '</span>
                     </div>
                 </div>
             </a>
@@ -138,7 +138,7 @@ function relaycard_build_card( $thumb, $title, $link, $options ) {
             <a class="relaycard-link relaycard-minimal-inner" href="' . esc_url( $link ) . '">
                 ' . $label_html . '
                 <div class="relaycard-title">' . esc_html( $title ) . '</div>
-                <span class="relaycard-cta">' . $cta . '</span>
+                <span class="relaycard-cta">' . wp_kses_post( $cta ) . '</span>
             </a>
             ' . $attribution . '
         </div>';
@@ -152,7 +152,7 @@ function relaycard_build_card( $thumb, $title, $link, $options ) {
                 <div class="relaycard-story-body">
                     ' . $label_html . '
                     <div class="relaycard-title">' . esc_html( $title ) . '</div>
-                    <span class="relaycard-cta">' . $cta . '</span>
+                    <span class="relaycard-cta">' . wp_kses_post( $cta ) . '</span>
                 </div>
             </a>
             ' . $attribution . '
@@ -167,7 +167,7 @@ function relaycard_build_card( $thumb, $title, $link, $options ) {
             <div class="relaycard-split-body">
                 ' . $label_html . '
                 <div class="relaycard-title">' . esc_html( $title ) . '</div>
-                <span class="relaycard-cta">' . $cta . '</span>
+                <span class="relaycard-cta">' . wp_kses_post( $cta ) . '</span>
             </div>
         </a>
         ' . $attribution . '

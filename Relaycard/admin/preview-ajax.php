@@ -26,7 +26,7 @@ function relaycard_preview_handler() {
 
     // Use placeholder image if no thumb found
     if ( ! $thumb ) {
-        $thumb = 'https://via.placeholder.com/800x450/333333/ffffff?text=Featured+Image';
+        $thumb = RELAYCARD_URL . 'assets/placeholder.png';
     }
 
     $html = relaycard_build_card( $thumb, $title, $link, $options );

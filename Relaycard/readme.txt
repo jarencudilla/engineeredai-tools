@@ -1,10 +1,10 @@
-=== EngineeredAI RelayCard — Inline Related Post Cards ===
-Contributors: engineeredai
+=== RelayCard — Inline Related Post Cards ===
+Contributors: jarencudilla
 Tags: related posts, inline related posts, content cards, post cards, internal linking
 Requires at least: 6.0
 Tested up to: 7.0
 Requires PHP: 8.0
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,9 +14,9 @@ Inline post cards that read like ads, link like content. Image-dominant related 
 
 **RelayCard** automatically injects image-dominant related post cards inside your content — heading-aware, config-driven, and designed to look like premium editorial ad units.
 
-Unlike traditional related posts plugins that dump links at the bottom of your post (where nobody reads), RelayCard places cards *inside* your content at the right moment — after enough context has been built, before the next section begins. The result is a visual break that keeps readers in your ecosystem instead of bouncing.
+RelayCard places cards *inside* your content at heading boundaries — after enough context has been built, before the next section begins. Cards only fire when a post has a featured image, keeping quality consistent.
 
-**Why RelayCard is different:**
+**Features:**
 
 * **Image-dominant by design** — the image stops the scroll, the title closes the click
 * **Heading-aware injection** — counts H2/H3/H4s and scales card placement automatically. Short posts get 1 card, long posts get 2. Nothing gets forced.
@@ -86,6 +86,31 @@ Cards link to your own posts — these are internal links and do not need nofoll
 
 = Can I remove the attribution? =
 The attribution (`// built with RelayCard — engineeredai.net`) is present on the free version and cannot be removed. It is minimal, monospace, and low-opacity — most readers won't notice it. A premium version with attribution removal may be available in the future.
+
+== External Services ==
+
+This plugin optionally connects to third-party AI providers to generate suggested card titles. This feature is only activated when you enter an API key in the plugin settings and manually trigger title generation. No data is sent automatically.
+
+= Anthropic (Claude) =
+Used for AI title generation when an Anthropic API key is provided.
+Data sent: post title, post excerpt.
+* Service: https://www.anthropic.com
+* Terms of Service: https://www.anthropic.com/legal/consumer-terms
+* Privacy Policy: https://www.anthropic.com/legal/privacy
+
+= OpenAI (ChatGPT) =
+Used for AI title generation when an OpenAI API key is provided.
+Data sent: post title, post excerpt.
+* Service: https://openai.com
+* Terms of Service: https://openai.com/policies/terms-of-use
+* Privacy Policy: https://openai.com/policies/privacy-policy
+
+= Google Gemini =
+Used for AI title generation when a Google Gemini API key is provided.
+Data sent: post title, post excerpt.
+* Service: https://ai.google.dev
+* Terms of Service: https://ai.google.dev/gemini-api/terms
+* Privacy Policy: https://policies.google.com/privacy
 
 == Screenshots ==
 
