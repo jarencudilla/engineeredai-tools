@@ -20,12 +20,12 @@
  * @package     RelayCard
  * @author      Jaren Cudilla / EngineeredAI
  * @link        https://engineeredai.net
- * @version     1.0.1
+ * @version     1.0.2
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-define( 'RELAYCARD_VERSION', '1.0.1' );
+define( 'RELAYCARD_VERSION', '1.0.2' );
 define( 'RELAYCARD_PATH', plugin_dir_path( __FILE__ ) );
 define( 'RELAYCARD_URL', plugin_dir_url( __FILE__ ) );
 
