@@ -1,0 +1,5 @@
+[project]
+name = "eai-workstation"
+version = "0.1.0"
+description = "Local-first AI chatbot on Ollama — the free Claude/ChatGPT replacement for CAS network work."
+requires-python = ">=3.11"

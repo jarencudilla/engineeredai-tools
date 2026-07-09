@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+
+# App data — local SQLite db, never committed
+app/data/*.db
+app/data/*.db-journal
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Build artifacts (PyInstaller, later phases)
+build/
+dist/
+*.spec
