@@ -1,0 +1,14 @@
+# Environment
+.venv/
+__pycache__/
+*.pyc
+
+# Secrets — never commit these
+config/credentials.json
+config/tokens/*.json
+
+# Per-site databases
+data/*.db
+
+# Logs
+logs/*.log
