@@ -18,7 +18,8 @@ from fastapi import FastAPI
 from app.backend import config
 from app.backend.logging_setup import configure_logging
 from app.backend.db.schema import init_schema
-from app.backend.routers import health
+from app.backend.chat.repository import mark_interrupted_on_startup
+from app.backend.routers import health, chat
 
 configure_logging()
 logger = logging.getLogger(__name__)
@@ -26,17 +27,21 @@ logger = logging.getLogger(__name__)
 app = FastAPI(title="EAI Workstation", version="0.1.0")
 
 app.include_router(health.router)
+app.include_router(chat.router)
 
 
 @app.on_event("startup")
 def on_startup() -> None:
     """
     on_startup
-    Runs once when the backend boots: ensures the database schema exists.
+    Runs once when the backend boots: ensures the database schema exists,
+    then sweeps for any message left GENERATING from a previous session
+    that crashed or lost power mid-generation, marking it INTERRUPTED.
     @return  None
     """
     logger.info("Starting EAI Workstation backend on %s:%d", config.HOST, config.PORT)
     init_schema()
+    mark_interrupted_on_startup()
 
 
 if __name__ == "__main__":
