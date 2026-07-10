@@ -3,9 +3,8 @@
 __pycache__/
 *.pyc
 
-# Secrets — never commit these
+# Secrets — never commit this (service account key)
 config/credentials.json
-config/tokens/*.json
 
 # Per-site databases
 data/*.db

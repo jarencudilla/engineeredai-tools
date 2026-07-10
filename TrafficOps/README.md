@@ -1,7 +1,7 @@
 # TrafficOps — MVP Slice
 
-Single site (QAJourney), GSC only, pull → normalize → store → display.
-No GA4, no multi-select, no AI yet. See `docs/TrafficOps-v1-Spec.md` for the full spec.
+Single site at a time, GSC + GA4, pull → normalize → store → display.
+No multi-select, no AI yet. See `docs/TrafficOps-v1-Spec.md` for the full spec.
 
 ## 1. Setup (one-time)
 
@@ -12,37 +12,54 @@ source .venv/bin/activate      # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-## 2. Google Cloud OAuth setup (one-time)
+## 2. Service account key (one-time)
 
-1. Go to [Google Cloud Console](https://console.cloud.google.com/) → create a project (or reuse one).
-2. Enable the **Search Console API**.
-3. Go to **APIs & Services → Credentials → Create Credentials → OAuth client ID**.
-   - Application type: **Desktop app**
-4. Download the JSON, save it as `config/credentials.json` (this exact path — it's gitignored, never commit it).
-5. Make sure the Google account you'll authenticate with has **at least Viewer access** in Search Console for each site you sync — you mentioned this is already done.
+You already have the TrafficOps Cloud project, the Search Console API and
+GA4 Data API enabled, and `trafficops-reader@trafficops.iam.gserviceaccount.com`
+added as Viewer on each site in both Search Console and GA4. One step left:
 
-## 3. Run it
+1. Cloud Console → **IAM & Admin → Service Accounts** → click `trafficops-reader`
+2. **Keys** tab → **Add Key → Create new key → JSON**
+3. Save the downloaded file as `config/credentials.json` (this exact path — it's gitignored, never commit it)
+
+One key authenticates against both APIs, for all six sites — access is
+controlled per-site inside each product's own console, not by separate
+credential files.
+
+## 3. Get GA4 property IDs (one script, not six manual lookups)
+
+```bash
+python -m scripts.discover_ga4_properties
+```
+
+This lists every GA4 property your service account can see, with the
+numeric `ga4_property_id` next to each. Match each one to a site by
+name and paste it into `config/sites.py`, replacing that site's
+`"ga4_property_id": None`.
+
+This only needs to run once — it's a lookup, not a repeated setup step.
+
+## 4. Run it
 
 ```bash
 python -m app.main
 ```
 
-First time you hit **Sync** on a given site, a browser window opens for Google consent.
-After that, the token is cached in `config/tokens/{site}_token.json` and reused silently.
+## 5. What this MVP slice proves
 
-## 4. What this MVP slice proves
-
-- OAuth flow works end-to-end for one site
-- GSC data pulls, normalizes (URL canonicalization), and stores in `data/qaj.db`
-- Table renders from the database, not live from the API (Sync and View are separate steps)
+- Service account auth works end-to-end for both GSC and GA4, one key for all six sites
+- Data pulls, normalizes (shared URL canonicalization across both sources), and stores per-site
+- Tables render from the database, not live from the API (Sync and View are separate steps)
 - Re-running Sync updates existing rows instead of duplicating them
+- GSC and GA4 sync independently — one failing doesn't block the other
 
-## 5. Known gaps (intentional — not bugs)
+## 6. Known gaps (intentional — not bugs)
 
-- **Single-thread sync.** Sync runs on the UI thread. Fine for one site / short date ranges. Move to a worker thread before combining sites or pulling long ranges (see spec's Performance section).
-- **No pagination.** GSC responses over 25,000 rows will silently truncate. Not a concern at current traffic levels, but flagged for when it becomes one.
-- **7-day pull window, hardcoded.** `app/sync.py` defaults to `days_back=7`. Date range picker is Phase 2.
-- **One site wired into the UI dropdown at a time.** All six are registered in `config/sites.py`, but multi-select (per our earlier discussion — open several `.db` files and merge in memory) isn't built yet. Adding it later doesn't require touching this slice's code, just a new selection mode in `main_window.py`.
+- **Single-thread sync.** Both syncs run on the UI thread. Fine for one site / short date ranges. Move to a worker thread before combining sites or pulling long ranges (see spec's Performance section).
+- **No GSC pagination.** Responses over 25,000 rows will silently truncate. Not a concern at current traffic levels, but flagged for when it becomes one.
+- **7-day pull window, hardcoded** for both sources.
+- **GSC and GA4 aren't joined yet.** Both are stored per-site with canonicalized URLs so a join ("impressions but no clicks" vs "clicks but no engagement") is possible later — that join itself is Phase 3 (Deterministic analysis), not built here.
+- **One site wired into the UI dropdown at a time.** All six are registered in `config/sites.py`, but multi-select (open several `.db` files and merge in memory) isn't built yet.
 
 ## 6. Folder reference
 

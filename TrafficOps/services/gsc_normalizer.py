@@ -3,48 +3,32 @@ services/gsc_normalizer.py
 
 Converts raw GSC API rows into GSCQueryRow objects ready for storage.
 
-This is where URL canonicalization lives. GSC can return the same
-logical page with trailing-slash or protocol variations, which would
-otherwise silently fragment one page's data into multiple rows.
-
-If normalization rules need to change (e.g. a redirect rewrite changes
-canonical URLs), this is the only file that needs to change.
+URL canonicalization is handled by services/url_utils.py, shared with
+the GA4 normalizer so both sources key pages identically.
 """
 
-from urllib.parse import urlparse, urlunparse
-
+from services.url_utils import canonicalize_url
 from models.gsc_query import GSCQueryRow
 
 
-def canonicalize_url(raw_url: str) -> str:
-    """
-    Normalize a URL so the same logical page always produces the
-    same string, regardless of trailing slash or scheme quirks.
-
-    @param raw_url  str  URL as returned by GSC
-    @return str     Canonicalized URL
-    """
-    parsed = urlparse(raw_url)
-    path = parsed.path.rstrip("/") or "/"
-    # NOTE: query strings and fragments are dropped intentionally —
-    # GSC already reports the page dimension without tracking params
-    # in almost all cases, but this guards against edge cases.
-    return urlunparse((parsed.scheme, parsed.netloc, path, "", "", ""))
-
-
-def normalize_gsc_rows(raw_rows: list[dict], date: str) -> list[GSCQueryRow]:
+def normalize_gsc_rows(raw_rows: list[dict]) -> list[GSCQueryRow]:
     """
     Turn raw API rows into a list of GSCQueryRow, ready for
     database.save_gsc_rows().
 
+    Each row carries its own date (collectors.gsc_collector requests
+    "date" as a dimension), so a multi-month backfill produces one
+    row per query/page/day, not one row per query/page for the whole
+    range — that granularity is what makes decay/comparison analysis
+    possible later.
+
     @param raw_rows  list[dict]  Output of collectors.gsc_collector.fetch_gsc_queries
-    @param date      str         ISO date these rows represent (single sync = single date)
     @return list[GSCQueryRow]
     """
     normalized = []
 
     for row in raw_rows:
-        query, page = row["keys"][0], row["keys"][1]
+        date, query, page = row["keys"][0], row["keys"][1], row["keys"][2]
 
         normalized.append(
             GSCQueryRow(
