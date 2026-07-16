@@ -9,6 +9,13 @@ column (generating / complete / stopped / interrupted / error) because a
 generation's lifecycle is independent of any single HTTP request — see
 chat/generation_job.py for why that separation exists.
 
+Version 3 (Phase 3): adds an FTS5 virtual table mirroring messages.content,
+kept in sync via triggers (not app code) so recall/repository.py never has
+to remember to update the search index — every insert and update to
+messages is automatically reflected. A message starts as an empty string
+(status=generating) and gets its real content on finalize; the AFTER UPDATE
+trigger handles that transition the same way it handles any other edit.
+
 Depends on: db/connection.py
 Called from: main.py (on startup)
 """
@@ -20,7 +27,7 @@ from app.backend.db.connection import get_connection
 logger = logging.getLogger(__name__)
 
 # Bump this and add a migration step whenever the schema changes.
-CURRENT_SCHEMA_VERSION = 2
+CURRENT_SCHEMA_VERSION = 3
 
 
 def init_schema() -> None:
@@ -69,9 +76,56 @@ def init_schema() -> None:
             "CREATE INDEX IF NOT EXISTS idx_messages_chat_id ON messages(chat_id)"
         )
 
+        _init_fts(conn)
         _set_version(conn)
     finally:
         conn.close()
+
+
+def _init_fts(conn) -> None:
+    """
+    _init_fts
+    Creates the FTS5 virtual table (external content, backed by messages.id
+    as rowid) and the triggers that keep it synced automatically. No app
+    code writes to messages_fts directly — these triggers are the only sync
+    mechanism, by design, so chat/repository.py never needed to change.
+    @param   conn  sqlite3.Connection
+    @return  None
+    """
+    conn.execute(
+        """
+        CREATE VIRTUAL TABLE IF NOT EXISTS messages_fts USING fts5(
+            content,
+            content='messages',
+            content_rowid='id'
+        )
+        """
+    )
+
+    conn.execute(
+        """
+        CREATE TRIGGER IF NOT EXISTS messages_ai AFTER INSERT ON messages BEGIN
+            INSERT INTO messages_fts(rowid, content) VALUES (new.id, new.content);
+        END
+        """
+    )
+
+    conn.execute(
+        """
+        CREATE TRIGGER IF NOT EXISTS messages_ad AFTER DELETE ON messages BEGIN
+            INSERT INTO messages_fts(messages_fts, rowid, content) VALUES('delete', old.id, old.content);
+        END
+        """
+    )
+
+    conn.execute(
+        """
+        CREATE TRIGGER IF NOT EXISTS messages_au AFTER UPDATE ON messages BEGIN
+            INSERT INTO messages_fts(messages_fts, rowid, content) VALUES('delete', old.id, old.content);
+            INSERT INTO messages_fts(rowid, content) VALUES (new.id, new.content);
+        END
+        """
+    )
 
 
 def _set_version(conn) -> None:

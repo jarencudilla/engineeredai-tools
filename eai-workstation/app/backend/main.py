@@ -19,7 +19,7 @@ from app.backend import config
 from app.backend.logging_setup import configure_logging
 from app.backend.db.schema import init_schema
 from app.backend.chat.repository import mark_interrupted_on_startup
-from app.backend.routers import health, chat
+from app.backend.routers import health, chat, recall
 
 configure_logging()
 logger = logging.getLogger(__name__)
@@ -28,6 +28,7 @@ app = FastAPI(title="EAI Workstation", version="0.1.0")
 
 app.include_router(health.router)
 app.include_router(chat.router)
+app.include_router(recall.router)
 
 
 @app.on_event("startup")
