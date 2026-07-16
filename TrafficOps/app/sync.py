@@ -124,7 +124,7 @@ def backfill_site_ga4(site_id: str) -> dict:
         start_date=start_date.isoformat(),
         end_date=end_date.isoformat(),
     )
-    normalized_rows = normalize_ga4_rows(raw_rows)
+    normalized_rows = normalize_ga4_rows(raw_rows, site_domain=site_config["gsc_property"])
 
     conn = get_connection(site_config["db_path"])
     rows_written = save_ga4_rows(conn, normalized_rows)
@@ -157,7 +157,7 @@ def sync_site_ga4_incremental(site_id: str, days_back: int = INCREMENTAL_DAYS) -
         start_date=start_date.isoformat(),
         end_date=end_date.isoformat(),
     )
-    normalized_rows = normalize_ga4_rows(raw_rows)
+    normalized_rows = normalize_ga4_rows(raw_rows, site_domain=site_config["gsc_property"])
 
     conn = get_connection(site_config["db_path"])
     rows_written = save_ga4_rows(conn, normalized_rows)

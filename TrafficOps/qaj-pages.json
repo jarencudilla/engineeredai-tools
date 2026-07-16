@@ -1,0 +1,4982 @@
+[
+  {
+    "page": "https://qajourney.net/real-world-happy-sad-path-testing-guide",
+    "total_impressions": 8896,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 37.76525830058661,
+    "total_sessions": 108,
+    "total_engaged_sessions": 43,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/cypress-automation-testing-guide",
+    "total_impressions": 2627,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 65.43122484931126,
+    "total_sessions": 40,
+    "total_engaged_sessions": 12,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/manual-vs-automated-testing-when-and-why-to-use-each-approach",
+    "total_impressions": 1633,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 81.23292060842144,
+    "total_sessions": 93,
+    "total_engaged_sessions": 23,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/test-methodologies-in-qa",
+    "total_impressions": 1224,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 85.49238973219043,
+    "total_sessions": 55,
+    "total_engaged_sessions": 8,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/best-qa-tools-for-website-testing",
+    "total_impressions": 1187,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 57.84954435572567,
+    "total_sessions": 30,
+    "total_engaged_sessions": 4,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/ai-assisted-manual-testing",
+    "total_impressions": 1168,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 63.46450444858266,
+    "total_sessions": 136,
+    "total_engaged_sessions": 72,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/playwright-for-qa-testing",
+    "total_impressions": 896,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 61.784186812583556,
+    "total_sessions": 285,
+    "total_engaged_sessions": 143,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/what-qa-testing-actually-is",
+    "total_impressions": 842,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 55.342766472457704,
+    "total_sessions": 14,
+    "total_engaged_sessions": 4,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/playwright-visual-regression-testing-guide",
+    "total_impressions": 609,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 71.38282865017418,
+    "total_sessions": 102,
+    "total_engaged_sessions": 42,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/manual-vs-automation-testing-qalead-perspective",
+    "total_impressions": 596,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 68.00930316091954,
+    "total_sessions": 24,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/how-to-write-effective-bug-reports-with-examples",
+    "total_impressions": 534,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 83.39362139917695,
+    "total_sessions": 223,
+    "total_engaged_sessions": 112,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/the-shift-left-testing-revolution-embedding-qa-into-agile-for-better-software-quality",
+    "total_impressions": 517,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 81.64348785871964,
+    "total_sessions": 169,
+    "total_engaged_sessions": 51,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/manual-testing-automation-skills-guide",
+    "total_impressions": 451,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 65.15147679324895,
+    "total_sessions": 40,
+    "total_engaged_sessions": 8,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/api-testing-with-postman-manual-and-automated",
+    "total_impressions": 397,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 54.31065573770492,
+    "total_sessions": 53,
+    "total_engaged_sessions": 20,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/create-effective-test-cases",
+    "total_impressions": 388,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 73.60020822017019,
+    "total_sessions": 93,
+    "total_engaged_sessions": 33,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/",
+    "total_impressions": 382,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 14.480048590864918,
+    "total_sessions": 1738,
+    "total_engaged_sessions": 365,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/testing-in-production-reality",
+    "total_impressions": 307,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 66.12835351377018,
+    "total_sessions": 18,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/qa-best-friends-429-500-errors-checkout-testing",
+    "total_impressions": 291,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 15.143711949426235,
+    "total_sessions": 21,
+    "total_engaged_sessions": 5,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/test-automation-essentials-beginners-guide-tools-frameworks",
+    "total_impressions": 290,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 59.79007633587786,
+    "total_sessions": 49,
+    "total_engaged_sessions": 6,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/ai-qa-workflow-structured-system",
+    "total_impressions": 282,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 62.36431788931789,
+    "total_sessions": 22,
+    "total_engaged_sessions": 10,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/becoming-a-scrum-master-skills-certifications-and-first-steps",
+    "total_impressions": 265,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 84.9114872325742,
+    "total_sessions": 61,
+    "total_engaged_sessions": 12,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/balancing-manual-automation-and-ai-driven-testing-in-real-world-projects",
+    "total_impressions": 229,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 57.82420091324202,
+    "total_sessions": 85,
+    "total_engaged_sessions": 10,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/playwright-beyond-testing",
+    "total_impressions": 225,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 32.762090509962846,
+    "total_sessions": 8,
+    "total_engaged_sessions": 2,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/cypress-full-stack-testing-api-ui",
+    "total_impressions": 222,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 53.09505747126437,
+    "total_sessions": 16,
+    "total_engaged_sessions": 3,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/best-qa-tools-browser-extensions",
+    "total_impressions": 213,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 70.38275075987842,
+    "total_sessions": 111,
+    "total_engaged_sessions": 41,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/hybrid-qa-methodology",
+    "total_impressions": 213,
+    "total_clicks": 1,
+    "avg_ctr": 0.006134969325153374,
+    "avg_position": 42.693047034764824,
+    "total_sessions": 56,
+    "total_engaged_sessions": 11,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/qa-framework-software-quality",
+    "total_impressions": 197,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 69.53822629969419,
+    "total_sessions": 100,
+    "total_engaged_sessions": 25,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/bash-node-for-testers",
+    "total_impressions": 194,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 8.812757201646091,
+    "total_sessions": 27,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/how-to-use-ai-in-qa-testing",
+    "total_impressions": 187,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 46.56220472440945,
+    "total_sessions": 105,
+    "total_engaged_sessions": 58,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/regression-testing-guide",
+    "total_impressions": 171,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 79.27830188679245,
+    "total_sessions": 57,
+    "total_engaged_sessions": 29,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/category/qa-fundamentals-best-practices/software-testing-strategies-methodologies",
+    "total_impressions": 165,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 84.66283846872082,
+    "total_sessions": 4,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/ai-prompts-qa-testing-real-workflow",
+    "total_impressions": 163,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 73.10987654320988,
+    "total_sessions": 36,
+    "total_engaged_sessions": 10,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/qa-and-the-future-ai-automation-and-trends-you-need-to-watch",
+    "total_impressions": 155,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 66.28030303030303,
+    "total_sessions": 17,
+    "total_engaged_sessions": 3,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/happy-path-testing",
+    "total_impressions": 122,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 80.19811320754717,
+    "total_sessions": 0,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/playwright-browser-automation-pipeline",
+    "total_impressions": 120,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 30.465304487179488,
+    "total_sessions": 12,
+    "total_engaged_sessions": 4,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/happy-path-testing-ai-dev-team",
+    "total_impressions": 112,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 55.90650406504065,
+    "total_sessions": 6,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/vault",
+    "total_impressions": 99,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 62.70774647887324,
+    "total_sessions": 66,
+    "total_engaged_sessions": 10,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/ai-prompts-qa-testing",
+    "total_impressions": 98,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 70.5761316872428,
+    "total_sessions": 83,
+    "total_engaged_sessions": 40,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/qa-testing-career-path-tech-leadership",
+    "total_impressions": 74,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 36.834371184371186,
+    "total_sessions": 36,
+    "total_engaged_sessions": 2,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/website-annotation-tools-qa-uat-testing",
+    "total_impressions": 69,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 10.930208333333333,
+    "total_sessions": 20,
+    "total_engaged_sessions": 2,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/security-testing-for-qa-engineers",
+    "total_impressions": 64,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 38.69384057971015,
+    "total_sessions": 6,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/casino-game-qa-testing-claude-collaborator",
+    "total_impressions": 60,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 59.51688762626262,
+    "total_sessions": 14,
+    "total_engaged_sessions": 5,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/qa-excellence-system",
+    "total_impressions": 59,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 31.753472222222225,
+    "total_sessions": 9,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/full-stack-developer-to-qa-expert-journey",
+    "total_impressions": 57,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 74.96808510638297,
+    "total_sessions": 68,
+    "total_engaged_sessions": 10,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/how-to-start-as-a-freelance-qa-engineer",
+    "total_impressions": 48,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 24.438172043010756,
+    "total_sessions": 14,
+    "total_engaged_sessions": 4,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/caching-qa-signal",
+    "total_impressions": 39,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 44.450292397660824,
+    "total_sessions": 7,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/prompt-engineering-for-qa-engineers",
+    "total_impressions": 36,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 64.4484126984127,
+    "total_sessions": 29,
+    "total_engaged_sessions": 14,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/fragmentation-qa-testing",
+    "total_impressions": 34,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 39.59375,
+    "total_sessions": 10,
+    "total_engaged_sessions": 4,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/k6-load-testing-tutorial",
+    "total_impressions": 32,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 19.385057471264368,
+    "total_sessions": 14,
+    "total_engaged_sessions": 3,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/qa-engineer-job-title-vs-actual-work",
+    "total_impressions": 32,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 29.09259259259259,
+    "total_sessions": 17,
+    "total_engaged_sessions": 8,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/playwright-scripts-performance-testing-optimization",
+    "total_impressions": 31,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 56.04347826086956,
+    "total_sessions": 16,
+    "total_engaged_sessions": 5,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/qa-basics-tools-test-plans-practices",
+    "total_impressions": 31,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 74.88095238095238,
+    "total_sessions": 22,
+    "total_engaged_sessions": 3,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/scribe-for-qa-testing",
+    "total_impressions": 31,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 13.729166666666666,
+    "total_sessions": 13,
+    "total_engaged_sessions": 5,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/the-value-of-being-agile-qa-testing-in-agile-environments",
+    "total_impressions": 31,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 49.4,
+    "total_sessions": 70,
+    "total_engaged_sessions": 3,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/qa-tester-to-lead-transition-guide",
+    "total_impressions": 29,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 62.32407407407407,
+    "total_sessions": 46,
+    "total_engaged_sessions": 4,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/how-ai-is-changing-software-testing",
+    "total_impressions": 28,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 59.71969696969697,
+    "total_sessions": 6,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/branch-level-qa-testing",
+    "total_impressions": 24,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 45.91666666666667,
+    "total_sessions": 51,
+    "total_engaged_sessions": 5,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/what-no-one-tells-you-about-becoming-a-qa-lead",
+    "total_impressions": 24,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 72.87745098039215,
+    "total_sessions": 5,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/wp-content/uploads/2026/04/QAJourney-Media-Kit-2026.pdf",
+    "total_impressions": 24,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 141.9111111111111,
+    "total_sessions": 0,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/category/advanced-testing-techniques",
+    "total_impressions": 21,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 50.10526315789474,
+    "total_sessions": 19,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/browser-engine-qa-testing",
+    "total_impressions": 20,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 17.64814814814815,
+    "total_sessions": 13,
+    "total_engaged_sessions": 5,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/manual-api-testing-qa",
+    "total_impressions": 19,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 46.63076923076923,
+    "total_sessions": 113,
+    "total_engaged_sessions": 60,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/qa-automation-framework-choice",
+    "total_impressions": 17,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 44.416666666666664,
+    "total_sessions": 22,
+    "total_engaged_sessions": 4,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/testing-ai-generated-code-hybrid-qa-workflow",
+    "total_impressions": 17,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 38.179487179487175,
+    "total_sessions": 11,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/breaking-down-the-qa-basics-tools-test-plans-and-common-practices",
+    "total_impressions": 16,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 37.984848484848484,
+    "total_sessions": 9,
+    "total_engaged_sessions": 2,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/qa-prompt-builder",
+    "total_impressions": 16,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 62.439393939393945,
+    "total_sessions": 22,
+    "total_engaged_sessions": 8,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/how-to-successfully-balance-your-qa-and-pm-responsibilities-for-optimal-project-management",
+    "total_impressions": 14,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 44.42424242424243,
+    "total_sessions": 76,
+    "total_engaged_sessions": 15,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/blog",
+    "total_impressions": 13,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 95.02000000000001,
+    "total_sessions": 135,
+    "total_engaged_sessions": 12,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/playwright-automation-no-api-access",
+    "total_impressions": 13,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 74.875,
+    "total_sessions": 6,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/test-case-templates-simplified-detailed-guide",
+    "total_impressions": 13,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 67.08333333333334,
+    "total_sessions": 21,
+    "total_engaged_sessions": 5,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/undervalued-qa-time-to-rethink-your-company",
+    "total_impressions": 12,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 44.95,
+    "total_sessions": 63,
+    "total_engaged_sessions": 8,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/category/test-automation-ai-driven-testing/qa-frameworks-tools-debugging",
+    "total_impressions": 10,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 57.23809523809524,
+    "total_sessions": 4,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/playwright-codegen-brittle-tests-refactoring",
+    "total_impressions": 10,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 56.22222222222222,
+    "total_sessions": 33,
+    "total_engaged_sessions": 4,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/qa-essential-skills-technical-guide",
+    "total_impressions": 10,
+    "total_clicks": 1,
+    "avg_ctr": 0.14285714285714285,
+    "avg_position": 49.476190476190474,
+    "total_sessions": 92,
+    "total_engaged_sessions": 31,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/playwright-automation-qa-real-world",
+    "total_impressions": 9,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 50.8125,
+    "total_sessions": 44,
+    "total_engaged_sessions": 13,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/category/qa-career-growth-leadership/strategic-qa-leadership-process-optimization",
+    "total_impressions": 8,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 58.5,
+    "total_sessions": 24,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/from-tester-to-decision-maker-making-tough-calls-as-a-qa-lead",
+    "total_impressions": 8,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 52.25,
+    "total_sessions": 63,
+    "total_engaged_sessions": 4,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/qa-as-a-career-a-stepping-stone-or-a-leadership-path",
+    "total_impressions": 8,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 50.25,
+    "total_sessions": 70,
+    "total_engaged_sessions": 5,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/abstraction-qa-testing",
+    "total_impressions": 7,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 19.25,
+    "total_sessions": 10,
+    "total_engaged_sessions": 4,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/ai-qa-workflow-for-real-projects",
+    "total_impressions": 7,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 63.583333333333336,
+    "total_sessions": 280,
+    "total_engaged_sessions": 128,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/building-a-scalable-qa-process-how-to-implement-the-qa-framework-aqlm-in-your-team",
+    "total_impressions": 7,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 58.0,
+    "total_sessions": 86,
+    "total_engaged_sessions": 33,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/adaptive-qa-leadership-model",
+    "total_impressions": 5,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 83.33333333333333,
+    "total_sessions": 5,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/ai-qa-team-multi-model",
+    "total_impressions": 5,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 83.2,
+    "total_sessions": 7,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/gamifying-qa-how-gamification-enhances-software-testing-efficiency-and-reduces-burnout",
+    "total_impressions": 5,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 76.0,
+    "total_sessions": 54,
+    "total_engaged_sessions": 5,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/the-evolution-of-a-qa-leader-where-do-you-go-from-here",
+    "total_impressions": 5,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 52.6,
+    "total_sessions": 79,
+    "total_engaged_sessions": 11,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/category/test-automation-ai-driven-testing/api-integration-backend-testing",
+    "total_impressions": 4,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 25.833333333333336,
+    "total_sessions": 29,
+    "total_engaged_sessions": 3,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/guerrilla-qa-shift-left-testing-real-world",
+    "total_impressions": 4,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 91.75,
+    "total_sessions": 25,
+    "total_engaged_sessions": 9,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/qa-engineer-skills-beyond-testing",
+    "total_impressions": 4,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 77.16666666666666,
+    "total_sessions": 3,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/the-qa-lead-mindset-building-influence-without-stepping-on-others",
+    "total_impressions": 4,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 44.5,
+    "total_sessions": 61,
+    "total_engaged_sessions": 6,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/how-to-optimize-playwright-scripts-for-performance-testing",
+    "total_impressions": 3,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 73.0,
+    "total_sessions": 121,
+    "total_engaged_sessions": 55,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/regression-suite-rebuild",
+    "total_impressions": 3,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 81.33333333333333,
+    "total_sessions": 17,
+    "total_engaged_sessions": 2,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/api-security-testing-for-qa-engineers",
+    "total_impressions": 2,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 33.0,
+    "total_sessions": 4,
+    "total_engaged_sessions": 2,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/leveraging-negative-traits-for-qa-excellence",
+    "total_impressions": 2,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 55.5,
+    "total_sessions": 27,
+    "total_engaged_sessions": 6,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/qa-mentorship",
+    "total_impressions": 2,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 41.0,
+    "total_sessions": 0,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/test-automation-for-beginners-tools-frameworks-and-key-practices",
+    "total_impressions": 2,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 64.0,
+    "total_sessions": 53,
+    "total_engaged_sessions": 5,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/the-future-of-qa-introducing-the-adaptive-qa-leadership-model-aqlm",
+    "total_impressions": 2,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 42.0,
+    "total_sessions": 56,
+    "total_engaged_sessions": 7,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/advanced-qa-techniques",
+    "total_impressions": 1,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 87.0,
+    "total_sessions": 73,
+    "total_engaged_sessions": 10,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/agile-testing-is-a-lie-youre-doing-qa-all-wrong",
+    "total_impressions": 1,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 64.0,
+    "total_sessions": 59,
+    "total_engaged_sessions": 8,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/category/qa-career-growth-leadership",
+    "total_impressions": 1,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 5.0,
+    "total_sessions": 32,
+    "total_engaged_sessions": 26,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/creating-test-strategies-and-detailed-test-plans-a-qa-leads-responsibility",
+    "total_impressions": 1,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 98.0,
+    "total_sessions": 67,
+    "total_engaged_sessions": 17,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/k6-performance-testing-windows-no-wsl",
+    "total_impressions": 1,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 28.0,
+    "total_sessions": 29,
+    "total_engaged_sessions": 5,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/links",
+    "total_impressions": 1,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 43.0,
+    "total_sessions": 113,
+    "total_engaged_sessions": 7,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/pagespeed-lighthouse-qa-debugging",
+    "total_impressions": 1,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 39.0,
+    "total_sessions": 7,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/qa-environment-setup-cloud-and-wsl",
+    "total_impressions": 1,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 34.0,
+    "total_sessions": 11,
+    "total_engaged_sessions": 3,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/qa-mindsets-soft-skills-journey-to-leadership",
+    "total_impressions": 1,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 47.0,
+    "total_sessions": 19,
+    "total_engaged_sessions": 3,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/layout-testing",
+    "total_impressions": 1,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 97.0,
+    "total_sessions": 0,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/sad-path-testing",
+    "total_impressions": 1,
+    "total_clicks": 1,
+    "avg_ctr": 1.0,
+    "avg_position": 78.0,
+    "total_sessions": 0,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/the-ultimate-guide-to-regression-testing-from-basics-to-advanced-strategies",
+    "total_impressions": 1,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 100.0,
+    "total_sessions": 56,
+    "total_engaged_sessions": 13,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/(not set)",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 609,
+    "total_engaged_sessions": 23,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/2024/12",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 9,
+    "total_engaged_sessions": 4,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/2025/01",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/about",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 92,
+    "total_engaged_sessions": 10,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/advanced-tips-for-using-playwrights-codegen-in-test-automation",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 20,
+    "total_engaged_sessions": 17,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/advertise",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 6,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/author/jaren",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 49,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/author/jaren/page/10",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/author/jaren/page/11",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/beyond-qa-how-scrum-ux-and-development-skills-expand-your-career-options",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 59,
+    "total_engaged_sessions": 6,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/blog/page/2",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 19,
+    "total_engaged_sessions": 2,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/blog/page/3",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 5,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/blog/page/4",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/blog/page/5",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 4,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/blog/page/6",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 5,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/blog/page/7",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 26,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/blog/page/8",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 16,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/blog/page/9",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 7,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/bola-idor-testing-qa-engineers",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 6,
+    "total_engaged_sessions": 2,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/breaking-down-the-qa-basics-tools-test-plans-and-common-practices-2",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 37,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/build-a-qa-framework-for-teams-empower-your-qa-process-and-elevate-software-quality",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 42,
+    "total_engaged_sessions": 3,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/category/advanced-testing-techniques/page/3",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/category/api-integration-backend-testing",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 5,
+    "total_engaged_sessions": 2,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/category/devops-ci-cd-continuous-testing",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/category/qa-career-growth-leadership/page/2",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/category/qa-career-growth-leadership/page/3",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 3,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/category/qa-career-growth-leadership/page/4",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 3,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/category/qa-career-growth-leadership/page/5",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/category/qa-career-growth-leadership/strategic-qa-leadership-process-optimization/page/2",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 3,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/category/qa-career-growth-leadership/tester-to-lead-transitioning-in-qa",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 11,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/category/qa-career-growth-leadership/tester-to-lead-transitioning-in-qa/page/2",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/category/qa-career-growth-leadership/tester-to-lead-transitioning-in-qa/page/3",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/category/qa-frameworks-tools-debugging",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 5,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/category/qa-frameworks-tools-debugging/page/2",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/category/qa-fundamentals-best-practices",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 26,
+    "total_engaged_sessions": 7,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/category/qa-fundamentals-best-practices/page/2",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 18,
+    "total_engaged_sessions": 2,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/category/qa-fundamentals-best-practices/page/3",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 3,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/category/qa-fundamentals-best-practices/page/4",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 4,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/category/qa-fundamentals-best-practices/page/5",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/category/qa-fundamentals-best-practices/software-testing-strategies-methodologies/page/2",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/category/qa-fundamentals-best-practices/software-testing-strategies-methodologies/page/3",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/category/software-testing-strategies-methodologies",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 8,
+    "total_engaged_sessions": 3,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/category/software-testing-strategies-methodologies/page/2",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/category/software-testing-strategies-methodologies/page/3",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/category/strategic-qa-leadership-process-optimization",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/category/strategic-qa-leadership-process-optimization/page/2",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/category/test-automation-ai-driven-testing",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 8,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/category/test-automation-ai-driven-testing/devops-ci-cd-continuous-testing",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 21,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/category/test-automation-ai-driven-testing/page/2",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/category/test-automation-ai-driven-testing/page/3",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 15,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/category/tester-to-lead-transitioning-in-qa",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 20,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/category/tester-to-lead-transitioning-in-qa/page/2",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 3,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/category/tester-to-lead-transitioning-in-qa/page/3",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/complete-qa-excellence-system-framework-leadership-implementation",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 15,
+    "total_engaged_sessions": 4,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/contact",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 77,
+    "total_engaged_sessions": 8,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/debugging-in-qa-why-manual-testing-and-ai-assistance-matter",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 60,
+    "total_engaged_sessions": 5,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/debugging-in-qa-why-manual-testing-and-ai-assistance-matter/comment-page-1",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/discipline-job-security-hybrid-qa-pm",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 49,
+    "total_engaged_sessions": 6,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/disclosure",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/dmca-policy",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 55,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/efficient-qa-test-case-design-simplified-vs-detailed-templates",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 39,
+    "total_engaged_sessions": 3,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/final-lessons-from-the-tester-to-lead-journey-key-takeaways-reflection",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 50,
+    "total_engaged_sessions": 7,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/gaming-necessity-for-qa-teams",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 48,
+    "total_engaged_sessions": 2,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/grep-awk-log-analysis-testing",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/how-qa-experience-translates-into-development-bridging-the-gap",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 61,
+    "total_engaged_sessions": 5,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/how-qa-leaders-shape-teams-mentorship-processes-and-culture",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 70,
+    "total_engaged_sessions": 15,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/how-qa-professionals-can-thrive-in-a-tech-driven-world",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 43,
+    "total_engaged_sessions": 3,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/how-to-be-scrum-master-pm",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 18,
+    "total_engaged_sessions": 2,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/imposter-syndrome-qa-lead",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 3,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/mastering-the-core-qa-skills-from-manual-to-automation",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 40,
+    "total_engaged_sessions": 6,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/playground/alerts",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/playwright-script-from-bug-report",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 21,
+    "total_engaged_sessions": 8,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/privacy-policy",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 72,
+    "total_engaged_sessions": 6,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/qa-essential-mindsets-skills-and-expectations",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 12,
+    "total_engaged_sessions": 7,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/qa-job-post-blew-up",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 22,
+    "total_engaged_sessions": 5,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/qa-logic-bug-case-study",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 31,
+    "total_engaged_sessions": 7,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/qa-pushback-survival",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 12,
+    "total_engaged_sessions": 6,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/qa-testing-methodology-vs-test-cases",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 16,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/qa-villain-perception-team-dynamics",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 22,
+    "total_engaged_sessions": 4,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/qaj-prompt-builder",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 11,
+    "total_engaged_sessions": 7,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/selenium-automation-qa-testers",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 98,
+    "total_engaged_sessions": 31,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/shift-left-testing-qa-agile",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/sprint-anxiety-hybrid-pm-scrum",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 5,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/sprint-planning-pressure",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 37,
+    "total_engaged_sessions": 10,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/abstraction",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 3,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/acceptance-criteria",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 3,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/access-control",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/adaptive-qa-leadership-model-aqlm",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/agentic-qa",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/agile-methods",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/agile-qa",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 14,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/agile-qa/page/2",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 4,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/ai-agent",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/ai-assisted-qa-testing",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/ai-assisted-testing",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/ai-dev-team",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/ai-endpoints",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/ai-generated-code",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/ai-in-qa",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 14,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/ai-in-qa-testing",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/ai-prompts",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/ai-qa",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 3,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/ai-testing-tools",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/ai-testing-workflow",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/ai-validation-workflows",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 4,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/api-testing",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/aqlm",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/autism-in-tech",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/automated-testing",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/automation-feasibility",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/automation-testing",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/automation-vs-manual-testing",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/backend-qa",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/backend-testing",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/bash",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/beginner-qa-skills",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/best-qa-tools",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/blast-radius",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/blink",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/branch-level-testing",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/branch-testing",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/broken-object-level-authorization",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/browser-automation",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/browser-engines",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 3,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/browser-extensions",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 3,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/browserstack",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/bug-prevention",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/bug-report-template",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/bug-reporting",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/bug-reports",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/building-a-qa-team",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/burp-suite",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/caching",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/career-framing",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/career-growth",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 26,
+    "total_engaged_sessions": 23,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/career-growth/page/2",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 10,
+    "total_engaged_sessions": 8,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/career-growth/page/3",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 7,
+    "total_engaged_sessions": 6,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/casino-game-testing",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/chatgpt-testing",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/chrome",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/ci-cd",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 3,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/ci-cd-devops-testing",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/claude",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/claude-ai",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/client-state",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/cls-fix",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/context-driven-testing",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/context-switching",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/continuous-improvement",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/contract-testing",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/cursor-qa",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/cypress",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/cypress-testing",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/debugging",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 4,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/debugging-tools",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/debugging-workflow",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/defect-verification",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/deployment",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 9,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/detailed-test-cases",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/determinism",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/developer-collaboration",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/development",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/edge-case-discovery",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/edge-case-mindset",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/environment-management",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/exif",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/exploratory-testing",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/exploratory-testing-security",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/feature-flags",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 7,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/field-report",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/financial-app-testing",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/firefox",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/fix-validation",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/flaky-tests",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 3,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/form-automation",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/form-validation",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/fragmentation",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 3,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/frontend-testing",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/functional-testing",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/gecko",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/generatepress",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/grafana-k6",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/grooming-tickets",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/hackerone",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/headless",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/hidden-assumptions",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/hybrid-pm",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/hybrid-qa-methodology",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/hypothesis-testing",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/iframe-testing",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/imposter-syndrome",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 15,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/javascript",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/javascript-testing",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/jmeter",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/job-security",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/job-title",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/js-math-bugs",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/judgment-layer",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/k6",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 3,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/lcp-optimization",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/load-testing",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/logic-grouping",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/login-testing",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/manual-qa",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/manual-testers",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/manual-testing",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 11,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/manual-to-automation",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/manual-vs-automation",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/manual-vs-automation-2",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/meme-case-studies",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/mocha-and-chai",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/monitoring",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/monolithic-systems",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/multi-model-ai",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 3,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/multiple-roles",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/n8n",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/negative-testing",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/network-delays",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/no-api",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/no-wsl",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/node-20",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/nodejs",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/observability",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 5,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/ocd-and-work",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/ollama",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/page-object-model",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/pagespeed-insights",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/parallel-testing",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/performance-testing",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/pipeline",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/playwright-scripts",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/postman",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 14,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/pr-environments",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/process-thinking",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/product-quality",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/production-incidents",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 8,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/production-testing",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 4,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/productivity-under-load",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/project-management-tips",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/prompt-builder",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 3,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/prompt-engineering",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/qa-and-product-management",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/qa-as-a-stepping-stone",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/qa-automation-strategy",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/qa-basics",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/qa-beginners",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 15,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/qa-beginners/page/2",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/qa-best-practices",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/qa-blind-spots",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/qa-brain",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/qa-career",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 6,
+    "total_engaged_sessions": 4,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/qa-career-growth",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/qa-career-path",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/qa-career-progression",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/qa-consulting",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/qa-debugging",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/qa-edge-cases",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/qa-engineer-security",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/qa-engineer-skills",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/qa-framework",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/qa-frameworks",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 15,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/qa-fundamentals",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/qa-hiring",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/qa-in-devops",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/qa-lead-mindset",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/qa-leadership",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 20,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/qa-leadership/page/2",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 6,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/qa-leadership/page/3",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/qa-methodology",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/qa-mindset",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/qa-practices",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/qa-pushback",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/qa-rates",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/qa-risk-analysis",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/qa-skills",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/qa-systems-thinking",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/qa-team",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 3,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/qa-templates",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/qa-testing",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/qa-testing-methodologies",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/qa-testing-tools",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/qa-tips",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/qa-to-dev",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/qa-to-dev-transition",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/qa-to-developer-transition",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/qa-tooling",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/qa-tools",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 13,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/qa-trends",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/qa-workflow",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/quality-assurance",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/quality-assurance-fundamentals",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/quality-engineering",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/real-world-testing",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/regression-testing",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 3,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/release-blockers",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/remote-qa",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/remote-qa-teams",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/reproducibility",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/resource-constraints",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/risk-based-testing",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/risk-modeling",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/rollback-strategy",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 10,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/safari",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/scope-management",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/scribe",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/scrum-master",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 4,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/sdet",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/security-testing",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/security-triage",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/selenium",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/selenium-ide",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/selenium-testing",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/selenium-webdriver",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/session-isolation",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/session-security",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/shift-left-testing",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 16,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/shift-left-testing-2",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/skill-file",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/software-quality-assurance",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/software-testing",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/software-testing-strategy",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 4,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/solo-qa",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/sprint-anxiety",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/sprint-delivery",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/sprint-planning",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/sprint-refinement",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/sql-injection",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/staging-environment",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/stealth",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/structured-testing",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/system-complexity",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/system-design",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/team-building",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 3,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/team-dynamics",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 4,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/team-leadership",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/technical-debt",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/technical-debt-prevention",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/test-automation",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 12,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/test-automation-for-beginners",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/test-automation/page/2",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/test-case-best-practices",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/test-case-design",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/test-case-generation",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/test-case-generation-with-ai",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 7,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/test-cases",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/test-classification",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/test-coverage",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/test-design",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/test-environment",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/test-isolation",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/test-judgment",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/test-management",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/test-methodologies",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/test-planning",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/test-strategy",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 3,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/tester-to-lead",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/testing-playground",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/testing-reality",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 3,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/threat-modeling",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/uat",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/ubuntu",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/user-experience",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/user-flow-logic",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/verification",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/web-automation",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/web-scraping",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/webkit",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 3,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/website-testing-tools",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/white-box-testing",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/windows",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/wordpress-qa",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/wsl-setup",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/xpath-and-css-selectors",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/tag/xss",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/terms-of-service",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 55,
+    "total_engaged_sessions": 4,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/test-optimistic-ui-updates",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 4,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/thank-you-newsletter-free",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 48,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/thank-you-premium",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 50,
+    "total_engaged_sessions": 7,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/thank-you-supporter",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 55,
+    "total_engaged_sessions": 3,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/the-art-of-giving-and-receiving-feedback-building-strong-qa-teams",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 91,
+    "total_engaged_sessions": 25,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/the-happy-and-sad-path-key-concepts-in-qa-testing",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 93,
+    "total_engaged_sessions": 30,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/the-last-hurdle-overcoming-imposter-syndrome-as-a-qa-leader",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 62,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/top-qa-trends-to-watch-in-2025-key-strategies-tools-and-best-practices",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 44,
+    "total_engaged_sessions": 19,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/transitioning-from-qa-tester-to-qa-lead-what-you-need-to-know",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 52,
+    "total_engaged_sessions": 4,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/understanding-the-basics-of-quality-assurance-qa-testing",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 36,
+    "total_engaged_sessions": 7,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/visual-regression-testing-with-playwright",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/why-qa-is-the-ultimate-career-foundation-building-skills-beyond-testing",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 42,
+    "total_engaged_sessions": 3,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/your-first-steps-in-qa-essential-mindsets-skills-and-expectations",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 48,
+    "total_engaged_sessions": 12,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/your-first-steps-in-qa-essential-mindsets-skills-and-expectations-2",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 70,
+    "total_engaged_sessions": 9,
+    "verdict": null
+  },
+  {
+    "page": "https://qajourney.net/your-first-steps-in-qa-essential-mindsets-skills-and-expectations/data:text/javascript",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  }
+]

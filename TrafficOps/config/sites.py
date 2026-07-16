@@ -15,55 +15,63 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 DATA_DIR = BASE_DIR / "data"
-TOKENS_DIR = BASE_DIR / "config" / "tokens"
 
 # NOTE: gsc_property must exactly match the property as it appears
 # in Google Search Console (usually "https://example.com/" with
 # trailing slash, or "sc-domain:example.com" for domain properties).
+#
+# NOTE: ga4_property_id is the numeric Property ID (NOT the
+# Measurement ID that starts with "G-"). Find it in GA4 →
+# Admin → Property Settings → Property ID. Fill these in below —
+# left as None until you do, so a missing ID fails loudly instead
+# of silently querying the wrong property.
 SITES = {
     "qaj": {
         "label": "QAJourney",
         "gsc_property": "https://qajourney.net/",
+        "ga4_property_id": 470886458,
         "db_path": DATA_DIR / "qaj.db",
-        "token_path": TOKENS_DIR / "qaj_token.json",
     },
     "eai": {
         "label": "EngineeredAI",
         "gsc_property": "https://engineeredai.net/",
+        "ga4_property_id": 471246383,
         "db_path": DATA_DIR / "eai.db",
-        "token_path": TOKENS_DIR / "eai_token.json",
     },
     "mmp": {
         "label": "MomentumPath",
         "gsc_property": "https://momentumpath.net/",
+        "ga4_property_id": 470932315,
         "db_path": DATA_DIR / "mmp.db",
-        "token_path": TOKENS_DIR / "mmp_token.json",
     },
     "hf": {
         "label": "HealthyForge",
         "gsc_property": "https://healthyforge.com/",
+        "ga4_property_id": 471093853,
         "db_path": DATA_DIR / "hf.db",
-        "token_path": TOKENS_DIR / "hf_token.json",
     },
     "rwh": {
         "label": "RemoteWorkHaven",
         "gsc_property": "https://remoteworkhaven.net/",
+        "ga4_property_id": 471230029,
         "db_path": DATA_DIR / "rwh.db",
-        "token_path": TOKENS_DIR / "rwh_token.json",
     },
     "he": {
         "label": "HobbyEngineered",
         "gsc_property": "https://hobbyengineered.com/",
+        "ga4_property_id": 518569530,
         "db_path": DATA_DIR / "he.db",
-        "token_path": TOKENS_DIR / "he_token.json",
     },
 }
 
-# Shared OAuth client credentials (one Google Cloud project, one
-# credentials.json, used to auth against all six site tokens).
+# Service account key — one key authenticates against both GSC and
+# GA4, for all six sites. Per-site access is granted per-property in
+# each product's own console (Search Console Users, GA4 Property
+# Access Management), not by separate credential files.
 CREDENTIALS_PATH = BASE_DIR / "config" / "credentials.json"
 
 GSC_SCOPES = ["https://www.googleapis.com/auth/webmasters.readonly"]
+GA4_SCOPES = ["https://www.googleapis.com/auth/analytics.readonly"]
 
 
 def get_site(site_id: str) -> dict:

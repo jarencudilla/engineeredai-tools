@@ -1,0 +1,5082 @@
+[
+  {
+    "page": "https://engineeredai.net/llm-quantization-explained",
+    "total_impressions": 1110,
+    "total_clicks": 7,
+    "avg_ctr": 0.0069622964867180805,
+    "avg_position": 10.580259721712165,
+    "total_sessions": 129,
+    "total_engaged_sessions": 41,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/the-best-no-code-low-code-platforms-with-ai-integration-you-need-to-know-in-2024",
+    "total_impressions": 999,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 86.73892662235858,
+    "total_sessions": 8,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/chatgpt-qa-testing-automation-guide",
+    "total_impressions": 924,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 70.44870724458674,
+    "total_sessions": 7,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/best-local-ai-models-for-your-gpu",
+    "total_impressions": 788,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 19.5305031973416,
+    "total_sessions": 122,
+    "total_engaged_sessions": 41,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/context-engineering-llms",
+    "total_impressions": 705,
+    "total_clicks": 1,
+    "avg_ctr": 0.0024449877750611247,
+    "avg_position": 66.80453266510723,
+    "total_sessions": 10,
+    "total_engaged_sessions": 2,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/ai-powered-productivity-can-ai-actually-make-you-work-smarter-not-harder",
+    "total_impressions": 700,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 50.102248174710866,
+    "total_sessions": 4,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/ai-powered-writing-how-chatgpt-enhances-content-creation",
+    "total_impressions": 435,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 67.6747990105133,
+    "total_sessions": 6,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/ollama-vs-gpt4all-vs-local-llms",
+    "total_impressions": 367,
+    "total_clicks": 2,
+    "avg_ctr": 0.005509641873278236,
+    "avg_position": 19.233608815426997,
+    "total_sessions": 42,
+    "total_engaged_sessions": 5,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/how-ai-is-revolutionizing-the-entertainment-industry",
+    "total_impressions": 355,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 79.53053160919539,
+    "total_sessions": 8,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/n8n-playwright-automation",
+    "total_impressions": 219,
+    "total_clicks": 1,
+    "avg_ctr": 0.0024330900243309003,
+    "avg_position": 14.017865832464373,
+    "total_sessions": 26,
+    "total_engaged_sessions": 9,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/what-is-llama-cpp",
+    "total_impressions": 212,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 58.39589665653496,
+    "total_sessions": 43,
+    "total_engaged_sessions": 4,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/ai-in-agriculture-how-ai-is-revolutionizing-farming-crop-management-and-sustainability",
+    "total_impressions": 151,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 65.3047052154195,
+    "total_sessions": 4,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/ai-daily-workflow",
+    "total_impressions": 146,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 63.536764705882355,
+    "total_sessions": 9,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/run-local-llm-on-android-phone",
+    "total_impressions": 141,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 31.608258928571427,
+    "total_sessions": 70,
+    "total_engaged_sessions": 19,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/how-ai-search-engines-work",
+    "total_impressions": 130,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 75.19298245614034,
+    "total_sessions": 4,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/q4-vs-q5-vs-q8-quantization",
+    "total_impressions": 127,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 9.146067415730338,
+    "total_sessions": 16,
+    "total_engaged_sessions": 2,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/llm-optimization-guide",
+    "total_impressions": 120,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 74.18640350877193,
+    "total_sessions": 29,
+    "total_engaged_sessions": 12,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/best-ai-content-tools-compared",
+    "total_impressions": 116,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 64.7613656783468,
+    "total_sessions": 15,
+    "total_engaged_sessions": 3,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/ai-seo-ranking-clarity-context",
+    "total_impressions": 109,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 59.49732142857143,
+    "total_sessions": 13,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/ai-auto-publish-to-platforms-problems",
+    "total_impressions": 105,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 47.03173400673401,
+    "total_sessions": 5,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/generative-ai-for-creatives-how-to-design-without-design-skills",
+    "total_impressions": 103,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 70.1211111111111,
+    "total_sessions": 9,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/ai-seo-generated-content-warning",
+    "total_impressions": 90,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 72.1494708994709,
+    "total_sessions": 38,
+    "total_engaged_sessions": 14,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/ollama-litellm-local-ai-setup-windows",
+    "total_impressions": 84,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 28.47222222222222,
+    "total_sessions": 124,
+    "total_engaged_sessions": 26,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/medium-api-alternative-automation",
+    "total_impressions": 77,
+    "total_clicks": 4,
+    "avg_ctr": 0.06382978723404255,
+    "avg_position": 36.90709219858156,
+    "total_sessions": 26,
+    "total_engaged_sessions": 9,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/enhancing-qa-with-chatgpt-a-comprehensive-guide",
+    "total_impressions": 71,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 71.9979674796748,
+    "total_sessions": 8,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/gpt5-vs-gpt4-review",
+    "total_impressions": 68,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 75.11451612903227,
+    "total_sessions": 5,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/the-best-ai-tools-to-use-in-2025-whats-worth-your-time",
+    "total_impressions": 64,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 74.2280701754386,
+    "total_sessions": 8,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/vibe-coding-what-breaks-what-you-need-to-know",
+    "total_impressions": 63,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 62.358333333333334,
+    "total_sessions": 10,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/why-over-relying-on-ai-is-weakening-developers-skills",
+    "total_impressions": 57,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 1.0,
+    "total_sessions": 13,
+    "total_engaged_sessions": 6,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/ai-in-energy",
+    "total_impressions": 52,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 84.24193548387096,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/",
+    "total_impressions": 51,
+    "total_clicks": 2,
+    "avg_ctr": 0.038461538461538464,
+    "avg_position": 7.777777777777778,
+    "total_sessions": 695,
+    "total_engaged_sessions": 298,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/llm-optimization-infrastructure",
+    "total_impressions": 51,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 40.24791666666667,
+    "total_sessions": 3,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/llm-inference-explained",
+    "total_impressions": 50,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 37.17037037037037,
+    "total_sessions": 54,
+    "total_engaged_sessions": 4,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/ai-coding-workflow",
+    "total_impressions": 49,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 57.94086021505377,
+    "total_sessions": 19,
+    "total_engaged_sessions": 9,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/agentic-ai-workflow-examples",
+    "total_impressions": 48,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 84.59210526315789,
+    "total_sessions": 5,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/ai-vs-traditional-coding-best-approach-2025",
+    "total_impressions": 46,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 63.12380952380953,
+    "total_sessions": 30,
+    "total_engaged_sessions": 3,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/ai-chatbots-customer-service-testing-production",
+    "total_impressions": 40,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 55.263888888888886,
+    "total_sessions": 24,
+    "total_engaged_sessions": 3,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/ai-image-compression-tools-benchmark",
+    "total_impressions": 35,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 62.08571428571429,
+    "total_sessions": 14,
+    "total_engaged_sessions": 9,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/ai-vs-traditional-coding-which-approach-is-best-for-you-in-2025",
+    "total_impressions": 35,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 75.67708333333333,
+    "total_sessions": 7,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tools",
+    "total_impressions": 34,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 59.492,
+    "total_sessions": 0,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/vibe-coding-with-ai-how-we-went-from-debugging-code-to-debugging-prompts",
+    "total_impressions": 34,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 73.984375,
+    "total_sessions": 16,
+    "total_engaged_sessions": 6,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/geographic-llm-targeting-guide",
+    "total_impressions": 33,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 64.54347826086956,
+    "total_sessions": 9,
+    "total_engaged_sessions": 3,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/repeatable-seo-system-five-blogs",
+    "total_impressions": 31,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 53.625,
+    "total_sessions": 7,
+    "total_engaged_sessions": 2,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/will-ai-replace-jobs",
+    "total_impressions": 27,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 73.75,
+    "total_sessions": 8,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/ai-content-workflow-that-actually-works",
+    "total_impressions": 26,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 41.266666666666666,
+    "total_sessions": 3,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/cgi-bin",
+    "total_impressions": 26,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 54.84782608695652,
+    "total_sessions": 0,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/ghost-in-shell-ai-tech-reality",
+    "total_impressions": 26,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 56.020833333333336,
+    "total_sessions": 31,
+    "total_engaged_sessions": 2,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/ai-search-vs-google-trust-problem",
+    "total_impressions": 24,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 79.95454545454545,
+    "total_sessions": 8,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/n8n-ollama-local-ai-drafting-pipeline",
+    "total_impressions": 24,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 45.523809523809526,
+    "total_sessions": 28,
+    "total_engaged_sessions": 10,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/fragmentation-ai-systems",
+    "total_impressions": 22,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 44.05882352941177,
+    "total_sessions": 9,
+    "total_engaged_sessions": 2,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/what-ai-resume-screeners-actually-do",
+    "total_impressions": 22,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 70.45,
+    "total_sessions": 6,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/ai-content-tools-compared",
+    "total_impressions": 21,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 52.4076923076923,
+    "total_sessions": 5,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/improve-llm-inference-speed",
+    "total_impressions": 20,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 29.076923076923077,
+    "total_sessions": 47,
+    "total_engaged_sessions": 5,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/running-ai-locally",
+    "total_impressions": 20,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 45.17857142857143,
+    "total_sessions": 8,
+    "total_engaged_sessions": 3,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/what-is-agentic-ai-3-types",
+    "total_impressions": 20,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 89.1923076923077,
+    "total_sessions": 6,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/ai-in-retail-e-commerce-how-ai-is-revolutionizing-shopping-in-2025",
+    "total_impressions": 19,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 73.55714285714285,
+    "total_sessions": 4,
+    "total_engaged_sessions": 3,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/ai-fatigue-isnt-intelligence",
+    "total_impressions": 17,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 88.625,
+    "total_sessions": 7,
+    "total_engaged_sessions": 3,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/ai-tools-that-actually-work",
+    "total_impressions": 17,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 24.41025641025641,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/wp-content/uploads/2026/04/EngineeredAI-Media-Kit-2026.pdf",
+    "total_impressions": 17,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 154.07142857142858,
+    "total_sessions": 0,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/ai-treated-like-dirty-word-tool-not-threat",
+    "total_impressions": 15,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 55.06666666666667,
+    "total_sessions": 10,
+    "total_engaged_sessions": 6,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/ai-in-interior-design-space-optimization",
+    "total_impressions": 14,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 68.0,
+    "total_sessions": 7,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/edge-ai-low-power-devices",
+    "total_impressions": 13,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 74.75,
+    "total_sessions": 6,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/local-alternatives-to-chatgpt",
+    "total_impressions": 13,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 50.388888888888886,
+    "total_sessions": 4,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/transition-to-ai-ml-data-science",
+    "total_impressions": 13,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 64.125,
+    "total_sessions": 5,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/contact",
+    "total_impressions": 12,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 2.888888888888889,
+    "total_sessions": 38,
+    "total_engaged_sessions": 10,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/n8n-content-syndication-automation",
+    "total_impressions": 12,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 35.45454545454545,
+    "total_sessions": 5,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/claude-45-vs-claude-4-content-gauntlet",
+    "total_impressions": 10,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 67.5625,
+    "total_sessions": 13,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/running-medical-llms-locally",
+    "total_impressions": 10,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 45.8125,
+    "total_sessions": 14,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/the-role-of-ai-in-shaping-modern-work-and-wellness",
+    "total_impressions": 10,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 90.625,
+    "total_sessions": 9,
+    "total_engaged_sessions": 2,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/comment-intelligence-dashboard",
+    "total_impressions": 9,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 9.0,
+    "total_sessions": 6,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/enhancing-your-chatgpt-experience-how-we-interact-today",
+    "total_impressions": 9,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 62.875,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/how-developers-use-ai-real-workflows",
+    "total_impressions": 8,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 47.07142857142857,
+    "total_sessions": 16,
+    "total_engaged_sessions": 2,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/structuring-ai-pipelines-inputs-outputs-failure-states",
+    "total_impressions": 8,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 57.9,
+    "total_sessions": 11,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/search-engine-discrimination-ai-content-data",
+    "total_impressions": 7,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 51.3125,
+    "total_sessions": 14,
+    "total_engaged_sessions": 4,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/how-to-deploy-vibe-coding-project",
+    "total_impressions": 6,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 32.6,
+    "total_sessions": 6,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/how-to-test-ai-recommendation-engine",
+    "total_impressions": 6,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 23.666666666666668,
+    "total_sessions": 6,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/about",
+    "total_impressions": 5,
+    "total_clicks": 1,
+    "avg_ctr": 0.25,
+    "avg_position": 5.5,
+    "total_sessions": 46,
+    "total_engaged_sessions": 8,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/ai-burnout-tracking-remote-work",
+    "total_impressions": 5,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 58.4,
+    "total_sessions": 5,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/ai-engineer-truth-no-degree-needed",
+    "total_impressions": 5,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 71.25,
+    "total_sessions": 6,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/ai-failure-patterns",
+    "total_impressions": 5,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 39.4,
+    "total_sessions": 4,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/autoblog-ai-experiment-001",
+    "total_impressions": 5,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 42.4,
+    "total_sessions": 13,
+    "total_engaged_sessions": 5,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/category/ai-analysis",
+    "total_impressions": 5,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 12.5,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/getting-into-ai-without-starting-over",
+    "total_impressions": 5,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 9.0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/multi-agent-local-ai-system-architecture",
+    "total_impressions": 5,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 15.25,
+    "total_sessions": 7,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/prompt-contracts-ai-instructions-edge-cases",
+    "total_impressions": 5,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 21.5,
+    "total_sessions": 7,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/quantization-8gb-gpu",
+    "total_impressions": 5,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 77.4,
+    "total_sessions": 2,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/turn-ai-chatbot-into-tutor",
+    "total_impressions": 5,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 53.6,
+    "total_sessions": 10,
+    "total_engaged_sessions": 6,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/what-ai-replaced-in-my-workflow",
+    "total_impressions": 5,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 56.6,
+    "total_sessions": 4,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/when-to-write-code-yourself-vs-let-model-do-it",
+    "total_impressions": 5,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 67.2,
+    "total_sessions": 13,
+    "total_engaged_sessions": 2,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/ai-and-gaming-how-ai-is-transforming-play-work-and-productivity",
+    "total_impressions": 4,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 69.25,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/ai-overcomplicates-simple-tasks",
+    "total_impressions": 4,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 63.0,
+    "total_sessions": 18,
+    "total_engaged_sessions": 3,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/blog",
+    "total_impressions": 4,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 4.666666666666667,
+    "total_sessions": 90,
+    "total_engaged_sessions": 15,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/building-with-ai-as-a-developer",
+    "total_impressions": 4,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 34.5,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/disclosure",
+    "total_impressions": 4,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 4.666666666666667,
+    "total_sessions": 3,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/how-to-get-a-job-in-ai-ml-data-science",
+    "total_impressions": 4,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 72.5,
+    "total_sessions": 5,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/how-to-set-up-openclaw",
+    "total_impressions": 4,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 29.833333333333332,
+    "total_sessions": 18,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/prompt-engineering-asking-better-questions",
+    "total_impressions": 4,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 51.25,
+    "total_sessions": 19,
+    "total_engaged_sessions": 6,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tools/visual-sitemap-generator/index.html",
+    "total_impressions": 4,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 88.75,
+    "total_sessions": 0,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/ai-human-dev-team-workflow",
+    "total_impressions": 3,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 5.666666666666667,
+    "total_sessions": 13,
+    "total_engaged_sessions": 3,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/ai-ides-vs-developer-thinking",
+    "total_impressions": 3,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 35.0,
+    "total_sessions": 17,
+    "total_engaged_sessions": 2,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/build-ai-tools-own-api-key",
+    "total_impressions": 3,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 49.666666666666664,
+    "total_sessions": 12,
+    "total_engaged_sessions": 4,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/category/ai-tools/page/2",
+    "total_impressions": 3,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 31.0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/getting-started-ai-machine-learning-data-science",
+    "total_impressions": 3,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 58.0,
+    "total_sessions": 12,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/how-healthcare-professionals-actually-use-ai",
+    "total_impressions": 3,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 82.0,
+    "total_sessions": 5,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/improve-chatbot-experience",
+    "total_impressions": 3,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 15.0,
+    "total_sessions": 7,
+    "total_engaged_sessions": 2,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/learning-game-development-ai-custom-404-games",
+    "total_impressions": 3,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 57.0,
+    "total_sessions": 4,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/local-video-scripting-pipeline-free-tools",
+    "total_impressions": 3,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 78.66666666666667,
+    "total_sessions": 10,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/self-imposed-token-limits-ai-search-blind-spot",
+    "total_impressions": 3,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 59.0,
+    "total_sessions": 14,
+    "total_engaged_sessions": 3,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/teaching-llms-data-evaluation-prompt-engineering",
+    "total_impressions": 3,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 40.666666666666664,
+    "total_sessions": 9,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/what-happens-when-you-let-ai-think-for-you",
+    "total_impressions": 3,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 64.66666666666667,
+    "total_sessions": 4,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/what-is-engineered-ai",
+    "total_impressions": 3,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 6.0,
+    "total_sessions": 5,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/wp-content/uploads/2026/05/llm-quantization-explained.webp",
+    "total_impressions": 3,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 3.6666666666666665,
+    "total_sessions": 0,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/ai-in-architecture",
+    "total_impressions": 2,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 98.5,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/ai-in-command-prompt",
+    "total_impressions": 2,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 75.0,
+    "total_sessions": 10,
+    "total_engaged_sessions": 2,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/building-eai-anti-bs-filter-wordpress-spam-plugin",
+    "total_impressions": 2,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 60.0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/category/productivity",
+    "total_impressions": 2,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 6.0,
+    "total_sessions": 4,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/gpt4all-local-assistant",
+    "total_impressions": 2,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 39.0,
+    "total_sessions": 14,
+    "total_engaged_sessions": 3,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/gpu-wattage-vs-inference-performance",
+    "total_impressions": 2,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 6.0,
+    "total_sessions": 12,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/persistent-browser-session-automation",
+    "total_impressions": 2,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 28.0,
+    "total_sessions": 22,
+    "total_engaged_sessions": 3,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/ai-debugging-content-reviewer",
+    "total_impressions": 1,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 91.0,
+    "total_sessions": 3,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/disable-default-copilot-windows-11",
+    "total_impressions": 1,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 73.0,
+    "total_sessions": 8,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/dmca-policy",
+    "total_impressions": 1,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 10.0,
+    "total_sessions": 4,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/extend-claude-context-local-llm",
+    "total_impressions": 1,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 48.0,
+    "total_sessions": 13,
+    "total_engaged_sessions": 2,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/how-to-set-up-a-local-mcp-server-with-ollama",
+    "total_impressions": 1,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 59.0,
+    "total_sessions": 19,
+    "total_engaged_sessions": 2,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/links",
+    "total_impressions": 1,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 10.0,
+    "total_sessions": 44,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/multimodal-llms-locally-vision-models-gpu",
+    "total_impressions": 1,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 11.0,
+    "total_sessions": 14,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/privacy-policy",
+    "total_impressions": 1,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 10.0,
+    "total_sessions": 35,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/optidash",
+    "total_impressions": 1,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 32.0,
+    "total_sessions": 0,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/wp-content/uploads/2026/04/best-LLM-based-on-your-GPU.webp",
+    "total_impressions": 1,
+    "total_clicks": 0,
+    "avg_ctr": 0.0,
+    "avg_position": 3.0,
+    "total_sessions": 0,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/(not set)",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 95,
+    "total_engaged_sessions": 3,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/2025/02",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 5,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/2025/03",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 4,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/5-ai-tools-that-save-you-hours-every-day",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/Blog",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 3,
+    "total_engaged_sessions": 2,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/Blog/page/10",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/Blog/page/11",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/Blog/page/12",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/Blog/page/13",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/Blog/page/2",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/Blog/page/3",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/Blog/page/4",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/Blog/page/5",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/Blog/page/6",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/Blog/page/7",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/Blog/page/8",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/Blog/page/9",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/Unlock-AIs-Full-Potential",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/advertise",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 5,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/ai-broke-your-flow",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 7,
+    "total_engaged_sessions": 4,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/ai-generated-code-passes-tests-breaks-production",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 13,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/ai-in-customer-service-enhancing-user-experiences-and-streamlining-support",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 5,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/ai-in-education-how-artificial-intelligence-is-transforming-learning",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/ai-in-finance-how-artificial-intelligence-is-transforming-trading-risk-management-and-customer-experience",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/ai-in-human-resources-how-ai-is-transforming-recruitment-and-employee-management",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/ai-in-legal-practice-the-future-of-law-with-human-ai-collaboration",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 19,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/ai-in-media-entertainment",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 10,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/ai-logic-grouping-fail",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 4,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/ai-powered-search-how-ai-is-changing-the-way-we-find-information",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 3,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/ai-wordpress-seo-fail",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 10,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/author/jaren",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 18,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/author/jaren/page/10",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/author/jaren/page/2",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/author/jaren/page/4",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/author/jaren/page/5",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/author/jaren/page/6",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/author/jaren/page/7",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/author/jaren/page/8",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/author/jaren/page/9",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/autonomous-ai-publishing-pipeline-lessons",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 12,
+    "total_engaged_sessions": 3,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/barangay-procurement-ai-prompts",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 8,
+    "total_engaged_sessions": 2,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/beyond-chatgpt-the-best-ai-assistants-for-productivity-in-2025",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 6,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/blog/page/10",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/blog/page/11",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/blog/page/12",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/blog/page/13",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/blog/page/2",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 3,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/blog/page/3",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 3,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/blog/page/4",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 3,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/blog/page/5",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 3,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/blog/page/6",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 3,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/blog/page/7",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/blog/page/8",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 3,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/blog/page/9",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/category/ai-applications",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 19,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/category/ai-applications/page/2",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/category/ai-content-strategy",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/category/ai-development",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/category/ai-fundamentals",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/category/ai-in-software-development",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/category/ai-systems",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/category/ai-tools",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 17,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/category/ai-tools-trends",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/category/ai-tools-workflows",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 2,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/category/ai-tools/page/3",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/category/ai-workflows",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/category/content-creation",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 4,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/category/content-creation/page/2",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/category/critical-analysis",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/category/experiments",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/category/lgu-ai-tools",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/category/prompt-engineering",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 3,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/category/real-world-ai-use-cases",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/claude-thinking-tool-vs-chatgpt",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 7,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/dmca",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 3,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/editorial-auditor-prompt",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 3,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/edtech-ai-failures-honest-assessment",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 5,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/free-ai-tools-byok",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 6,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/getting-started-with-chatgpt-a-quick-guide-for-beginners",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 3,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/how-ai-is-reshaping-software-testing-what-every-qa-engineer-needs-to-know",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 12,
+    "total_engaged_sessions": 2,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/how-generative-ai-is-transforming-content-creation-a-complete-guide",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 6,
+    "total_engaged_sessions": 2,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/how-to-automate-your-business-with-ai-tools",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 5,
+    "total_engaged_sessions": 3,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/how-to-publish-ai-generated-content-automatically",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 10,
+    "total_engaged_sessions": 2,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/how-to-publish-ai-generated-content-automatically]",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/how-to-tell-if-ai-tool-is-real-or-wrapper",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 14,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/how-we-leverage-generative-ai-to-create-cutting-edge-content",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 6,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/local-llm-realistic-expectations",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/multi-model-ai-writing-stack",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 13,
+    "total_engaged_sessions": 3,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/page/2",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/plan-before-vibe-coding",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/prompt-engineering-critical-thinking",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 8,
+    "total_engaged_sessions": 2,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/prompt-engineering-that-actually-works",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/relaycard",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 6,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/riasdkajhsdf",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/abstraction",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/adsense-tools",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/agentic-ai",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/agentic-workflow",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/ai-agent",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 5,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/ai-automation",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/ai-career",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/ai-career-transition",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/ai-code-quality",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/ai-coding",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/ai-comparisons",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/ai-content",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/ai-content-workflow",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/ai-dependency",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/ai-dev-team",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/ai-developer-agent",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/ai-development",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 8,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/ai-development/page/2",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 5,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/ai-discoverability",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/ai-experimentation",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/ai-experiments",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/ai-failure",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/ai-fatigue",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/ai-for-content-creators",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/ai-fundamentals",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/ai-hiring",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/ai-hype",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/ai-job-market",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/ai-launcher",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/ai-limitations",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/ai-output-quality",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/ai-overviews",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/ai-performance",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/ai-pipelines",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/ai-planning",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/ai-production",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 3,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/ai-productivity",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 14,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/ai-prompting",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/ai-proxy",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/ai-reality",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/ai-reasoning",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/ai-search",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/ai-system-design",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/ai-systems",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/ai-testing",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/ai-tool-evaluation",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/ai-tooling",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/ai-tools",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/ai-trust-problem",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/ai-tutor",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/ai-without-a-degree",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/ai-workflow",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 9,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/ai-workflows",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/ai-writing-workflow",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/alfred",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/analysis",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/analysis/page/2",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 3,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/analytics",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/android-ai",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/api-automation",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/applied-ai",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/authentication",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/autoblog",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/autoblog-ai",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/autohotkey",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/automation",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 8,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/beginner-ai",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/best-practices",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/bias-testing",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/bootstrapped-saas",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/browser-automation",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/business-automation",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/byok",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/canonical-sourcing",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/career-advice",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/chatgpt",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/chatgpt-5-2",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/chatgpt-alternative",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/chatgpt-codex",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/chatgpt-projects",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/chatgpt-search",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/chatgpt-workflows",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/claude",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/claude-ai",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/claude-code",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/claude-sonnet-4-6",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/clinical-accuracy",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/cloudflare-ai-crawl-control",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/cloudflare-ai-crawlers",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/code-generation",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/code-quality",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 13,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/code-review",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/coding-with-ai",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/cognitive-skills",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/cold-start",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/comparison",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/consumer-hardware",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/content-automation",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/content-creation",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 13,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/content-creation-ai",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/content-production",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/content-syndication",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/context-engineering",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/context-length",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/context-limits",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/context-switching",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/cpu-inference",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/critical-analysis",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 3,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/critical-thinking",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/cuda",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/custom-instructions",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/data-science-career",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/debugging",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/developer-skills",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 6,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/developer-workflow",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/documentation",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 4,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/due-diligence",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/echocast",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/edge-cases",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/efficiency",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/engineered-ai",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/engineering-notes",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/evaluation",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/express",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/failure-handling",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/fetch-limit",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/flask",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/foundation-models",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/fragmentation",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/gemini",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/gemini-3-1",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/gemma-4",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/generative-ai",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/getting-started",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 3,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/gguf",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/github-gist",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/github-pages",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/google-search-console",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/gptbot",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/gpu",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/gpu-inference",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/gpu-offloading",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/graphql",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/groq",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/gtx-1070",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 4,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/gtx-1660",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/honest-review",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/how-to-get-into-ai",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/human-in-the-loop",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/image-analysis",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/inference-optimization",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/judgment",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/keyword-matching",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/kv-cache",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/linkedin",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/litellm",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/llama-3-2",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/llama-cpp",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/llava",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/llm",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/llm-citations",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/llm-hardware",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/llm-inference",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/llm-models",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/llm-optimization",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/llm-quantization",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/llms",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/local-ai",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/local-ai-setup",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 5,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/local-llm",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/local-llms",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 4,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/low-power-hardware",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/machine-learning",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/marketing-automation",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/mcp",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/mcphost",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/medical-ai",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/medium",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/mistral",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/mobile-ai",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/mobile-inference",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/model-compression",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/multi-agent",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/multi-agent-ai",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/multi-model-ai",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/multi-model-writing",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/n8n",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/n8n-playwright",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/no-code",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/node-js",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/notion",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/off-grid",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/off-grid-app",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/offline-ai",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/ollama",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/open-webui",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/openclaw",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/openrouter",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/output-validation",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/performance",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/perplexity-pro",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/persistent-context",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/phi-4",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/pipeline-architecture",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/platforms",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/playwright",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/pm2",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/power-consumption",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/privacy",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/production",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/production-ai",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/production-testing",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 3,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/productivity",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 9,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/project-scoping",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/prompt-design",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/prompt-engineering",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 11,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/prompting",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/protocol-handlers",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/publisher-traffic",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/publishing-pipeline",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/qa",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/qa-engineer",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/quality-gates",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/qwen",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 5,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/qwen-2-5",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/qwen-3",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/raspberry-pi",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/recommendation-engine",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/retrieval-practice",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/rtx-3060",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/rtx-3090",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 4,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/saas",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 3,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/schema-markup",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/search-engine-optimization",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/search-result-truncation",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/security",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/seo",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/seo-tools",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/session-cookies",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/session-management",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/skill-file",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/snapdragon-npu",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 5,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/social-media-automation",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 5,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/software-development",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/software-engineering",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/solo-builder",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/solo-operator",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/specification",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/start-menu-search",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/substack",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/system-design",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/system-prompts",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/test-automation",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/token-cost",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/token-limits",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/tokens-per-second",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/tools",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/tools/page/2",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/trends",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/tutorial",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/ux",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/vibe-coding",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 6,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/vibe-team-engineering",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/vision-models",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/voice-input",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/windows",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/windows-configuration",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/wordpress-automation",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/wordpress-rest-api",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/workflow-architecture",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/workflow-automation",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/workflows",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 2,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/wrapper-vs-engineering",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/wrappers",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/writing-pipeline",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/tag/zero-click-search",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 1,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/terms-of-service",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 10,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/the-ai-hype-cycle-why-some-ai-trends-fade-while-others-stick",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 3,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/the-hidden-costs-of-ai-is-automation-really-saving-us-time-and-money",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 7,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/unlock-ais-full-potential",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 4,
+    "total_engaged_sessions": 2,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/vault",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 20,
+    "total_engaged_sessions": 3,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/voice-input-better-ai-output",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 3,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/when-to-use-ai-in-marketing-vs-trap",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 15,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/why-ai-finance-solutions-fail-what-works",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 7,
+    "total_engaged_sessions": 0,
+    "verdict": null
+  },
+  {
+    "page": "https://engineeredai.net/why-ai-is-giving-you-more-work-and-how-to-fix-it",
+    "total_impressions": 0,
+    "total_clicks": 0,
+    "avg_ctr": 0,
+    "avg_position": 0,
+    "total_sessions": 11,
+    "total_engaged_sessions": 1,
+    "verdict": null
+  }
+]

@@ -10,7 +10,7 @@ from services.url_utils import canonicalize_url
 from models.ga4_row import GA4Row
 
 
-def normalize_ga4_rows(raw_rows: list) -> list[GA4Row]:
+def normalize_ga4_rows(raw_rows: list, site_domain: str) -> list[GA4Row]:
     """
     Turn a list of raw GA4 API row objects into GA4Row instances,
     ready for database.db.save_ga4_rows().
@@ -20,9 +20,14 @@ def normalize_ga4_rows(raw_rows: list) -> list[GA4Row]:
     — order matters here because GA4 returns values positionally,
     not as named fields. See collectors/ga4_collector.py.
 
-    @param raw_rows  list  Output of collectors.ga4_collector.fetch_ga4_landing_pages
-                            (already a flat list — pagination handled
-                            by the collector)
+    @param raw_rows     list  Output of collectors.ga4_collector.fetch_ga4_landing_pages
+                               (already a flat list — pagination handled
+                               by the collector)
+    @param site_domain  str   The site's own domain (e.g. site_config["gsc_property"]).
+                               REQUIRED — GA4's landingPage is a bare path with
+                               no scheme/host, so without this, rows would be
+                               keyed differently from GSC's full-URL pages and
+                               silently fail to join. See services/url_utils.py.
     @return list[GA4Row]
     """
     normalized = []
@@ -43,7 +48,7 @@ def normalize_ga4_rows(raw_rows: list) -> list[GA4Row]:
 
         normalized.append(
             GA4Row(
-                page=canonicalize_url(landing_page),
+                page=canonicalize_url(landing_page, base_url=site_domain),
                 sessions=sessions,
                 engaged_sessions=engaged_sessions,
                 bounce_rate=bounce_rate,
